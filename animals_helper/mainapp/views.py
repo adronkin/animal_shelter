@@ -14,8 +14,6 @@ class Contact(TemplateView):
     template_name = 'mainapp/contact.html'
 
 
-
-
 def pet_list(request):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
@@ -25,3 +23,15 @@ def pet_list(request):
         'pets': pets,
     }
     return render(request, 'mainapp/pets.html', content)
+
+
+def pet_card(request, pk):
+    pet = get_object_or_404(Pet, pk=pk)
+
+    context = {
+        'title': 'карточка питомца',
+        # 'catalog_menu': get_catalog_menu(),
+        # 'category': pet.pet_category_type,
+        'pet': pet,
+    }
+    return render(request, 'mainapp/pet_card.html', context)

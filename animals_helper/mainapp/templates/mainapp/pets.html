@@ -5,11 +5,11 @@
 	<head>		</head>
 
 		<h4>Hello</h4>
-		{% for item in pets %}
-		{% for img in item.images.all %}
-               <a href="{{ img.image.url }}">
+    	{% for item in pets %}
+		    {% for img in item.images.all %}
+               <a href="{% url 'mainapp:pet_card' item.pk %}">
                    <img src="{{ img.image.url }}" alt=""> </a>
-           {% endfor %}
+            {% endfor %}
 			<h1>{{item.name}}</h1>
 			<p>Категория питомца: {{item.pet_category_type}}</p>
 			<p>Состояние питомца: {{item.pet_category_health}}</p>
