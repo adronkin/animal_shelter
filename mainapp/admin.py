@@ -30,3 +30,4 @@ admin.site.register(PetSize)
 admin.site.register(PetWool)
 admin.site.register(PetColor)
 admin.site.register(PetCharacter)
+
