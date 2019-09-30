@@ -1,0 +1,28 @@
+{% load static %}
+	<!DOCTYPE html>
+	<title>{{title}}</title>
+	<html lang="zxx" class="no-js">
+	<head>		</head>
+
+		<h4>Hello</h4>
+		{% for item in pets %}
+		{% for img in item.images.all %}
+               <a href="{{ img.image.url }}">
+                   <img src="{{ img.image.url }}" alt=""> </a>
+           {% endfor %}
+			<h1>{{item.name}}</h1>
+			<p>Категория питомца: {{item.pet_category_type}}</p>
+			<p>Состояние питомца: {{item.pet_category_health}}</p>
+			<p>Пол питомца: {{item.pet_gender}}</p>
+			<p>Возраст питомца: {{item.age}}</p>
+			<p>Месяц питомца: {{item.month}}</p>
+			<p>Размер питомца: {{item.pet_size}}</p>
+			<p>Длина шерсти питомца: {{item.pet_wool_length}}</p>
+			<p>Цвет питомца: {{item.pet_color}}</p>
+			<p>Характер питомца: {{item.pet_character}}</p>
+			<p>Город питомца: {{item.pet_city}}</p>
+			<br><br><br>
+			<p>-------------------------------------------------------------------------------</p>
+		{% endfor %}
+		</body>
+	</html>
