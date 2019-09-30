@@ -61,11 +61,15 @@ class Social(Core):
     obj = models.ForeignKey(Shelter, related_name='links', on_delete=models.PROTECT)
 
 
-class Category(Core):
+class PetCategory(Core):
     """Класс описывающий вид животного"""
 
 
-class Breed(Core):
+class PetStatus(Core):
+    """ Класс описывающий состояние здоровья питомца и его готовность покинуть приют """
+
+
+class PetBreed(Core):
     """Класс описывающий породу животного"""
 
 
@@ -91,22 +95,10 @@ class PetCharacter(Core):
 
 class Pet(Core):
     """Класс описывающий животного"""
-    HELP = 'SOS'
-    SICK = 'SCK'
-    READY = 'RDY'
-    HOME = 'HME'
-
-    STATUS_CHOICES = (
-        (HELP, 'Нужна помощь'),
-        (SICK, 'На лечении'),
-        (READY, 'Можно забрать'),
-        (HOME, 'Уже дома'),
-    )
-
     pet_shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, related_name='pets', blank=False, null=False)
-    pet_status = models.CharField(verbose_name='статус', max_length=3, choices=STATUS_CHOICES, default=SICK)
-    pet_category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    pet_breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
+    pet_category = models.ForeignKey(PetCategory, on_delete=models.CASCADE)
+    pet_status = models.ForeignKey(PetStatus, on_delete=models.CASCADE)
+    pet_breed = models.ForeignKey(PetBreed, on_delete=models.CASCADE)
     pet_gender = models.ForeignKey(PetGender, on_delete=models.CASCADE)
     pet_size = models.ForeignKey(PetSize, on_delete=models.CASCADE)
     pet_wool_length = models.ForeignKey(PetWool, on_delete=models.CASCADE)

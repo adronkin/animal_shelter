@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 from .models import (
-    Picture, City, Shelter, Donate, Social, Category, Breed, PetGender,
-    PetSize, PetWool, PetColor, PetCharacter, Pet
+    Picture, City, Shelter, Donate, Social, PetCategory, PetStatus, PetBreed,
+    PetGender, PetSize, PetWool, PetColor, PetCharacter, Pet
 )
 
 
@@ -22,8 +22,9 @@ admin.site.register(City)
 admin.site.register(Shelter)
 admin.site.register(Donate)
 admin.site.register(Social)
-admin.site.register(Category)
-admin.site.register(Breed)
+admin.site.register(PetCategory)
+admin.site.register(PetStatus)
+admin.site.register(PetBreed)
 admin.site.register(PetGender)
 admin.site.register(PetSize)
 admin.site.register(PetWool)
