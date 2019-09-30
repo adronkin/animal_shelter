@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 from .models import (
-    Picture, Category, PetGender, PetSize, PetWool, PetColor, PetCharacter, Pet
+    Picture, City, Shelter, Donate, Social, Category, Breed, PetGender,
+    PetSize, PetWool, PetColor, PetCharacter, Pet
 )
 
 
@@ -12,12 +13,17 @@ class PictureInline(admin.TabularInline):
 
 
 @admin.register(Pet)
-class ProductAdmin(admin.ModelAdmin):
+class PetAdmin(admin.ModelAdmin):
     """ Набор изображений для отдельно взятого питомца """
     inlines = (PictureInline,)
 
 
+admin.site.register(City)
+admin.site.register(Shelter)
+admin.site.register(Donate)
+admin.site.register(Social)
 admin.site.register(Category)
+admin.site.register(Breed)
 admin.site.register(PetGender)
 admin.site.register(PetSize)
 admin.site.register(PetWool)
