@@ -18,10 +18,25 @@ class PetAdmin(admin.ModelAdmin):
     inlines = (PictureInline,)
 
 
+class SocialInline(admin.TabularInline):
+    """ ссылки на соц.сети """
+    model = Social
+    fk_name = 'obj'
+
+
+class DonateInline(admin.TabularInline):
+    """ реквизиты для финансовой помощи """
+    model = Donate
+    fk_name = 'account'
+
+
+@admin.register(Shelter)
+class ShelterAdmin(admin.ModelAdmin):
+    """ Подключаем к питомнику соц.сети, донаты, картинки """
+    inlines = (SocialInline, DonateInline, PictureInline,)
+
+
 admin.site.register(City)
-admin.site.register(Shelter)
-admin.site.register(Donate)
-admin.site.register(Social)
 admin.site.register(PetCategory)
 admin.site.register(PetStatus)
 admin.site.register(PetBreed)
