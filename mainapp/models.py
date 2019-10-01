@@ -50,21 +50,21 @@ class Category(models.Model):
 
 
 class PetGender(models.Model):
-	"""Класс описывающий пол животного"""
-	gender = models.CharField(verbose_name='пол', max_length=16, unique=True)
-	is_active = models.BooleanField(verbose_name='активность', default=True)
+    """Класс описывающий пол животного"""
+    gender = models.CharField(verbose_name='пол', max_length=16, unique=True)
+    is_active = models.BooleanField(verbose_name='активность', default=True)
 
-	def __str__(self):
-		return self.gender
+    def __str__(self):
+        return self.gender
 
 
 class PetSize(models.Model):
-	"""Класс описывающий размеры животного"""
-	size = models.CharField(verbose_name='размер', max_length=16, unique=True)
-	is_active = models.BooleanField(verbose_name='активность', default=True)
+    """Класс описывающий размеры животного"""
+    size = models.CharField(verbose_name='размер', max_length=16, unique=True)
+    is_active = models.BooleanField(verbose_name='активность', default=True)
 
-	def __str__(self):
-		return self.size
+    def __str__(self):
+        return self.size
 
 
 class PetWool(models.Model):
