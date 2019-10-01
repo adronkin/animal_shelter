@@ -1,3 +1,5 @@
 .idea
 run.sh
 run.bat
+**/migrations
+**/__pycache__
