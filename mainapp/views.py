@@ -1,7 +1,11 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, get_object_or_404
 
+<<<<<<< HEAD
 from mainapp.models import Pet
+=======
+from mainapp.models import Pet, Shelter
+>>>>>>> 12ae91e2b198bcec6a9f6c3821aa7d75bb9ca638
 
 
 class Index(TemplateView):
@@ -13,11 +17,17 @@ class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
 
+<<<<<<< HEAD
 
 def pet_list(request):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
 
+=======
+def pet_list(request):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    pets = Pet.objects.all()
+>>>>>>> 12ae91e2b198bcec6a9f6c3821aa7d75bb9ca638
     content = {
         'title': title,
         'pets': pets,

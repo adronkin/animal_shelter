@@ -4,6 +4,7 @@
 	<html lang="zxx" class="no-js">
 	<head>		</head>
 
+<<<<<<< HEAD
 		<h4>Hello</h4>
     	{% for item in pets %}
 		    {% for img in item.images.all %}
@@ -21,6 +22,27 @@
 			<p>Цвет питомца: {{item.pet_color}}</p>
 			<p>Характер питомца: {{item.pet_character}}</p>
 			<p>Город питомца: {{item.pet_city}}</p>
+=======
+		<h2>Список питомцев: </h2>
+    	{% for pet in pets %}
+		    {% for img in pet.images.all %}
+
+               <a href="{% url 'mainapp:pet_card' pet.pk %}">
+                   <img src="{{ img.image.url }}" alt=""> </a>
+           {% endfor %}
+			<h1>{{pet.name}}</h1>
+    		<p>Категория питомца: {{pet.pet_category}}</p>
+			<p>Состояние питомца: {{pet.pet_status}}</p>
+			<p>Пол питомца: {{pet.pet_gender}}</p>
+			<p>Возраст питомца: {{pet.age}}</p>
+			<p>Месяц питомца: {{pet.month}}</p>
+			<p>Размер питомца: {{pet.pet_size}}</p>
+			<p>Длина шерсти питомца: {{pet.pet_wool_length}}</p>
+			<p>Цвет питомца: {{pet.pet_color}}</p>
+			<p>Характер питомца: {{pet.pet_character}}</p>
+            <p>Приют: {{pet.pet_shelter}}</p>
+			<p>Город, в котором находится приют: {{pet.pet_shelter.shelter_city}}</p>
+>>>>>>> 12ae91e2b198bcec6a9f6c3821aa7d75bb9ca638
 			<br><br><br>
 			<p>-------------------------------------------------------------------------------</p>
 		{% endfor %}
