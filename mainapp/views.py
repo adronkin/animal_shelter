@@ -4,6 +4,31 @@ from django.shortcuts import render, get_object_or_404
 from mainapp.models import Pet, Shelter
 
 
+def get_year_output(year):
+    year_output = 'год(-а)'
+
+    if year == 1:
+        year_output = 'год'
+    elif 4 >= year >= 2:
+        year_output = 'года'
+    elif 20 >= year >= 5:
+        year_output = 'лет'
+
+    return year_output
+
+
+def get_month_output(month):
+
+    if month == 1:
+        month_output = 'месяц'
+    elif 4 >= month >= 2:
+        month_output = 'месяца'
+    elif 12 >= month >= 5 or month == 0:
+        month_output = 'месяцев'
+
+    return month_output
+
+
 class Index(TemplateView):
     """ Главная страница """
     template_name = 'mainapp/index.html'
@@ -13,10 +38,10 @@ class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
 
+
 def pet_list(request):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
-
     content = {
         'title': title,
         'pets': pets,
@@ -29,8 +54,9 @@ def pet_card(request, pk):
 
     context = {
         'title': 'карточка питомца',
-        # 'catalog_menu': get_catalog_menu(),
-        # 'category': pet.pet_category_type,
         'pet': pet,
+        'shelter': pet.pet_shelter,
+        'year_output': get_year_output(year=pet.age),
+        'month_output': get_month_output(month=pet.month)
     }
     return render(request, 'mainapp/pet_card.html', context)
