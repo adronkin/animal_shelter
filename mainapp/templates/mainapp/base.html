@@ -55,170 +55,153 @@
 </head>
 <body>
 
-    {% block main_menu %}
-        <header id="header" id="home">
-            <div class="container main-menu">
-                <div class="row align-items-center justify-content-between d-flex">
-                    <div id="logo">
-                        <a href={% url 'mainapp:index'%}><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
-                    </div>
-                    <nav id="nav-menu-container">
-                        <ul class="nav-menu">
-                            <li class="menu-active"><a href="{% url 'mainapp:index' %}">Home</a></li>
-                            <li><a href="{% url 'mainapp:about' %}">About Us</a></li>
-                            <li><a href="{% url 'mainapp:cats' %}">Cats</a></li>
-                            <li><a href="{% url 'mainapp:dogs' %}">Dogs</a></li>
-                            <li><a href="{% url 'mainapp:volunteer' %}">Volunteer</a></li>
-                            <li class="menu-has-children"><a href="">Blog</a>
-                                <ul>
-                                    <li><a href="{% url 'mainapp:blog-home' %}">Blog Home</a></li>
-                                    <li><a href="{% url 'mainapp:blog-single' %}">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{% url 'mainapp:contact' %}">Contact</a></li>
-                            <li class="menu-has-children"><a href="">Dropdown</a>
-                                <ul>
-                                    <li><a href="{% url 'mainapp:elements' %}">Elements</a></li>
-                                    <li><a href="#">Item</a></li>
-                                    <li class="menu-has-children"><a href="">Level 2</a>
-                                        <ul>
-                                            <li><a href="#">Item 1</a></li>
-                                            <li><a href="#">Item 2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav><!-- #nav-menu-container -->
+{% block main_menu %}
+    <header id="header" id="home">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href={% url 'main:index' %}><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
                 </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="{% url 'main:index' %}">Home</a></li>
+                        <li><a href="{% url 'main:about' %}">About Us</a></li>
+                        <li><a href="{% url 'main:cats' %}">Cats</a></li>
+                        <li><a href="{% url 'main:dogs' %}">Dogs</a></li>
+                        <li><a href="{% url 'main:volunteer' %}">Volunteer</a></li>
+                        <li class="menu-has-children"><a href="">Blog</a>
+                            <ul>
+                                <li><a href="{% url 'main:blog-home' %}">Blog Home</a></li>
+                                <li><a href="{% url 'main:blog-single' %}">Blog Single</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                        <li class="menu-has-children"><a href="">Dropdown</a>
+                            <ul>
+                                <li><a href="{% url 'main:elements' %}">Elements</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li class="menu-has-children"><a href="">Level 2</a>
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
             </div>
-        </header><!-- #header -->
-    {% endblock %}
+        </div>
+    </header><!-- #header -->
+{% endblock %}
 
-    {% block main_banner %}
-        <!-- start banner Area -->
-        <section class="banner-area relative" id="home">
-            <div class="container">
-                <div class="overlay overlay-bg"></div>
-                <div class="row fullscreen d-flex align-items-center justify-content-start">
-                    <div class="banner-content col-lg-8 col-md-12">
-                        <h1 class="text-uppercase">
-                            Adopt Us. <br>
-                            We need your help.
-                        </h1>
-                        <p class="text-white sub-head">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
-                            or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+{% block main_banner %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block call_to_action %}
+{% endblock %}
+
+{% block footer %}
+    <!-- start footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row pt-120 pb-80">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-footer-widget">
+                        <h6>About Us</h6>
+                        <p>
+                            Few would argue that, despite the advanc ements off eminism over the past three decades,
+                            women still face a double standard when it comes to their behavior. While men’s
+                            borderline-inappropriate behavior. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
-                        <a href="#" class="primary-btn header-btn text-uppercase">Find a pet to adopt</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- End banner Area -->
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
-
-    {% block footer %}
-        <!-- start footer Area -->
-        <footer class="footer-area">
-            <div class="container">
-                <div class="row pt-120 pb-80">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h6>About Us</h6>
-                            <p>
-                                Few would argue that, despite the advanc ements off eminism over the past three decades,
-                                women still face a double standard when it comes to their behavior. While men’s
-                                borderline-inappropriate behavior. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h6>Useful Links</h6>
-                            <div class="row">
-                                <ul class="col footer-nav">
-                                    <li><a href="{% url 'mainapp:index' %}">Home</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="{% url 'mainapp:about' %}">About</a></li>
-                                    <li><a href="#">Case Study</a></li>
-                                </ul>
-                                <ul class="col footer-nav">
-                                    <li><a href="#">Pricing</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="{% url 'mainapp:blog-home' %}">Blog</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4  col-md-6">
-                        <div class="single-footer-widget mail-chimp">
-                            <h6 class="mb-20">Contact Us</h6>
-                            <ul class="list-contact">
-                                <li class="flex-row d-flex">
-                                    <div class="icon">
-                                        <span class="lnr lnr-home"></span>
-                                    </div>
-                                    <div class="detail">
-                                        <h4>Binghamton, New York</h4>
-                                        <p>
-                                            4343 Hinkle Deegan Lake Road
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="flex-row d-flex">
-                                    <div class="icon">
-                                        <span class="lnr lnr-phone-handset"></span>
-                                    </div>
-                                    <div class="detail">
-                                        <h4>00 (953) 9865 562</h4>
-                                        <p>
-                                            Mon to Fri 9am to 6 pm
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="flex-row d-flex">
-                                    <div class="icon">
-                                        <span class="lnr lnr-envelope"></span>
-                                    </div>
-                                    <div class="detail">
-                                        <h4>support@colorlib.com</h4>
-                                        <p>
-                                            Send us your query anytime!
-                                        </p>
-                                    </div>
-                                </li>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-footer-widget">
+                        <h6>Useful Links</h6>
+                        <div class="row">
+                            <ul class="col footer-nav">
+                                <li><a href="{% url 'main:index' %}">Home</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="{% url 'main:about' %}">About</a></li>
+                                <li><a href="#">Case Study</a></li>
+                            </ul>
+                            <ul class="col footer-nav">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="{% url 'main:blog-home' %}">Blog</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="copyright-text">
-                <div class="container">
-                    <div class="row footer-bottom d-flex justify-content-between">
-                        <p class="col-lg-8 col-sm-6 footer-text m-0 text-white">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        <div class="col-lg-4 col-sm-6 footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                        </div>
+                <div class="col-lg-4  col-md-6">
+                    <div class="single-footer-widget mail-chimp">
+                        <h6 class="mb-20">Contact Us</h6>
+                        <ul class="list-contact">
+                            <li class="flex-row d-flex">
+                                <div class="icon">
+                                    <span class="lnr lnr-home"></span>
+                                </div>
+                                <div class="detail">
+                                    <h4>Binghamton, New York</h4>
+                                    <p>
+                                        4343 Hinkle Deegan Lake Road
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex-row d-flex">
+                                <div class="icon">
+                                    <span class="lnr lnr-phone-handset"></span>
+                                </div>
+                                <div class="detail">
+                                    <h4>00 (953) 9865 562</h4>
+                                    <p>
+                                        Mon to Fri 9am to 6 pm
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex-row d-flex">
+                                <div class="icon">
+                                    <span class="lnr lnr-envelope"></span>
+                                </div>
+                                <div class="detail">
+                                    <h4>support@colorlib.com</h4>
+                                    <p>
+                                        Send us your query anytime!
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- End footer Area -->
-    {% endblock %}
+        </div>
+        <div class="copyright-text">
+            <div class="container">
+                <div class="row footer-bottom d-flex justify-content-between">
+                    <p class="col-lg-8 col-sm-6 footer-text m-0 text-white">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                            aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-sm-6 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer Area -->
+{% endblock %}
 
 </body>
 </html>

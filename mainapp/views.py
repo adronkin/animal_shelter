@@ -71,6 +71,12 @@ class Cats(TemplateView):
     """Страница кошек"""
     template_name = 'mainapp/cats.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'cats'
+        context['href'] = 'main:cats'
+        return context
+
 
 class Dogs(TemplateView):
     """Страница кошек"""
