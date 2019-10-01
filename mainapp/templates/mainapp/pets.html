@@ -10,6 +10,7 @@
 
                <a href="{% url 'mainapp:pet_card' pet.pk %}">
                    <img src="{{ img.image.url }}" alt=""> </a>
+
            {% endfor %}
 			<h1>{{pet.name}}</h1>
     		<p>Категория питомца: {{pet.pet_category}}</p>
@@ -23,6 +24,7 @@
 			<p>Характер питомца: {{pet.pet_character}}</p>
             <p>Приют: {{pet.pet_shelter}}</p>
 			<p>Город, в котором находится приют: {{pet.pet_shelter.shelter_city}}</p>
+
 			<br><br><br>
 			<p>-------------------------------------------------------------------------------</p>
 		{% endfor %}
