@@ -29,16 +29,6 @@ def get_month_output(month):
     return month_output
 
 
-class Index(TemplateView):
-    """ Главная страница """
-    template_name = 'mainapp/index.html'
-
-
-class Contact(TemplateView):
-    """ Страница контактов интернет-магазина """
-    template_name = 'mainapp/contact.html'
-
-
 def pet_list(request):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
@@ -60,3 +50,48 @@ def pet_card(request, pk):
         'month_output': get_month_output(month=pet.month)
     }
     return render(request, 'mainapp/pet_card.html', context)
+
+
+class Index(TemplateView):
+    """ Главная страница """
+    template_name = 'mainapp/index.html'
+
+
+class Contact(TemplateView):
+    """ Страница контактов интернет-магазина """
+    template_name = 'mainapp/contact.html'
+
+
+class About(TemplateView):
+    """ Главная страница """
+    template_name = 'mainapp/about.html'
+
+
+class Cats(TemplateView):
+    """Страница кошек"""
+    template_name = 'mainapp/cats.html'
+
+
+class Dogs(TemplateView):
+    """Страница кошек"""
+    template_name = 'mainapp/dogs.html'
+
+
+class Volunteer(TemplateView):
+    """Страница добровольцев"""
+    template_name = 'mainapp/volunteer.html'
+
+
+class BlogHome(TemplateView):
+    """Страница главная блога"""
+    template_name = 'mainapp/blog-home.html'
+
+
+class BlogSingle(TemplateView):
+    """Страница single блога"""
+    template_name = 'mainapp/blog-single.html'
+
+
+class Elements(TemplateView):
+    """Страница демострации"""
+    template_name = 'mainapp/elements.html'
