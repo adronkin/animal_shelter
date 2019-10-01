@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, get_object_or_404
 
-from mainapp.models import Pet
+from mainapp.models import Pet, Shelter
 
 
 class Index(TemplateView):
@@ -17,7 +17,6 @@ class Contact(TemplateView):
 def pet_list(request):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
-
     content = {
         'title': title,
         'pets': pets,
