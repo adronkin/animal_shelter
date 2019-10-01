@@ -14,22 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path
 from django.conf import settings
+from django.conf.urls import include
 from django.conf.urls.static import static
 
 import mainapp.views as mainapp
 
-
+# не понял зачем было urlpatterns а затем +=  Пока убпал, соединил в один список
+# комбинировать re_path и path тоже не вижу смысла
+"""
+TODO: сделать неймспейсы для других приложений, когда они будут
+"""
 urlpatterns = [
+    path('', include('mainapp.urls', namespace='main')),
+
+    # path('contact/', mainapp.Contact),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += [
-    path('contact/', mainapp.Contact),
-    re_path(r'', include('mainapp.urls')),
-]
