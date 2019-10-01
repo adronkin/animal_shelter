@@ -18,6 +18,13 @@ class Core(models.Model):
     def __str__(self):
         return f'{self.name}' if self.name else ''
 
+    def delete(self, **kwargs):  # или может *args
+        if 'force' in kwargs:
+            super().delete()
+        else:
+            self.is_active = False
+            self.save()
+
 
 class Picture(Core):
     """ Класс изображений - родитель для других моделей использующих изображения """
@@ -30,11 +37,39 @@ class Picture(Core):
     related_obj = models.ForeignKey(Core, verbose_name='изображения', null=True, blank=True, related_name='images', on_delete=models.CASCADE)
 
 
-class Category(Core):
+class City(Core):
+    """ Класс для выбора города приюта / пользователя """
+
+
+class Shelter(Core):
+    """ Класс-модель приюта/питомника """
+    shelter_logo = models.ImageField(upload_to='shelter/images', verbose_name='логотип приюта', blank=True)
+    shelter_city = models.ForeignKey(City, verbose_name='город', related_name='shelters', null=False, blank=False, on_delete=models.PROTECT)
+    shelter_address = models.CharField(verbose_name='адрес', max_length=255, null=False, blank=False, unique=True)
+    shelter_phone = models.CharField(verbose_name='телефон', max_length=17, null=False, blank=False, unique=True)
+    shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
+
+
+class Donate(Core):
+    """ Класс для финансовой помощи - Сбер, ЯндексДеньги, PayPal... """
+    account = models.ForeignKey(Shelter, verbose_name='реквизиты счетов', blank=True, related_name='accounts', on_delete=models.PROTECT)
+
+
+class Social(Core):
+    """ Класс ссылок на соц.сети и мессенджеры """
+    link = models.URLField(verbose_name='ссылка на соц.сеть', null=True, blank=True, unique=True)
+    obj = models.ForeignKey(Shelter, related_name='links', on_delete=models.PROTECT)
+
+
+class PetCategory(Core):
     """Класс описывающий вид животного"""
 
 
-class Breed(Core):
+class PetStatus(Core):
+    """ Класс описывающий состояние здоровья питомца и его готовность покинуть приют """
+
+
+class PetBreed(Core):
     """Класс описывающий породу животного"""
 
 
@@ -55,24 +90,24 @@ class PetColor(Core):
 
 
 class PetCharacter(Core):
-    """Класс описывающий характер животнго"""
-
-
-# добавить особенности (теги), например нет глаза и т.д.
+    """Класс описывающий характер животного"""
 
 
 class Pet(Core):
     """Класс описывающий животного"""
-    pet_category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    pet_shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE, related_name='pets', blank=False, null=False)
+    pet_category = models.ForeignKey(PetCategory, on_delete=models.CASCADE)
+    pet_status = models.ForeignKey(PetStatus, on_delete=models.CASCADE)
+    pet_breed = models.ForeignKey(PetBreed, on_delete=models.CASCADE)
     pet_gender = models.ForeignKey(PetGender, on_delete=models.CASCADE)
-    age = models.PositiveIntegerField(verbose_name='возраст (лет)', default=0)
-    month = models.PositiveIntegerField(verbose_name='возраст (мес)', default=0)
     pet_size = models.ForeignKey(PetSize, on_delete=models.CASCADE)
     pet_wool_length = models.ForeignKey(PetWool, on_delete=models.CASCADE)
     pet_color = models.ForeignKey(PetColor, on_delete=models.CASCADE)
     pet_character = models.ForeignKey(PetCharacter, on_delete=models.CASCADE)
+    age = models.PositiveIntegerField(verbose_name='возраст (лет)', default=0)
+    month = models.PositiveIntegerField(verbose_name='возраст (мес)', default=0)
 
     # Убираем из каталога неактивные объявления
     @staticmethod
     def get_items():
-        return Pet.objects.filter(is_active=True, category__is_active=True).order_by('category', 'name')
+        return Pet.objects.filter(is_active=True).order_by('pet_category', 'name')
