@@ -45,6 +45,7 @@ def pet_card(request, pk):
     context = {
         'title': 'карточка питомца',
         'pet': pet,
+        'shelter': pet.pet_shelter,
         'year_output': year_output,
         'month_output': month_output
     }
