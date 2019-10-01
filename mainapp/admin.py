@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from .models import (
-    Picture, City, Shelter, Donate, Social, PetCategory, PetStatus, PetBreed,
-    PetGender, PetSize, PetWool, PetColor, PetCharacter, Pet
-)
+from .models import *
 
 
 class PictureInline(admin.TabularInline):
@@ -36,11 +33,11 @@ class ShelterAdmin(admin.ModelAdmin):
     inlines = (SocialInline, DonateInline, PictureInline,)
 
 
-admin.site.register(City)
 admin.site.register(PetCategory)
 admin.site.register(PetStatus)
-admin.site.register(PetBreed)
+admin.site.register(City)
 admin.site.register(PetGender)
+admin.site.register(PetBreed)
 admin.site.register(PetSize)
 admin.site.register(PetWool)
 admin.site.register(PetColor)
