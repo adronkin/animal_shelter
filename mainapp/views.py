@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
 from django.shortcuts import render
 
 
@@ -20,6 +20,12 @@ class About(TemplateView):
 class Cats(TemplateView):
     """Страница кошек"""
     template_name = 'mainapp/cats.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'cats'
+        context['href'] = 'main:cats'
+        return context
 
 
 class Dogs(TemplateView):
