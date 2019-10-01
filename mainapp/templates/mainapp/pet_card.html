@@ -16,8 +16,10 @@
         <p>Категория питомца: {{pet.pet_category_type}}</p>
         <p>Состояние питомца: {{pet.pet_category_health}}</p>
         <p>Пол питомца: {{pet.pet_gender}}</p>
-        <p>Возраст питомца: {{pet.age}}</p>
-        <p>Месяц питомца: {{pet.month}}</p>
+        <p>Возраст питомца:
+            {{pet.age}} {{ year_output }}
+            {{pet.month}} {{ month_output }}
+        </p>
         <p>Размер питомца: {{pet.pet_size}}</p>
         <p>Длина шерсти питомца: {{pet.pet_wool_length}}</p>
         <p>Цвет питомца: {{pet.pet_color}}</p>
