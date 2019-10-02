@@ -60,25 +60,25 @@
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href={% url 'main:index' %}><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
+                    <a href={% url 'mainapp:index' %}><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="{% url 'main:index' %}">Home</a></li>
-                        <li><a href="{% url 'main:about' %}">About Us</a></li>
-                        <li><a href="{% url 'main:cats' %}">Cats</a></li>
-                        <li><a href="{% url 'main:dogs' %}">Dogs</a></li>
-                        <li><a href="{% url 'main:volunteer' %}">Volunteer</a></li>
+                        <li class="menu-active"><a href="{% url 'mainapp:index' %}">Home</a></li>
+                        <li><a href="{% url 'mainapp:about' %}">About Us</a></li>
+                        <li><a href="{% url 'mainapp:cats' %}">Cats</a></li>
+                        <li><a href="{% url 'mainapp:dogs' %}">Dogs</a></li>
+                        <li><a href="{% url 'mainapp:volunteer' %}">Volunteer</a></li>
                         <li class="menu-has-children"><a href="">Blog</a>
                             <ul>
-                                <li><a href="{% url 'main:blog-home' %}">Blog Home</a></li>
-                                <li><a href="{% url 'main:blog-single' %}">Blog Single</a></li>
+                                <li><a href="{% url 'mainapp:blog-home' %}">Blog Home</a></li>
+                                <li><a href="{% url 'mainapp:blog-single' %}">Blog Single</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                        <li><a href="{% url 'mainapp:contact' %}">Contact</a></li>
                         <li class="menu-has-children"><a href="">Dropdown</a>
                             <ul>
-                                <li><a href="{% url 'main:elements' %}">Elements</a></li>
+                                <li><a href="{% url 'mainapp:elements' %}">Elements</a></li>
                                 <li><a href="#">Item</a></li>
                                 <li class="menu-has-children"><a href="">Level 2</a>
                                     <ul>
@@ -125,15 +125,15 @@
                         <h6>Useful Links</h6>
                         <div class="row">
                             <ul class="col footer-nav">
-                                <li><a href="{% url 'main:index' %}">Home</a></li>
+                                <li><a href="{% url 'mainapp:index' %}">Home</a></li>
                                 <li><a href="#">Service</a></li>
-                                <li><a href="{% url 'main:about' %}">About</a></li>
+                                <li><a href="{% url 'mainapp:about' %}">About</a></li>
                                 <li><a href="#">Case Study</a></li>
                             </ul>
                             <ul class="col footer-nav">
                                 <li><a href="#">Pricing</a></li>
                                 <li><a href="#">Team</a></li>
-                                <li><a href="{% url 'main:blog-home' %}">Blog</a></li>
+                                <li><a href="{% url 'mainapp:blog-home' %}">Blog</a></li>
                             </ul>
                         </div>
                     </div>

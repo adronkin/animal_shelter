@@ -1,5 +1,5 @@
-.idea
+.idea/
 run.sh
 run.bat
-**/migrations
-**/__pycache__
+**/migrations/
+**/__pycache__/

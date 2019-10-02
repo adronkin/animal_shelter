@@ -30,6 +30,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
-    path('contact/', mainapp.Contact),
+    path('contact/', mainapp.Contact.as_view()),
     re_path(r'', include('mainapp.urls')),
 ]
