@@ -1,9 +1,11 @@
+{% extends 'mainapp/base.html' %}
 {% load static %}
 	<!DOCTYPE html>
 	<title>{{title}}</title>
 	<html lang="zxx" class="no-js">
 	<head>		</head>
-
+    {% block content %}
+    <body>
 		<h2>Список питомцев: </h2>
     	{% for pet in pets %}
 		    {% for img in pet.images.all %}
@@ -28,4 +30,5 @@
 			<p>-------------------------------------------------------------------------------</p>
 		{% endfor %}
 		</body>
+    {% endblock %}
 	</html>
