@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from .models import (
-    Picture, City, Shelter, Donate, Social, PetCategory, PetStatus, PetBreed,
-    PetGender, PetSize, PetWool, PetColor, PetCharacter, Pet
-)
+from .models import *
 
 
 class PictureInline(admin.TabularInline):
