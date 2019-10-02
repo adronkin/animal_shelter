@@ -4006,3 +4006,33 @@ body.mobile-nav-active #mobile-nav-toggle {
                End Blog Details  Page style
 ################
 */
+
+.pet_card {
+  width: 33%;
+  margin: 2%;
+  padding: 2%;
+  border-style: groove;
+  border-radius: 50px;
+  display: block;
+  background-color: #908ba9;
+  color: #0b0b0b;
+}
+
+.pet_card_photos {
+  justify-content: space-around;
+  display: flex;
+  border-radius: 30px;
+
+}
+
+.pet_card_single_photo {
+  border-style: outset;
+  border-width: 1px;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.pet_card_name {
+  text-align: center;
+  padding-bottom: 4%;
+}
