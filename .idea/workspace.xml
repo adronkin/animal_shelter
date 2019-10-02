@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c8fbe4b-01e9-494a-84da-b5daed61e610" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/inc-main_banner_big.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/inc-main_banner_small.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/blog-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/blog-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/blog-single.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/blog-single.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/volunteer.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/volunteer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569870743815</updated>
-      <workItem from="1569870745170" duration="19773000" />
+      <workItem from="1569870745170" duration="20277000" />
     </task>
     <servers />
   </component>
