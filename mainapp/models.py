@@ -63,11 +63,12 @@ class PetSize(models.Model):
 
 class PetWool(models.Model):
     """Класс описывающий длину шерсти животного"""
-    wool_lenght = models.CharField(verbose_name='длина шерсти', max_length=16, unique=True)
+    wool_length = models.CharField(verbose_name='длина шерсти', max_length=16, unique=True)
     is_active = models.BooleanField(verbose_name='активность', default=True)
 
     def __str__(self):
-        return self.wool_lenght
+        return self.wool_length
+
 
 
 class PetColor(models.Model):
@@ -88,7 +89,7 @@ class PetCharacter(models.Model):
         return self.character
 
 
-# добавить особенности (теги), например нет глаза и ТД
+# добавить особенности (теги), например нет глаза и т.д.
 
 class Pet(models.Model):
     """Класс описывающий животного"""
@@ -112,3 +113,4 @@ class Pet(models.Model):
     @staticmethod
     def get_items():
         return Pet.objects.filter(is_active=True, category__is_active=True).order_by('category', 'name')
+
