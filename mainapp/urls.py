@@ -1,7 +1,8 @@
 from os.path import abspath, basename, dirname
-from django.urls import path
+from django.urls import path, include
 from .views import pet_list, pet_card
 from .views import Index, Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements
+
 
 
 app_name = basename(dirname(abspath(__file__)))
