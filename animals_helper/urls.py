@@ -21,6 +21,7 @@ import mainapp.views as mainapp
 
 
 urlpatterns = [
+    path('', include('mainapp.urls', namespace='main')),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('authapp/', include('authapp.urls')),
