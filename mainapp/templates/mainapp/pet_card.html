@@ -1,20 +1,23 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
+
+{% block main_banner %}
+    {% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% endblock %}
+
 {% block content %}
-<body>
-    <div class="container">
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+               <div>
 		{% for img in pet.images.all %}
                <a href="{{ img.image.url }}">
                    <img src="{{ img.image.url }}" alt="">
                </a>
         {% endfor %}
         <h1>{{pet.name}}</h1>
+        <p>Приют: {{pet.pet_shelter}}</p>
         <p>Порода: {{pet.pet_breed}}</p>
         <p>Пол: {{pet.pet_gender}}</p>
         <p>Возраст:
@@ -29,6 +32,12 @@
         <p>Город: {{shelter.shelter_city}}</p>
         <p>Связаться по телефону {{ shelter.shelter_phone }}</p>
     </div>
-</body>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
 {% endblock %}
-</html>
+
+{% block call_to_action %}
+    {% include 'mainapp/includes/inc-call_to_action.html' %}
+{% endblock %}

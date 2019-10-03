@@ -1,36 +1,34 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
-	<!DOCTYPE html>
-	<title>{{title}}</title>
-	<html lang="zxx" class="no-js">
-	<head>		</head>
 
-    <body>
-        {% block content %}
-		<h2>Список питомцев: </h2>
-    	{% for pet in pets %}
-            <div class="pet_card">
-            <h1 class="pet_card_name">{{pet.name}}</h1>
-            <div class="pet_card_photos">
-		    {% for img in pet.images.all %}
-               <a href="{% url 'mainapp:pet_card' pet.pk %}">
-                   <img class="pet_card_single_photo" src="{{ img.image.url }}" alt=""> </a>
-           {% endfor %}
+{% block main_banner %}
+    {% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+            {% for pet in pets %}
+                <div class="col-lg-3 col-md-6">
+                <a href="{% url 'mainapp:pet_card' pet.pk %}">
+                    <div class="single-cat-list">
+
+                        <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">{{pet.name}}</div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            {% endfor %}
             </div>
-    		Категория питомца: {{pet.pet_category}}<br>
-			Состояние питомца: {{pet.pet_status}}<br>
-			Пол питомца: {{pet.pet_gender}}<br>
-			Возраст питомца: {{pet.age}}<br>
-			Месяц питомца: {{pet.month}}<br>
-			Размер питомца: {{pet.pet_size}}<br>
-			Длина шерсти питомца: {{pet.pet_wool_length}}<br>
-			Цвет питомца: {{pet.pet_color}}<br>
-			Характер питомца: {{pet.pet_character}}<br>
-            Приют: {{pet.pet_shelter}}<br>
-			Город, в котором находится приют: {{pet.pet_shelter.shelter_city}}<br>
-             </div>
-		{% endfor %}
-        {% endblock %}
-		</body>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}
 
-	</html>
+{% block call_to_action %}
+    {% include 'mainapp/includes/inc-call_to_action.html' %}
+{% endblock %}
