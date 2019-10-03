@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
     path('authapp/', include('authapp.urls')),
+    path('adminapp/', include('authapp.urls')),
 ]
 
 if settings.DEBUG:
