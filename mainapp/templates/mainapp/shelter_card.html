@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+            <img class="img-fluid" src="{{ shelter.shelter_logo.url }}" alt="">
+            Адрес: {{ shelter.shelter_city }}, {{ shelter.shelter_address }} <br>
+            Телефон: {{ shelter.shelter_phone }} <br>
+            e-mail: {{ shelter.shelter_email }} <br>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block call_to_action %}
+    {% include 'mainapp/includes/inc-call_to_action.html' %}
+{% endblock %}
