@@ -52,6 +52,15 @@ def pet_card(request, pk):
     return render(request, 'mainapp/pet_card.html', context)
 
 
+def shelter_card(request, pk):
+    shelter = get_object_or_404(Shelter, pk=pk)
+    context = {
+        'title': shelter.name,
+        'shelter': shelter,
+    }
+    return render(request, 'mainapp/shelter_card.html', context)
+
+
 class Index(TemplateView):
     """ Главная страница """
     template_name = 'mainapp/index.html'
