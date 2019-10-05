@@ -62,34 +62,8 @@
                 <div id="logo">
                     <a href="/"><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
                 </div>
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active"><a href="/">Home</a></li>
-                        <li><a href="{% url 'mainapp:about' %}">About Us</a></li>
-                        <li><a href="{% url 'mainapp:cats' %}">Cats</a></li>
-                        <li><a href="{% url 'mainapp:dogs' %}">Dogs</a></li>
-                        <li><a href="{% url 'mainapp:volunteer' %}">Volunteer</a></li>
-                        <li class="menu-has-children"><a href="">Blog</a>
-                            <ul>
-                                <li><a href="{% url 'mainapp:blog-home' %}">Blog Home</a></li>
-                                <li><a href="{% url 'mainapp:blog-single' %}">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{% url 'mainapp:contact' %}">Contact</a></li>
-                        <li class="menu-has-children"><a href="">Dropdown</a>
-                            <ul>
-                                <li><a href="{% url 'mainapp:elements' %}">Elements</a></li>
-                                <li><a href="#">Item</a></li>
-                                <li class="menu-has-children"><a href="">Level 2</a>
-                                    <ul>
-                                        <li><a href="#">Item 1</a></li>
-                                        <li><a href="#">Item 2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav><!-- #nav-menu-container -->
+
+                {% include 'mainapp/includes/mainmenu.html' with menu=menu.get_menu_mainmenu %}
             </div>
         </div>
     </header><!-- #header -->

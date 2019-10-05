@@ -63,7 +63,7 @@ class Contact(TemplateView):
 
 
 class About(TemplateView):
-    """ Главная страница """
+    """ Страница О нас """
     template_name = 'mainapp/about.html'
 
 
@@ -79,25 +79,10 @@ class Cats(TemplateView):
 
 
 class Dogs(TemplateView):
-    """Страница кошек"""
+    """ Страница собак """
     template_name = 'mainapp/dogs.html'
 
 
 class Volunteer(TemplateView):
     """Страница добровольцев"""
     template_name = 'mainapp/volunteer.html'
-
-
-class BlogHome(TemplateView):
-    """Страница главная блога"""
-    template_name = 'mainapp/blog-home.html'
-
-
-class BlogSingle(TemplateView):
-    """Страница single блога"""
-    template_name = 'mainapp/blog-single.html'
-
-
-class Elements(TemplateView):
-    """Страница демострации"""
-    template_name = 'mainapp/elements.html'

@@ -1,0 +1,31 @@
+{#            <li> {% if user.first_name %} {{ user.first_name|title }} {% else %} {{ user.username|title }} {% endif %}#}
+{#                <ul class="drop menu6">#}
+{#                    {% if user.is_superuser %} <li><a href="/admin/"> {% trans 'Админка' %} </a></li> {% endif %}#}
+{#                    {% if perms.auth.can_translate %} <li><a href="/rosetta/"> {% trans 'Перевод' %} </a></li> {% endif %}#}
+{#                    <li><a href="{% url 'users:account_detail' user.pk %}"> {% trans 'Профиль' %} </a></li>#}
+{#                    <li><a href="{% url 'orders:orders' %}"> {% trans 'Заказы' %} </a></li>#}
+{#                    <li><a href="{% url 'users:logout' %}"> {% trans 'Выход' %} </a></li>#}
+{#                </ul>#}
+{#            </li>#}
+
+
+<nav id="nav-menu-container">
+    <ul class="nav-menu {{ menu.css_class }}">
+        {% for object in menu.submenus.all %}
+            <li class="{{ object.css_class }}"> <a href="{{ object.get_url }}"> {{ object.name }} </a></li>
+        {% endfor %}
+
+        <li class="menu-active"><a href="/">Home</a></li>
+        <li><a href="{% url 'mainapp:about' %}">About Us</a></li>
+        <li><a href="{% url 'mainapp:cats' %}">Cats</a></li>
+        <li><a href="{% url 'mainapp:dogs' %}">Dogs</a></li>
+        <li><a href="{% url 'mainapp:volunteer' %}">Volunteer</a></li>
+        <li class="menu-has-children"><a href="">Blog</a>
+            <ul>
+                <li><a href="{% url 'mainapp:blog-home' %}">Blog Home</a></li>
+                <li><a href="{% url 'mainapp:blog-single' %}">Blog Single</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'mainapp:contact' %}">Contact</a></li>
+    </ul>
+</nav><!-- #nav-menu-container -->
