@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'mainapp',
     'authapp',
     'adminapp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -113,8 +114,8 @@ DATABASES = {
 # AUTH_USER_MODEL = 'authapp.'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', )
 
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # LOGIN_URL = '/authapp/login/'
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -155,5 +156,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 USE_THOUSAND_SEPARATOR = True

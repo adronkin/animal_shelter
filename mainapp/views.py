@@ -24,6 +24,15 @@ class ShelterDetail(DetailView):
     model = Shelter
 
 
+def shelter_card(request, pk):
+    shelter = get_object_or_404(Shelter, pk=pk)
+    context = {
+        'title': shelter.name,
+        'shelter': shelter,
+    }
+    return render(request, 'mainapp/shelter_card.html', context)
+
+
 class PetList(ListView):
     """ страница питомцев, нашедших дом """
     model = Pet

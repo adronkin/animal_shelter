@@ -13,6 +13,18 @@
 
             </li>
         {% endfor %}
-        <li><a href="{% url 'mainapp:volunteer' %}">Volunteer</a></li>
+        <li><a href="{% url 'mainapp:volunteer' %}">Волонтерство</a></li>
+        {% if user.is_authenticated %}
+            {% if user.avatar %}
+                <li><img src="{{ user.avatar.url }}" width="40" alt="" style="border-radius: 50%"></li>
+            {% endif %}
+            <li class="mainmenu menu-has-children"><a href="/">{% if user.first_name %} {{ user.first_name }} {% else %} {{ user.username }} {% endif %}</a>
+                <ul>
+                    <li class=""> <a href="{% url 'logout' %}">Выйти</a> </li>
+                </ul>
+            </li>
+        {% else %}
+            <li class="mainmenu"> <a href="{% url 'login' %}">Войти</a> </li>
+        {% endif %}
     </ul>
 </nav><!-- #nav-menu-container -->
