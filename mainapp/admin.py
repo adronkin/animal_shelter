@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from .models import *
+from .models import (
+    Picture, City, Shelter, Donate, Social, PetCategory, PetStatus, PetBreed,
+    PetGender, PetSize, PetWool, PetColor, PetCharacter, Pet, Menu
+)
 
 
 class PictureInline(admin.TabularInline):
@@ -33,11 +36,18 @@ class ShelterAdmin(admin.ModelAdmin):
     inlines = (SocialInline, DonateInline, PictureInline,)
 
 
+class MenuAdmin(admin.ModelAdmin):
+    """ Отображение структуры меню в АдминПанеле """
+    list_display = ('__str__', 'css_class', 'seen_guests',
+                    'seen_users', 'seen_shelters', 'parent',)
+
+
+admin.site.register(Menu, MenuAdmin)
+admin.site.register(City)
 admin.site.register(PetCategory)
 admin.site.register(PetStatus)
-admin.site.register(City)
-admin.site.register(PetGender)
 admin.site.register(PetBreed)
+admin.site.register(PetGender)
 admin.site.register(PetSize)
 admin.site.register(PetWool)
 admin.site.register(PetColor)

@@ -1,32 +1,41 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
 from mainapp.models import Pet, Shelter
 
 
-def get_year_output(year):
-    year_output = 'год(-а)'
-
-    if year == 1:
-        year_output = 'год'
-    elif 4 >= year >= 2:
-        year_output = 'года'
-    elif 20 >= year >= 5:
-        year_output = 'лет'
-
-    return year_output
+class Index(TemplateView):
+    """ Главная страница """
+    template_name = 'mainapp/index.html'
+    adopted = Pet.get_count('Уже дома')
+    extra_context = {
+        'adopted': adopted,
+        'pets': Pet.get_count() - adopted,
+    }
 
 
-def get_month_output(month):
+class ShelterList(ListView):
+    """ страница списка приютов """
+    model = Shelter
 
-    if month == 1:
-        month_output = 'месяц'
-    elif 4 >= month >= 2:
-        month_output = 'месяца'
-    elif 12 >= month >= 5 or month == 0:
-        month_output = 'месяцев'
 
-    return month_output
+class ShelterDetail(DetailView):
+    """ страница списка приютов """
+    model = Shelter
+
+
+def shelter_card(request, pk):
+    shelter = get_object_or_404(Shelter, pk=pk)
+    context = {
+        'title': shelter.name,
+        'shelter': shelter,
+    }
+    return render(request, 'mainapp/shelter_card.html', context)
+
+
+class PetList(ListView):
+    """ страница питомцев, нашедших дом """
+    model = Pet
 
 
 def pet_list(request):
@@ -40,8 +49,30 @@ def pet_list(request):
 
 
 def pet_card(request, pk):
-    pet = get_object_or_404(Pet, pk=pk)
+    def get_year_output(year):
+        year_output = 'год(-а)'
 
+        if year == 1:
+            year_output = 'год'
+        elif 4 >= year >= 2:
+            year_output = 'года'
+        elif 20 >= year >= 5:
+            year_output = 'лет'
+
+        return year_output
+
+    def get_month_output(month):
+
+        if month == 1:
+            month_output = 'месяц'
+        elif 4 >= month >= 2:
+            month_output = 'месяца'
+        elif 12 >= month >= 5 or month == 0:
+            month_output = 'месяцев'
+
+        return month_output
+
+    pet = get_object_or_404(Pet, pk=pk)
     context = {
         'title': 'карточка питомца',
         'pet': pet,
@@ -52,27 +83,13 @@ def pet_card(request, pk):
     return render(request, 'mainapp/pet_card.html', context)
 
 
-def shelter_card(request, pk):
-    shelter = get_object_or_404(Shelter, pk=pk)
-    context = {
-        'title': shelter.name,
-        'shelter': shelter,
-    }
-    return render(request, 'mainapp/shelter_card.html', context)
-
-
-class Index(TemplateView):
-    """ Главная страница """
-    template_name = 'mainapp/index.html'
-
-
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
 
 
 class About(TemplateView):
-    """ Главная страница """
+    """ Страница О нас """
     template_name = 'mainapp/about.html'
 
 
@@ -88,25 +105,10 @@ class Cats(TemplateView):
 
 
 class Dogs(TemplateView):
-    """Страница кошек"""
+    """ Страница собак """
     template_name = 'mainapp/dogs.html'
 
 
 class Volunteer(TemplateView):
     """Страница добровольцев"""
     template_name = 'mainapp/volunteer.html'
-
-
-class BlogHome(TemplateView):
-    """Страница главная блога"""
-    template_name = 'mainapp/blog-home.html'
-
-
-class BlogSingle(TemplateView):
-    """Страница single блога"""
-    template_name = 'mainapp/blog-single.html'
-
-
-class Elements(TemplateView):
-    """Страница демострации"""
-    template_name = 'mainapp/elements.html'

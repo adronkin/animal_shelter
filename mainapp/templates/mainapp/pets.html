@@ -1,5 +1,4 @@
 {% extends 'mainapp/base.html' %}
-{% load static %}
 
 {% block main_banner %}
     {% include 'mainapp/includes/inc-main_banner_small.html' %}
@@ -10,19 +9,19 @@
     <section class="cat-list-area section-gap">
         <div class="container">
             <div class="row">
-            {% for pet in pets %}
-                <div class="col-lg-3 col-md-6">
-                <a href="{% url 'mainapp:pet_card' pet.pk %}">
-                    <div class="single-cat-list">
+                {% for pet in pets %}
+                    <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'mainapp:pet_card' pet.pk %}">
+                            <div class="single-cat-list">
 
-                        <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">{{pet.name}}</div>
-                        </div>
+                                <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="text">{{pet.name}}</div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                </div>
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </section>

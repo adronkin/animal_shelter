@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+    {% for object in object_list %}
+        <br>
+        <a href="{% url 'mainapp:shelter_detail' object.pk %}"> <img src="{{ object.shelter_logo.url }}" alt=""> </a>
+        <p>{{ object.name }}</p>
+        <p>{{ object.shelter_city }} {{ object.shelter_address }}</p>
+        <p>{{ object.shelter_phone }}</p>
+        <p>{{ object.shelter_email }}</p>
+        <br><hr>
+    {% endfor %}
+{% endblock content %}
