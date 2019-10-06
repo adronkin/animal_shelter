@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import post_save
 
 
 class Core(models.Model):
@@ -113,6 +114,10 @@ class Pet(Core):
     def get_items():
         return Pet.objects.filter(is_active=True).order_by('pet_category', 'name')
 
+    @staticmethod
+    def get_count(status=''):
+        return Pet.objects.filter(is_active=True, pet_status__name__contains=status).count()
+
 
 class MenuManager(models.Manager):
     """ Менеджер меню """
@@ -136,15 +141,25 @@ class Menu(Core):
 
     objects = MenuManager()
 
-    def set_css_active(self):
-        self.css_class = f'active {self.css_class}'
-        return self
-
     def __getattr__(self, attr):
         if attr.startswith('get_menu_'):
             return type(self).objects.get_menu(attr[9:])
         return super().__getattr__(attr)
 
     def get_url(self):
-        url = self.url
-        return reverse(url) if ':' in url else url
+        return reverse(self.url) if ':' in self.url else self.url
+
+
+def create_menu_shelter(instance, created, **kwargs):
+    """
+    После добавления нового приюта, по сигналу, создает новый подпункт
+    меню в пункте меню Приюты.
+    """
+    if created:
+        Menu.objects.create(
+            name=instance, sort=instance.id, url=f'/shelters/{instance.id}',
+            seen_users=True, seen_shelters=True, parent=Menu.objects.get(name='Приюты')
+        )
+
+
+post_save.connect(create_menu_shelter, sender=Shelter)
