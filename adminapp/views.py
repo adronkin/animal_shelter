@@ -1,13 +1,16 @@
-import TODO as TODO
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render
 from django.db import models
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
 
 from mainapp.models import Shelter, PetCategory, Pet
 
 # TODO объеденить success_url (create update)
 # TODO нет модели пользователя
+from mainapp.views import get_year_output, get_month_output
+
 
 class ShelterList(ListView):
     """Выводит список приютов"""
@@ -75,9 +78,20 @@ class CategoryDelete(DeleteView):
     pass
 
 
-class CategoryPetList(ListView):
+class PetList(ListView):
     """Выводит всех животных категории"""
-    pass
+    model = Pet
+    template_name = 'adminapp/pet_list.html'
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'список питомцев'
+
+        return context
 
 
 class PetCreate(CreateView):
@@ -109,4 +123,13 @@ class PetDelete(DeleteView):
 
 class PetDetail(DetailView):
     """Вывод информации о животном"""
-    pass
+    model = Pet
+    template_name = 'adminapp/pet_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'карточка питомца'
+        context['year_output'] = get_year_output(year=Pet.age),
+        context['month_output'] = get_month_output(month=Pet.month)
+
+        return context
