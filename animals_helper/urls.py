@@ -21,13 +21,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
+    path('authapp/', include('authapp.urls')),
+    path('adminapp/', include('adminapp.urls')),
+    re_path(r'', include('mainapp.urls', namespace='main'))
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += [
-    path('authapp/', include('authapp.urls')),
-    path('adminapp/', include('authapp.urls')),
-    re_path(r'', include('mainapp.urls', namespace='main')),
-]
