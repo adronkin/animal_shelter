@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/animals_helper.iml" filepath="$PROJECT_DIR$/.idea/animals_helper.iml" />
-      <module fileurl="file://Z:/geekshop/geekshop/.idea/geekshop.iml" filepath="Z:/geekshop/geekshop/.idea/geekshop.iml" />
-    </modules>
-  </component>
-</project>
