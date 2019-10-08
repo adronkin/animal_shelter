@@ -1,6 +1,9 @@
 .idea/
+db.sqlite3
 run.sh
 run.bat
+run_for_env.bat
 **/migrations/
 **/__pycache__/
-db.sqlite3
+
+tmp/email-messages/*
