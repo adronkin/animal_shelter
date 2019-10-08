@@ -4006,3 +4006,17 @@ body.mobile-nav-active #mobile-nav-toggle {
                End Blog Details  Page style
 ################
 */
+
+.modal-dialog {
+    max-width: 50%;
+}
+
+.modal-body {
+  height: 100%;
+  width: 100%;
+}
+
+.pet-modal-form {
+  display: flex;
+  justify-content: space-between;
+}
