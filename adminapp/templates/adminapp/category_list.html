@@ -12,11 +12,10 @@
             <div class="row">
                 {% for object in object_list %}
                     <div class="col-lg-3 col-md-6">
-                        <a href="{% url 'adminapp:pet_detail' object.pk %}">
+                        <a href="{% url 'adminapp:category_detail' object.pk %}">
                             <div class="single-cat-list">
-                                <img src="{{ object.images.first.image.url }}" alt="" class="img-fluid">
-                                <div class="overlay">
-                                    <div class="text">{{ object.name }}</div>
+                                <div >
+                                    <div >{{ object.name }}</div>
                                 </div>
                             </div>
                         </a>
@@ -24,9 +23,9 @@
                 {% endfor %}
             </div>
             <p>
-                <a href="{% url 'adminapp:pet_create'%}"
+                <a href="{% url 'adminapp:category_create' %}"
                    class="btn btn-danger">
-                    добавить питомца
+                    новая категория
                 </a>
             </p>
         </div>

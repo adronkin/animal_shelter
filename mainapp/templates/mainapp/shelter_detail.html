@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+
+{% block main_banner %}
+
+    {% if object.shelter_logo %}
+        <section class="relative" id="home" style="background:url({{ object.shelter_logo.url }}) center; background-size:cover;">
+            <div class="container">
+                <div class="overlay overlay-bg"></div>
+                <div class="row fullscreen d-flex align-items-center justify-content-start">
+                    <div class="banner-content col-lg-8 col-md-12">
+                        <h1 class="text-uppercase">
+                            Нам нужна Ваша помощь. <br>
+                            Питомцев, в поисках дома: {{ pets }}. <br>
+                            Питомцев, нашедших дом: {{ adopted }}.
+                        </h1>
+                        <a href="#" class="primary-btn header-btn text-uppercase">Find a pet to adopt</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        {% include 'mainapp/includes/inc-main_banner_big.html' %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+        <br>
+        <p>{{ object.name }}</p>
+        <p>{{ object.shelter_city }} {{ object.shelter_address }}</p>
+        <p>{{ object.shelter_phone }}</p>
+        <p>{{ object.shelter_email }}</p>
+        <br><hr>
+{% endblock content %}

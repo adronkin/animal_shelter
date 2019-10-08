@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+from django.db.models.signals import post_save
 
 
 class Core(models.Model):
@@ -111,3 +113,53 @@ class Pet(Core):
     @staticmethod
     def get_items():
         return Pet.objects.filter(is_active=True).order_by('pet_category', 'name')
+
+    @staticmethod
+    def get_count(status=''):
+        return Pet.objects.filter(is_active=True, pet_status__name__contains=status).count()
+
+
+class MenuManager(models.Manager):
+    """ Менеджер меню """
+    def get_menu(self, attr):
+        return self.filter(name=attr, parent_id__isnull=True).first()
+
+
+class Menu(Core):
+    """ Модель меню """
+    class Meta:
+        ordering = ('parent_id', 'sort', 'name')
+        verbose_name = 'Элемент меню'
+        verbose_name_plural = 'Меню сайта'
+
+    url = models.CharField('ссылка', max_length=255, blank=False, null=False, default='#')
+    css_class = models.CharField('CSS-Класс блока меню', max_length=30, null=False, blank=True, default='')
+    seen_guests = models.BooleanField('виден незарегистрированным пользователям', default=True)
+    seen_users = models.BooleanField('виден зарегистрированным пользователям', default=False)
+    seen_shelters = models.BooleanField('виден приютам', default=False)
+    parent = models.ForeignKey('self', verbose_name='суперкласс меню', null=True, blank=True, related_name='submenus', on_delete=models.CASCADE)
+
+    objects = MenuManager()
+
+    def __getattr__(self, attr):
+        if attr.startswith('get_menu_'):
+            return type(self).objects.get_menu(attr[9:])
+        return super().__getattr__(attr)
+
+    def get_url(self):
+        return reverse(self.url) if ':' in self.url else self.url
+
+
+def create_menu_shelter(instance, created, **kwargs):
+    """
+    После добавления нового приюта, по сигналу, создает новый подпункт
+    меню в пункте меню Приюты.
+    """
+    if created:
+        Menu.objects.create(
+            name=instance, sort=instance.id, url=f'/shelters/{instance.id}',
+            seen_users=True, seen_shelters=True, parent=Menu.objects.get(name='Приюты')
+        )
+
+
+post_save.connect(create_menu_shelter, sender=Shelter)

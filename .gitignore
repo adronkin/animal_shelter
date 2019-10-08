@@ -3,5 +3,4 @@ run.sh
 run.bat
 **/migrations/
 **/__pycache__/
-mainapp/__pycache__/
-animals_helper/__pycache__/
+db.sqlite3

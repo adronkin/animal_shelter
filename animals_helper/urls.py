@@ -17,21 +17,17 @@ from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-import mainapp.views as mainapp
-
 
 urlpatterns = [
-    path('', include('mainapp.urls', namespace='main')),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
-    path('authapp/', include('authapp.urls')),
-    path('adminapp/', include('adminapp.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
-    path('contact/', mainapp.Contact.as_view()),
-    re_path(r'', include('mainapp.urls')),
+    path('authapp/', include('authapp.urls')),
+    path('adminapp/', include('adminapp.urls')),
+    re_path(r'', include('mainapp.urls', namespace='main')),
 ]
