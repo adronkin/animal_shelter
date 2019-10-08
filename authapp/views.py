@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, HttpResponseRedirect
+from django.urls import reverse
+
 from .forms import RegisterForm
 
 
@@ -8,7 +10,7 @@ def register(response):
         if form.is_valid():
             form.save()
 
-        return redirect("/")
+        return HttpResponseRedirect(reverse('main:index'))
     else:
         form = RegisterForm()
 

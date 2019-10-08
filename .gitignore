@@ -2,6 +2,7 @@
 db.sqlite3
 run.sh
 run.bat
-**/migrations
-**/__pycache__
-/run_for_env.bat
+run_for_env.bat
+**/migrations/
+**/__pycache__/
+
