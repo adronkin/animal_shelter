@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Register:&#10;    - mainmenu.html&#10;    - authapp:&#10;        - login.html&#10;        - register.html&#10;        - base.html&#10;        - forms.py&#10;        - urls.py&#10;        -">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/animals_helper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/animals_helper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +109,7 @@
       <workItem from="1569965388432" duration="731000" />
       <workItem from="1569974883591" duration="70508000" />
       <workItem from="1570332445593" duration="79000" />
-      <workItem from="1570532674965" duration="4583000" />
+      <workItem from="1570532674965" duration="4829000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -205,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570478422678</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Register (немного поправила):&#10;    - authapp:&#10;        - register.html&#10;        - forms.py&#10;        - views.py">
+      <created>1570538320405</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570538320405</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -259,7 +256,8 @@
     <MESSAGE value="синхронизировал с изменениями других участников из develop-ветки.&#10;удалил неиспользуемые шаблоны, SCSS.&#10;удалил {% load static %} из шаблонов, где статика не используется" />
     <MESSAGE value="Register:&#10;    - mainmenu.html&#10;    - authapp:&#10;        - login.html&#10;        - register.html&#10;        - base.html&#10;        - forms.py&#10;        - urls.py&#10;        - views.py" />
     <MESSAGE value=".gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
+    <MESSAGE value="Register (немного поправила):&#10;    - authapp:&#10;        - register.html&#10;        - forms.py&#10;        - views.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register (немного поправила):&#10;    - authapp:&#10;        - register.html&#10;        - forms.py&#10;        - views.py" />
   </component>
   <component name="masterDetails">
     <states>
