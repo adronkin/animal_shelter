@@ -166,8 +166,8 @@ DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = '25'
-EMAIL_HOST_USER = 'django@geekshop.local'
-EMAIL_HOST_PASSWORD = 'geekshop'
+EMAIL_HOST_USER = 'django@animals_helper.local'
+EMAIL_HOST_PASSWORD = 'geekbrains'
 EMAIL_USE_SSL = False
 
 # вариант python -m smtpd -n -c DebuggingServer localhost:25
