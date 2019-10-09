@@ -1,5 +1,4 @@
 .idea/
-db.sqlite3
 run.sh
 run.bat
 run_for_env.bat
