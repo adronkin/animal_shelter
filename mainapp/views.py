@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.generic import TemplateView
 from django.shortcuts import render, get_object_or_404
 
@@ -29,14 +30,26 @@ def get_month_output(month):
     return month_output
 
 
-def pet_list(request):
+def pet_list(request, page=1):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
+
+    paginator = Paginator(pets, 1)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
+    try:
+        pets_paginator = paginator.page(page)
+    except PageNotAnInteger:
+        pets_paginator = paginator.page(1)
+    except EmptyPage:
+        pets_paginator = paginator.page(paginator.num_pages)
+
     content = {
         'title': title,
-        'pets': pets,
+        'pets': pets_paginator,
     }
     return render(request, 'mainapp/pets.html', content)
+
+
+
 
 
 def pet_card(request, pk):

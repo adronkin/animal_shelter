@@ -9,6 +9,7 @@ app_name = basename(dirname(abspath(__file__)))
 urlpatterns = [
     path('pets/', pet_list, name='pet_list'),
     path('pets/<int:pk>/', pet_card, name='pet_card'),
+    path('pets/page/<int:page>/', pet_list, name='page'),
 
     path('', Index.as_view(), name='index'),
     path('contact/', Contact.as_view(), name='contact'),
