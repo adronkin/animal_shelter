@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
@@ -38,14 +39,15 @@ class PetList(ListView):
     model = Pet
 
 
-def pet_list(request):
-    title = 'СПИСОК ПИТОМЦЕВ'
-    pets = Pet.objects.all()
-    content = {
-        'title': title,
-        'pets': pets,
-    }
-    return render(request, 'mainapp/pets.html', content)
+# удалить?
+# def pet_list(request):
+#     title = 'СПИСОК ПИТОМЦЕВ'
+#     pets = Pet.objects.all()
+#     content = {
+#         'title': title,
+#         'pets': pets,
+#     }
+#     return render(request, 'mainapp/pets.html', content)
 
 
 def pet_card(request, pk):
@@ -83,6 +85,25 @@ def pet_card(request, pk):
     return render(request, 'mainapp/pet_card.html', context)
 
 
+def pet_list(request, page=1):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    pets = Pet.objects.all()
+
+    paginator = Paginator(pets, 1)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
+    try:
+        pets_paginator = paginator.page(page)
+    except PageNotAnInteger:
+        pets_paginator = paginator.page(1)
+    except EmptyPage:
+        pets_paginator = paginator.page(paginator.num_pages)
+
+    content = {
+        'title': title,
+        'pets': pets_paginator,
+    }
+    return render(request, 'mainapp/pets.html', content)
+
+
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
@@ -112,3 +133,18 @@ class Dogs(TemplateView):
 class Volunteer(TemplateView):
     """Страница добровольцев"""
     template_name = 'mainapp/volunteer.html'
+
+
+class BlogHome(TemplateView):
+    """Страница главная блога"""
+    template_name = 'mainapp/blog-home.html'
+
+
+class BlogSingle(TemplateView):
+    """Страница single блога"""
+    template_name = 'mainapp/blog-single.html'
+
+
+class Elements(TemplateView):
+    """Страница демострации"""
+    template_name = 'mainapp/elements.html'
