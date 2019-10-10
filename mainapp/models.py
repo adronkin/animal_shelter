@@ -41,7 +41,6 @@ class Picture(Core):
 
 class City(Core):
     """ Класс для выбора города приюта / пользователя """
-    region = models.CharField(verbose_name='регион', null=False, blank=False)
 
 
 class Shelter(Core):

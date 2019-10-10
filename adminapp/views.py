@@ -2,8 +2,6 @@ from tkinter import Image
 
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.db import models
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
@@ -11,26 +9,28 @@ from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed
 
 
 # TODO объеденить success_url (create update)
-# TODO нет модели пользователя
 # TODO PetDetail вывести возраст, город и телефон
 # TODO валидация размера изображения
 # TODO reverse на страницу которую редактировал
-# TODO доступ только для админа
 # TODO убрать дубли get_context_data
-# TODO добавить в карточку город, приют и тд
+# TODO добавить в создание питомца город, приют и тд
 # TODO ошибка с добавлением изображений нового питомца, приюта (создать отдельные классы)
 # TODO закрепить породы за видами животных
-# TODO добавить в карточку город, приют и тд
+# TODO добавить регионы
+# 509 строк
 
 
 class SettingsList(TemplateView):
     """Выводит список классов для редактирования"""
     template_name = 'adminapp/settings_list.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Настройки'
-
         return context
 
 
@@ -39,10 +39,13 @@ class ShelterList(ListView):
     model = Shelter
     template_name = 'adminapp/shelter/shelter_list.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Список приютов'
-
         return context
 
 
@@ -53,10 +56,13 @@ class ShelterCreate(CreateView):
     success_url = reverse_lazy('adminapp:shelter_list')
     fields = '__all__'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Создание приюта'
-
         return context
 
 
@@ -67,10 +73,13 @@ class ShelterUpdate(UpdateView):
     success_url = reverse_lazy('adminapp:shelter_list')
     fields = '__all__'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Редактирование'
-
         return context
 
 
@@ -79,10 +88,13 @@ class ShelterDetail(DetailView):
     model = Shelter
     template_name = 'adminapp/shelter/shelter_detail.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f'{self.object.shelter.name}'
-
         return context
 
 
@@ -92,10 +104,13 @@ class ShelterDelete(DeleteView):
     template_name = 'adminapp/shelter/shelter_delete.html'
     success_url = reverse_lazy('adminapp:shelter_list')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Удаление приюта'
-
         return context
 
 
@@ -104,10 +119,13 @@ class CategoryList(ListView):
     model = PetCategory
     template_name = 'adminapp/category/category_list.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Список категорий'
-
         return context
 
 
@@ -118,10 +136,13 @@ class CategoryCreate(CreateView):
     success_url = reverse_lazy('adminapp:category_create')
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Создание категории'
-
         return context
 
 
@@ -131,14 +152,16 @@ class CategoryUpdate(UpdateView):
     template_name = 'adminapp/category/category_update.html'
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Категории/редактирование'
-
         return context
 
     def get_success_url(self):
-
         return reverse_lazy('adminapp:category_detail', args=[self.object.petcategory.pk])
 
 
@@ -147,10 +170,13 @@ class CategoryDetail(DetailView):
     model = PetCategory
     template_name = 'adminapp/category/category_detail.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f'Категория: {self.object.petcategory.name}'
-
         return context
 
 
@@ -160,10 +186,13 @@ class CategoryDelete(DeleteView):
     template_name = 'adminapp/category/category_delete.html'
     success_url = reverse_lazy('adminapp:category_list')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Категории/удаление'
-
         return context
 
     def delete(self, request, *args, **kwargs):
@@ -182,10 +211,13 @@ class StatusList(ListView):
     model = PetStatus
     template_name = 'adminapp/status/status_list.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Список категорий'
-
         return context
 
 
@@ -196,10 +228,13 @@ class StatusCreate(CreateView):
     success_url = reverse_lazy('adminapp:status_list')
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Создание статуса'
-
         return context
 
 
@@ -209,14 +244,16 @@ class StatusUpdate(UpdateView):
     template_name = 'adminapp/status/status_update.html'
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Статусы/редактирование'
-
         return context
 
     def get_success_url(self):
-
         return reverse_lazy('adminapp:status_detail', args=[self.object.petcategory.pk])
 
 
@@ -225,10 +262,13 @@ class StatusDetail(DetailView):
     model = PetStatus
     template_name = 'adminapp/status/status_detail.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f'Статус: {self.object.petstatus.name}'
-
         return context
 
 
@@ -238,10 +278,13 @@ class StatusDelete(DeleteView):
     template_name = 'adminapp/status/status_delete.html'
     success_url = reverse_lazy('adminapp:status_list')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Статусы/удаление'
-
         return context
 
     def delete(self, request, *args, **kwargs):
@@ -260,10 +303,13 @@ class BreedList(ListView):
     model = PetBreed
     template_name = 'adminapp/breed/breed_list.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Список пород'
-
         return context
 
 
@@ -274,10 +320,13 @@ class BreedCreate(CreateView):
     success_url = reverse_lazy('adminapp:breed_list')
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавление новой породы'
-
         return context
 
 
@@ -287,14 +336,16 @@ class BreedUpdate(UpdateView):
     template_name = 'adminapp/breed/breed_update.html'
     fields = ('name', 'description', 'is_active')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Породы/редактирование'
-
         return context
 
     def get_success_url(self):
-
         return reverse_lazy('adminapp:breed_detail', args=[self.object.petbreed.pk])
 
 
@@ -303,10 +354,13 @@ class BreedDetail(DetailView):
     model = PetBreed
     template_name = 'adminapp/breed/breed_detail.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = f'Статус: {self.object.petbreed.name}'
-
         return context
 
 
@@ -316,10 +370,13 @@ class BreedDelete(DeleteView):
     template_name = 'adminapp/breed/breed_delete.html'
     success_url = reverse_lazy('adminapp:breed_list')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Породы/удаление'
-
         return context
 
     def delete(self, request, *args, **kwargs):
@@ -338,14 +395,13 @@ class PetList(ListView):
     model = Pet
     template_name = 'adminapp/pet/pet_list.html'
 
-    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Список питомцев'
-
         return context
 
 
@@ -356,10 +412,13 @@ class PetCreate(CreateView):
     success_url = reverse_lazy('adminapp:pet_list')
     fields = '__all__'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавить питомца'
-
         return context
 
 
@@ -370,10 +429,13 @@ class PetUpdate(UpdateView):
     success_url = reverse_lazy('adminapp:pet_list')
     fields = '__all__'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Редактирование'
-
         return context
 
 
@@ -383,9 +445,14 @@ class PetDelete(DeleteView):
     template_name = 'adminapp/pet/pet_delete.html'
     success_url = reverse_lazy('adminapp:pet_list')
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Питомцы/удаление'
+        return context
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -403,10 +470,13 @@ class PetDetail(DetailView):
     model = Pet
     template_name = 'adminapp/pet/pet_detail.html'
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Карточка питомца'
-
         return context
 
 
@@ -417,9 +487,12 @@ class ImageCreate(CreateView):
     success_url = reverse_lazy('adminapp:pet_list')
     fields = ('image', )
 
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def form_valid(self, form):
         form.instance.related_obj_id = self.kwargs.get('pk')
-
         return super().form_valid(form)
 
 
@@ -428,6 +501,9 @@ class ImageDelete(DeleteView):
     model = Image
     template_name = 'adminapp/image_delete.html'
 
-    def get_success_url(self):
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
+    def get_success_url(self):
         return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
