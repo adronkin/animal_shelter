@@ -89,7 +89,7 @@ def pet_list(request, page=1):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
 
-    paginator = Paginator(pets, 1)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
+    paginator = Paginator(pets, 4)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
     try:
         pets_paginator = paginator.page(page)
     except PageNotAnInteger:
