@@ -1,0 +1,35 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                {% for object in object_list %}
+                    <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'adminapp:pet_detail' object.pk %}">
+                            <div class="single-cat-list">
+                                <img src="{{ object.images.first.image.url }}" alt="" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="text">{{ object.name }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <p>
+                <a href="{% url 'adminapp:pet_create'%}"
+                   class="btn btn-danger">
+                    добавить питомца
+                </a>
+            </p>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct1.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct2.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct3.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct4.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct5.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct6.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct7.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-cat-list">
+                        <img src="{% static 'img/ct8.jpg' %}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">Siamese Cat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}
+
+{% block call_to_action %}
+    {% include 'mainapp/includes/inc-call_to_action.html' %}
+{% endblock %}
+				

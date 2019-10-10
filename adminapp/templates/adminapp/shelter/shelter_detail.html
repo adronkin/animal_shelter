@@ -1,0 +1,45 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    {% for img in shelter.images.all %}
+                        <a href="{{ img.image.url }}">
+                            <img src="{{ img.image.url }}" alt="">
+                        </a>
+                    {% endfor %}
+                    <h1>{{ shelter.name }}</h1>
+                    <p>{{ shelter.description }}</p>
+                    <p>Город: {{ shelter.shelter_city }}</p>
+                    <p>Адрес: {{ shelter.shelter_address }}</p>
+                    <p>Телефон: {{ shelter.shelter_phone }}</p>
+                    <p>Email: {{ shelter.shelter_email }}</p>
+                    <p>Активность: {{ shelter.is_active }}</p>
+                    <p>Дата создания: {{ shelter.created }}</p>
+                    <p>Последнее редактирование: {{ shelter.updated }}</p>
+                    <p>
+                        <a href="{% url 'adminapp:shelter_update' object.pk %}"
+                           class="btn btn-danger">
+                            редактировать
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'adminapp:shelter_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

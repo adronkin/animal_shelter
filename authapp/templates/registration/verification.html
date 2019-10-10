@@ -1,0 +1,19 @@
+{% extends  'base.html' %}
+{% load static %}
+
+{% block main %}
+    <h1 class="text-center">Подтверждение почты</h1>
+    <div class="card">
+        <div class="card-body">
+            {% if user.is_active %}
+                <h4 class="card-title">Поздравляем!</h4>
+                <br>
+                <h4 class="card-title">{{ user.username|title }}, Ваша почта подтверждена.</h4>
+            {% else %}
+                <h4 class="card-title">Верификация не пройдена.</h4>
+            {% endif %}
+        </div>
+    </div>
+    <a
+            class="btn btn-success" href="{% url 'main:index' %}">на главную</a>
+{% endblock %}

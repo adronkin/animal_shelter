@@ -1,0 +1,34 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                {% for object in object_list %}
+                    <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'adminapp:category_detail' object.pk %}">
+                            <div class="single-cat-list">
+                                <div >
+                                    <div >{{ object.name }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <p>
+                <a href="{% url 'adminapp:category_create' %}"
+                   class="btn btn-danger">
+                    новая категория
+                </a>
+            </p>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}
