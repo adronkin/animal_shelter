@@ -1,9 +1,10 @@
 {% block content %}
 <!-- Start cat-list Area -->
-<div class="pet-modal-form">
+<div class="pet-modal-form" style="display: block">
         {% for img in pet.images.all %}
-        <a href="{{ img.image.url }}"><img src="{{ img.image.url }}" alt=""></a>
+        <a href="{{ img.image.url }}"><img style="height: 200px" src="{{ img.image.url }}" alt=""></a>
         {% endfor %}
+		<br>
         Приют: {{pet.pet_shelter}}<br>
         Порода: {{pet.pet_breed}}<br>
         Пол: {{pet.pet_gender}}<br>
