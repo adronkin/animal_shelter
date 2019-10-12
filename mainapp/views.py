@@ -148,3 +148,20 @@ class BlogSingle(TemplateView):
 class Elements(TemplateView):
     """Страница демострации"""
     template_name = 'mainapp/elements.html'
+
+
+class SearchView(ListView):
+    """форма поиска"""
+    template_name = 'mainapp/includes/search_list.html'
+    model = Pet
+
+    def get_queryset(self):
+        super(SearchView, self).get_queryset()
+        query = self.request.GET.get('search')
+        if query:
+            query = self.model.objects.filter(name__icontains=query)
+
+        else:
+            query = self.model.objects.all()
+
+        return query

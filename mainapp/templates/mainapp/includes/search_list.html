@@ -1,0 +1,68 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block search %}
+<div class="search_conteiner container">
+    <div class="search">
+        <form action="{% url 'mainapp:search_list' %}" method="get">
+            <input class="search_input" type="text" name="search" placeholder="введите запрос...">
+            <button type="submit" class="btn btn-outline-primary btn-lo">Найти</button>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Выбор города</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        Москва
+                        <input type="checkbox" name="sort_city" value="city">
+                    </li>
+                    <li>
+                        Краснодар
+                        <input type="checkbox" name="sort_city" value="city">
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Выбрать животное</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                    Собаки
+                    <input type="checkbox" name="sort_animal" value="animal">
+                    </li>
+                    <li>
+                        Кошки
+                        <input type="checkbox" name="sort_animal" value="animal">
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Тип шерсти</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>длинная<input type="checkbox" name="sort_wool" value="long"></li>
+                    <li>короткая<input type="checkbox" name="sort_wool" value="short"></li>
+                </ul>
+            </div>
+        </form>
+        <div class="result">
+            <ul>
+                {% for n in object_list %}
+                    <li>
+                        <a href="">
+                            {{ n }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
