@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'authapp',
     'adminapp',
     'crispy_forms',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -111,8 +112,14 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
 # AUTH_USER_MODEL = 'authapp.'
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', )
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+)
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -177,3 +184,11 @@ EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
 
+
+# ключи ВК
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7163751'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'xoNTlHt58J1pr6UQ5qxa'
+
+# ключи гугла
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '659908000422-u951chquomj00bigaimdd97rbns9e8kf'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '6lGjkUTyWRpzhiwMeVfFEbnx'

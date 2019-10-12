@@ -1,4 +1,5 @@
 {% extends  'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block main %}
@@ -17,4 +18,10 @@
             </form>
         </div>
     </div>
+    <a class="social" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+     ВКонтакте
+    </a>
+    <a class="social" href="{% url 'social:begin' 'google-oauth2' %}?next=/">
+     Google
+    </a>
 {% endblock %}

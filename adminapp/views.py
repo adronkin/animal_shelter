@@ -8,15 +8,13 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView, D
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed
 
 
-# TODO валидация размера изображения
-# TODO reverse на страницу которую редактировал
 # TODO убрать дубли get_context_data (миксин или абстрактный класс)
 # TODO добавить в создание питомца город, приют и тд
 # TODO ошибка с добавлением изображений нового питомца, приюта (создать отдельные классы)
 # TODO закрепить породы за видами животных
 # TODO добавить регионы
 # TODO убрать template_name
-# 509 строк
+# TODO добавить валидацию через form
 
 
 class SettingsList(TemplateView):
