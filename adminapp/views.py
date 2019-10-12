@@ -8,15 +8,14 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView, D
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed
 
 
-# TODO объеденить success_url (create update)
-# TODO PetDetail вывести возраст, город и телефон
 # TODO валидация размера изображения
 # TODO reverse на страницу которую редактировал
-# TODO убрать дубли get_context_data
+# TODO убрать дубли get_context_data (миксин или абстрактный класс)
 # TODO добавить в создание питомца город, приют и тд
 # TODO ошибка с добавлением изображений нового питомца, приюта (создать отдельные классы)
 # TODO закрепить породы за видами животных
 # TODO добавить регионы
+# TODO убрать template_name
 # 509 строк
 
 
@@ -37,7 +36,7 @@ class SettingsList(TemplateView):
 class ShelterList(ListView):
     """Выводит список приютов"""
     model = Shelter
-    template_name = 'adminapp/shelter/shelter_list.html'
+    template_name = 'adminapp/shelter_list.html'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -133,7 +132,7 @@ class CategoryCreate(CreateView):
     """Создает новую категорию"""
     model = PetCategory
     template_name = 'adminapp/category/category_update.html'
-    success_url = reverse_lazy('adminapp:category_create')
+    success_url = reverse_lazy('adminapp:category_list')
     fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
@@ -419,6 +418,7 @@ class PetCreate(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавить питомца'
+
         return context
 
 
@@ -477,6 +477,7 @@ class PetDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Карточка питомца'
+        context['shelter'] = self.object.pet_shelter
         return context
 
 
