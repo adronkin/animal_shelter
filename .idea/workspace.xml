@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3">
-      <change afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/search_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +177,7 @@
       <workItem from="1569974883591" duration="70508000" />
       <workItem from="1570332445593" duration="79000" />
       <workItem from="1570561050836" duration="17411000" />
-      <workItem from="1570912016405" duration="841000" />
+      <workItem from="1570912016405" duration="2218000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
