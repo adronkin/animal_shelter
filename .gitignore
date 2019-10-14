@@ -1,8 +1,8 @@
-.idea/
+/.idea/
 run.sh
 run.bat
 run_for_env.bat
-**/migrations/
-**/__pycache__/
+/**/migrations/
+/**/__pycache__/
 
-tmp/email-messages/*
+/tmp/email-messages/*
