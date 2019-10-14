@@ -18,6 +18,13 @@ class Index(TemplateView):
 class ShelterList(ListView):
     """ страница списка приютов """
     model = Shelter
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ShelterList, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        context['title'] = 'Приюты'
+        return context
 
 
 class ShelterDetail(DetailView):
@@ -37,17 +44,6 @@ def shelter_card(request, pk):
 class PetList(ListView):
     """ страница питомцев, нашедших дом """
     model = Pet
-
-
-# удалить?
-# def pet_list(request):
-#     title = 'СПИСОК ПИТОМЦЕВ'
-#     pets = Pet.objects.all()
-#     content = {
-#         'title': title,
-#         'pets': pets,
-#     }
-#     return render(request, 'mainapp/pets.html', content)
 
 
 def pet_card(request, pk):

@@ -4014,6 +4014,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 ################
 */
 
+/* ################
+    Стили для модальных окон питомцев и списка приютов
+################ */
+
 .modal-dialog {
     max-width: 50%;
 }
@@ -4028,6 +4032,84 @@ body.mobile-nav-active #mobile-nav-toggle {
   justify-content: space-between;
 }
 
+.shelter_section {
+  background-image: url("../../media/shelter/bg/bg_3.jpg");
+  background-repeat: repeat-y;
+  background-repeat: repeat-x;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.pets_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container_shelters_pets {
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.shelter_list  {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.shelter_logo img {
+  margin: 0 0 0 15px;
+  height: 150px;
+}
+
+.shelter_info {
+  text-align: left;
+  width: 33%;
+}
+
+.shelter_pets_bottom img {
+}
+
+.shelter_pet_overlay {
+  position: relative;
+}
+
+.our_pets_text {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+
+.shelter-list-image-carusel-area {
+  }
+
+.shelter-list-image-carusel-area .owl-dots {
+  text-align: center;
+  bottom: 5px;
+  margin-top: 50px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+.my_img-fluid {
+  width: 100px;
+  height: 300px;
+}
+
+.my_img-fluid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+}
 
 /*
 ################
