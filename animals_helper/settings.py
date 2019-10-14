@@ -57,7 +57,9 @@ INSTALLED_APPS = [
     'adminapp',
     'crispy_forms',
     'social_django',
+    'django_extensions',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
