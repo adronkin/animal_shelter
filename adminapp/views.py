@@ -1,20 +1,20 @@
-from tkinter import Image
-
 from django.contrib.auth.decorators import user_passes_test
-from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect, request
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
-from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed
+
+from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
+    ImageUpdateForm
+from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture
 
 
 # TODO убрать дубли get_context_data (миксин или абстрактный класс)
-# TODO добавить в создание питомца город, приют и тд
-# TODO ошибка с добавлением изображений нового питомца, приюта (создать отдельные классы)
-# TODO закрепить породы за видами животных
-# TODO добавить регионы
+# TODO исправить косяк с добавлением картинок нового питомца
+#  (сейчас нужно сначала заполнить всю инфу - сохраниться - добавлять картинки)
 # TODO убрать template_name
 # TODO добавить валидацию через form
+# TODO image для приюта
 
 
 class SettingsList(TemplateView):
@@ -34,7 +34,7 @@ class SettingsList(TemplateView):
 class ShelterList(ListView):
     """Выводит список приютов"""
     model = Shelter
-    template_name = 'adminapp/shelter_list.html'
+    template_name = 'adminapp/shelter/shelter_list.html'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -49,9 +49,9 @@ class ShelterList(ListView):
 class ShelterCreate(CreateView):
     """Создает новый приют"""
     model = Shelter
-    template_name = 'adminapp/shelter/shelter_update.html'
+    form_class = ShelterUpdateForm
+    template_name = 'adminapp/shelter/shelter_create.html'
     success_url = reverse_lazy('adminapp:shelter_list')
-    fields = '__all__'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -66,9 +66,9 @@ class ShelterCreate(CreateView):
 class ShelterUpdate(UpdateView):
     """Редактирование приюта"""
     model = Shelter
+    form_class = ShelterUpdateForm
     template_name = 'adminapp/shelter/shelter_update.html'
     success_url = reverse_lazy('adminapp:shelter_list')
-    fields = '__all__'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -129,9 +129,9 @@ class CategoryList(ListView):
 class CategoryCreate(CreateView):
     """Создает новую категорию"""
     model = PetCategory
+    form_class = CategoryUpdateForm
     template_name = 'adminapp/category/category_update.html'
     success_url = reverse_lazy('adminapp:category_list')
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -146,8 +146,8 @@ class CategoryCreate(CreateView):
 class CategoryUpdate(UpdateView):
     """Редактирование категории"""
     model = PetCategory
+    form_class = CategoryUpdateForm
     template_name = 'adminapp/category/category_update.html'
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -221,9 +221,9 @@ class StatusList(ListView):
 class StatusCreate(CreateView):
     """Создает новый статус"""
     model = PetStatus
+    form_class = StatusUpdateForm
     template_name = 'adminapp/status/status_update.html'
     success_url = reverse_lazy('adminapp:status_list')
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -238,8 +238,8 @@ class StatusCreate(CreateView):
 class StatusUpdate(UpdateView):
     """Редактирование статуса"""
     model = PetStatus
+    form_class = StatusUpdateForm
     template_name = 'adminapp/status/status_update.html'
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -313,9 +313,9 @@ class BreedList(ListView):
 class BreedCreate(CreateView):
     """Добавляет новую породу"""
     model = PetBreed
+    form_class = BreedUpdateForm
     template_name = 'adminapp/breed/breed_update.html'
     success_url = reverse_lazy('adminapp:breed_list')
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -330,8 +330,8 @@ class BreedCreate(CreateView):
 class BreedUpdate(UpdateView):
     """Редактирование породы"""
     model = PetBreed
+    form_class = BreedUpdateForm
     template_name = 'adminapp/breed/breed_update.html'
-    fields = ('name', 'description', 'is_active')
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -405,9 +405,9 @@ class PetList(ListView):
 class PetCreate(CreateView):
     """Создание нового питомца"""
     model = Pet
-    template_name = 'adminapp/pet/pet_update.html'
+    form_class = PetUpdateForm
+    template_name = 'adminapp/pet/pet_create.html'
     success_url = reverse_lazy('adminapp:pet_list')
-    fields = '__all__'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -423,9 +423,9 @@ class PetCreate(CreateView):
 class PetUpdate(UpdateView):
     """Редактирование карточки питомца"""
     model = Pet
+    form_class = PetUpdateForm
     template_name = 'adminapp/pet/pet_update.html'
     success_url = reverse_lazy('adminapp:pet_list')
-    fields = '__all__'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -481,10 +481,10 @@ class PetDetail(DetailView):
 
 class ImageCreate(CreateView):
     """Реализует добавление изображений"""
-    model = Image
+    model = Picture
     template_name = 'adminapp/image_create.html'
-    success_url = reverse_lazy('adminapp:pet_list')
-    fields = ('image', )
+    # success_url = reverse_lazy('adminapp:pet_create')
+    fields = ('image',)
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -495,9 +495,31 @@ class ImageCreate(CreateView):
         return super().form_valid(form)
 
 
+class ImageUpdate(CreateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = ImageUpdateForm
+    template_name = 'adminapp/image_create.html'
+    # fields = ('image',)
+
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    # def get_success_url(self):
+    #     return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+
+    def get_success_url(self):
+        return request.META.get('HTTP_REFERER')
+
+
 class ImageDelete(DeleteView):
     """Реализует удаление изоражений"""
-    model = Image
+    model = Picture
     template_name = 'adminapp/image_delete.html'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))

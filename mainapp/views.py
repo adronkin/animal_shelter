@@ -19,6 +19,14 @@ class ShelterList(ListView):
     """ страница списка приютов """
     model = Shelter
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ShelterList, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        context['title'] = 'Приюты'
+        return context
+
 
 class ShelterDetail(DetailView):
     """ страница списка приютов """
@@ -37,17 +45,6 @@ def shelter_card(request, pk):
 class PetList(ListView):
     """ страница питомцев, нашедших дом """
     model = Pet
-
-
-# удалить?
-# def pet_list(request):
-#     title = 'СПИСОК ПИТОМЦЕВ'
-#     pets = Pet.objects.all()
-#     content = {
-#         'title': title,
-#         'pets': pets,
-#     }
-#     return render(request, 'mainapp/pets.html', content)
 
 
 def pet_card(request, pk):
@@ -148,3 +145,20 @@ class BlogSingle(TemplateView):
 class Elements(TemplateView):
     """Страница демострации"""
     template_name = 'mainapp/elements.html'
+
+
+class SearchView(ListView):
+    """форма поиска"""
+    template_name = 'mainapp/includes/search_list.html'
+    model = Pet
+
+    def get_queryset(self):
+        super(SearchView, self).get_queryset()
+        query = self.request.GET.get('search')
+        if query:
+            query = self.model.objects.filter(name__icontains=query)
+
+        else:
+            query = self.model.objects.all()
+
+        return query
