@@ -83,7 +83,7 @@ function init() {
 
     $.ajax({
         // В файле data.json заданы геометрия, опции и данные меток .
-        url: "/static/js/json/data.json"
+        url: "/static/js/json/maps_data.json"
     }).done(function (data) {
         objectManager.add(data);
     });
