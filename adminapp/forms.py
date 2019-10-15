@@ -24,6 +24,9 @@ class PetUpdateForm(forms.ModelForm):
             'age': 'Возраст (лет)',
             'month': 'Возраст (мес)',
         }
+        widgets = {
+            'is_active': forms.NullBooleanSelect(),
+        }
 
 
 class ShelterUpdateForm(forms.ModelForm):
@@ -42,6 +45,11 @@ class ShelterUpdateForm(forms.ModelForm):
             'shelter_phone': 'Телефон',
             'shelter_email': 'Email',
         }
+        widgets = {
+            'is_active': forms.NullBooleanSelect(),
+            'shelter_email': forms.EmailInput(),
+            'shelter_logo': forms.FileInput(),
+        }
 
 
 class CategoryUpdateForm(forms.ModelForm):
@@ -52,6 +60,9 @@ class CategoryUpdateForm(forms.ModelForm):
             'name': 'Наименование категории',
             'description': 'Описание категории',
             'is_active': 'Активность',
+        }
+        widgets = {
+            'is_active': forms.NullBooleanSelect(),
         }
 
 
@@ -64,6 +75,9 @@ class StatusUpdateForm(forms.ModelForm):
             'description': 'Описание статуса',
             'is_active': 'Активность',
         }
+        widgets = {
+            'is_active': forms.NullBooleanSelect(),
+        }
 
 
 class BreedUpdateForm(forms.ModelForm):
@@ -74,6 +88,9 @@ class BreedUpdateForm(forms.ModelForm):
             'name': 'Наименование породы',
             'description': 'Описание породы',
             'is_active': 'Активность',
+        }
+        widgets = {
+            'is_active': forms.NullBooleanSelect(),
         }
 
 

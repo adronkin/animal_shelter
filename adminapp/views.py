@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import user_passes_test
-from django.http import HttpResponseRedirect, request
-from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
 
@@ -513,18 +513,19 @@ class ImageUpdate(CreateView):
     # def get_success_url(self):
     #     return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
 
-    def get_success_url(self):
-        return request.META.get('HTTP_REFERER')
+    # def get_success_url(self):
+    #     return request.META.get('HTTP_REFERER')
 
 
 class ImageDelete(DeleteView):
     """Реализует удаление изоражений"""
     model = Picture
-    template_name = 'adminapp/image_delete.html'
+    template_name = 'adminapp/pet/pet_image_delete.html'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    def get_success_url(self):
-        return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+    # def get_success_url(self):
+    #     return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+

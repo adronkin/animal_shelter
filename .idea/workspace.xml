@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/search_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/shelter/bg/bg_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/shelter/bg/bg_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/shelter/bg/bg_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/search_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/visualized.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
+      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals_helper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/shelter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/shelter_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="adminapp/migrations/" />
@@ -41,15 +37,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/adminapp/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="530" selection-start-line="530" selection-end-line="530" />
+            <state relative-caret-position="395">
+              <caret line="522" column="38" selection-start-line="522" selection-start-column="38" selection-end-line="522" selection-end-column="38" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -58,48 +61,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainapp/templates/mainapp/pet_card.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-597">
+            <state relative-caret-position="380">
+              <caret line="96" column="21" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="21" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainapp/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainapp/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="60" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/animals_helper/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="59" column="22" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -139,6 +107,8 @@
       <find>_create</find>
       <find>_update</find>
       <find>Picture</find>
+      <find>HttpResponseRedirect</find>
+      <find>.pk</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,9 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" />
-        <option value="$PROJECT_DIR$/mainapp/context_processors.py" />
-        <option value="$PROJECT_DIR$/mainapp/admin.py" />
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/includes/inc-main_banner_small.html" />
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/index.html" />
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/pet_list.html" />
@@ -187,13 +154,11 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter_detail.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/category_update.html" />
-        <option value="$PROJECT_DIR$/adminapp/forms.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet_update.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter_update.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/status_list.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/status_detail.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/status_delete.html" />
-        <option value="$PROJECT_DIR$/adminapp/urls.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/breed/breed_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/breed/breed_detail.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/breed/breed_update.html" />
@@ -201,10 +166,15 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/settings_list.html" />
         <option value="$PROJECT_DIR$/mainapp/models.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/adminapp/views.py" />
         <option value="$PROJECT_DIR$/mainapp/urls.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mainapp/views.py" />
+        <option value="$PROJECT_DIR$/adminapp/urls.py" />
+        <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" />
+        <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" />
+        <option value="$PROJECT_DIR$/adminapp/forms.py" />
+        <option value="$PROJECT_DIR$/adminapp/views.py" />
+        <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" />
       </list>
     </option>
   </component>
@@ -264,7 +234,36 @@
             <path>
               <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="adminapp" type="462c0819:PsiDirectoryNode" />
+              <item name="shelter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="mainapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,7 +277,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/adminapp/templates/adminapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -288,19 +287,19 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
+      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\mainapp\templates\mainapp" />
+      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\authapp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/category" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\mainapp\templates\mainapp" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\authapp" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\authapp\templates" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\adminapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -475,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571084454501</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
+      <created>1571085480771</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1571085480771</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184469000" />
+    <option name="totallyTimeSpent" value="189826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -526,37 +532,37 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.21101573" />
-      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946293" weight="0.3299363" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4985694" weight="0.33630574" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.49928468" weight="0.3299363" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50143063" side_tool="true" weight="0.26496816" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985694" weight="0.26496816" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.26496816" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.26496816" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998884" />
-      <window_info anchor="right" id="Maven" order="0" />
-      <window_info anchor="right" id="Palette" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Json Parser" order="8" />
-      <window_info anchor="right" id="SciView" order="9" />
-      <window_info anchor="right" id="Database" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Json Parser" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +623,8 @@
     <MESSAGE value="Merge branch 'pet_modal_form' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;mainapp/urls.py&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="adminapp:&#10;-pet_detail.html&#10;-views" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
+    <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -631,15 +638,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/media/images/dg1_x8OpK3a.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/templates/mainapp/includes/inc-call_to_action.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -725,31 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -879,74 +856,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="40" column="74" lean-forward="true" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/mainapp/__pycache__/views.cpython-37.pyc">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/templates/mainapp/pet_card.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="530" selection-start-line="530" selection-end-line="530" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-597">
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mainapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+        <state relative-caret-position="148">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/__pycache__/views.cpython-37.pyc">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mainapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -957,8 +882,99 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/animals_helper/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="59" column="22" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="22" />
+        <state relative-caret-position="481">
+          <caret line="75" column="13" lean-forward="true" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainapp/templates/mainapp/pet_card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_create.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="25" selection-start-line="25" selection-end-line="30" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="522" column="38" selection-start-line="522" selection-start-column="38" selection-end-line="522" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -47,31 +47,34 @@ class PetList(ListView):
     model = Pet
 
 
+def get_year_output(year):
+    year_output = 'год(-а)'
+
+    if year == 1:
+        year_output = 'год'
+    elif 4 >= year >= 2:
+        year_output = 'года'
+    elif 20 >= year >= 5:
+        year_output = 'лет'
+
+    return year_output
+
+
+def get_month_output(month):
+
+    if month == 1:
+        month_output = 'месяц'
+    elif 4 >= month >= 2:
+        month_output = 'месяца'
+    elif 12 >= month >= 5 or month == 0:
+        month_output = 'месяцев'
+
+    return month_output
+
+
 def pet_card(request, pk):
-    def get_year_output(year):
-        year_output = 'год(-а)'
-
-        if year == 1:
-            year_output = 'год'
-        elif 4 >= year >= 2:
-            year_output = 'года'
-        elif 20 >= year >= 5:
-            year_output = 'лет'
-
-        return year_output
-
-    def get_month_output(month):
-
-        if month == 1:
-            month_output = 'месяц'
-        elif 4 >= month >= 2:
-            month_output = 'месяца'
-        elif 12 >= month >= 5 or month == 0:
-            month_output = 'месяцев'
-
-        return month_output
-
     pet = get_object_or_404(Pet, pk=pk)
+
     context = {
         'title': 'карточка питомца',
         'pet': pet,
