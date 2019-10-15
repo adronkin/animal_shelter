@@ -8,3 +8,6 @@ db.sqlite3
 
 /tmp/email-messages/*
 media/uploads/
+!/adminapp/migrations/__init__.py
+!/authapp/migrations/__init__.py
+!/mainapp/migrations/__init__.py
