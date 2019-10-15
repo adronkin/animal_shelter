@@ -4044,6 +4044,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: flex;
   flex-wrap: wrap;
 }
+.owl-carousel {
+  height: 30vh;
+}
+
+
+.owl-carousel .owl-item img {
+  width: 100%;
+}
+
+.no-js .owl-carousel {
+  display: flex;
+  justify-content: center;
+}
 
 .container_shelters_pets {
 
@@ -4052,15 +4065,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .shelter_list  {
-  display: flex;
+  display: block;
   justify-content: space-between;
-  margin-left: 5%;
+  margin-left: 0;
   margin-right: 5%;
 }
 
 .shelter_logo img {
-  margin: 0 0 0 15px;
   height: 150px;
+  opacity: 0.8;
 }
 
 .shelter_info {
@@ -4100,15 +4113,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 .my_img-fluid {
-  width: 100px;
-  height: 300px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 350px;
 }
 
 .my_img-fluid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0 0;
+  height: 50%;
 }
 
 /*
