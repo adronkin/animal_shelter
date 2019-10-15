@@ -1,17 +1,21 @@
 {% extends 'mainapp/base.html' %}
 
+
+
 {% block main_banner %}
 
     {% if object.shelter_logo %}
-        <section class="relative" id="home" style="background:url({{ object.shelter_logo.url }}) center; background-size:cover;">
+        <section class="relative" id="home">
             <div class="container">
                 <div class="overlay overlay-bg"></div>
                 <div class="row fullscreen d-flex align-items-center justify-content-start">
+                    <img style="height: 400px" src="{{ object.shelter_logo.url }}" alt="">
                     <div class="banner-content col-lg-8 col-md-12">
-                        <h1 class="text-uppercase">
+                        <h1 class="text-uppercase" style="color: black;">
                             Нам нужна Ваша помощь. <br>
                             Питомцев, в поисках дома: {{ pets }}. <br>
                             Питомцев, нашедших дом: {{ adopted }}.
+                            {{ pets }}
                         </h1>
                         <a href="#" class="primary-btn header-btn text-uppercase">Find a pet to adopt</a>
                     </div>
