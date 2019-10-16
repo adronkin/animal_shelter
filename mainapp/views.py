@@ -32,6 +32,12 @@ class ShelterDetail(DetailView):
     """ страница списка приютов """
     model = Shelter
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(DetailView, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        return context
 
 def shelter_card(request, pk):
     shelter = get_object_or_404(Shelter, pk=pk)
@@ -154,10 +160,10 @@ class SearchView(ListView):
     """форма поиска"""
     template_name = 'mainapp/includes/search_list.html'
     model = Pet
-
     def get_queryset(self):
         super(SearchView, self).get_queryset()
         query = self.request.GET.get('search')
+
         if query:
             query = self.model.objects.filter(name__icontains=query)
 
