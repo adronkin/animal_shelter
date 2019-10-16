@@ -4127,6 +4127,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 0.75;
 }
 
+.single-image-carusel {
+  display: flex;
+  justify-content: center;
+}
+
+.single-image-carusel img{
+  margin: 0;
+  padding: 0;
+}
+
 /*
 ################
     Кнопки соц сетей
