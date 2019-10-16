@@ -1,9 +1,11 @@
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
+from django.views import generic
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
 
+from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
     ImageUpdateForm
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture
@@ -420,10 +422,11 @@ class PetCreate(CreateView):
         return context
 
 
-class PetUpdate(UpdateView):
+class PetUpdate(generic.UpdateView):
     """Редактирование карточки питомца"""
     model = Pet
-    form_class = PetUpdateForm
+    form_class = forms.PetUpdateForm
+    image_form = forms.ImageUpdateForm
     template_name = 'adminapp/pet/pet_update.html'
     success_url = reverse_lazy('adminapp:pet_list')
 
@@ -431,10 +434,79 @@ class PetUpdate(UpdateView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Редактирование'
-        return context
+    def get_initial(self):
+        initial = super(PetUpdate, self).get_initial()
+        initial = initial.copy()
+        return initial
+
+    def get(self, request, *args, **kwargs):
+        request.GET = request.GET.copy()
+        if request.META['HTTP_REFERER'].endswith('pet/update/'):
+            request.GET['HTTP_REFERER'] = 'pet_update'
+        return super(
+            PetUpdate, self).get(request, *args, **kwargs)
+
+    def get_success_url(self, request):
+        if request.GET.get('HTTP_REFERER') == 'pet_update':
+            return reverse('adminapp:pet_update')
+        return reverse('adminapp:pet_list')
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['title'] = 'Редактирование'
+    #     context['image_form'] = self.image_form
+    #     return context
+
+    def get_context_data(self, *args, **kwargs):
+        ctx = super(PetUpdate, self).get_context_data(*args, **kwargs)
+        ctx['title'] = 'Редактирование'
+        ctx['cancel_url'] = reverse('adminapp:pet_list')
+        ctx['image_form'] = self.image_form
+        return ctx
+
+    def form_valid(self, form, request):
+        self.object = form.save()
+        return HttpResponseRedirect(self.get_success_url(request))
+
+    def post(self, request, *args, **kwargs):
+        self.object = None
+        form = self.get_form()
+        if form.is_valid():
+            post_data = self.form_valid(form, request)
+        else:
+            post_data = self.form_invalid(form)
+
+        image_form = self.image_form(**self.get_image_form_kwargs())
+
+        # image_form.instance.user = self.object
+        if image_form.is_valid():
+            pet_profile = image_form.save(commit=False)
+            pet_profile.user = self.object
+            pet_profile.save()
+            post_data = self.image_form(request)
+        else:
+            post_data = self.render_to_response(
+                self.get_context_data(form=form, profile_form=image_form))
+        return post_data
+
+    def get_image_form_kwargs(self):
+        kwargs = {
+            'initial': self.get_image_initial(),
+            'prefix': self.get_prefix(),
+        }
+
+        if self.request.method in ('POST', 'PUT'):
+            kwargs.update({
+                'data': self.request.POST,
+                'files': self.request.FILES,
+            })
+        return kwargs
+
+    def get_image_initial(self):
+        initial = super(PetUpdate, self).get_initial()
+        initial = initial.copy()
+        initial['pet'] = self.object
+        return initial
 
 
 class PetDelete(DeleteView):
@@ -510,22 +582,30 @@ class ImageUpdate(CreateView):
         form.instance.related_obj_id = self.kwargs.get('pk')
         return super().form_valid(form)
 
-    # def get_success_url(self):
-    #     return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+    def get_success_url(self, **kwargs):
+        # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+        return self.request.META.get('HTTP_REFERER')
 
-    # def get_success_url(self):
-    #     return request.META.get('HTTP_REFERER')
+    def get_context_data(self, **kwargs):
+        data = super(ImageUpdate, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
 
 
 class ImageDelete(DeleteView):
     """Реализует удаление изоражений"""
     model = Picture
-    template_name = 'adminapp/pet/pet_image_delete.html'
+    template_name = 'adminapp/image_delete.html'
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    # def get_success_url(self):
-    #     return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+    def get_success_url(self, **kwargs):
+        # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+        return self.request.META.get('HTTP_REFERER')
 
+    def get_context_data(self, **kwargs):
+        data = super(ImageDelete, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data

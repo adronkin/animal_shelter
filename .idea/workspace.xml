@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
-      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/adminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="adminapp/migrations/" />
@@ -51,10 +47,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="522" column="38" selection-start-line="522" selection-start-column="38" selection-end-line="522" selection-end-column="38" />
+            <state relative-caret-position="376">
+              <caret line="485" column="48" selection-start-line="485" selection-start-column="48" selection-end-line="485" selection-end-column="48" />
               <folding>
-                <element signature="e#0#59#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="398">
               <caret line="96" column="21" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="21" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -141,7 +137,6 @@
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/shelter_card.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet_list.html" />
-        <option value="$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet_detail.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/category_list.html" />
@@ -173,8 +168,9 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html" />
         <option value="$PROJECT_DIR$/adminapp/forms.py" />
-        <option value="$PROJECT_DIR$/adminapp/views.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" />
+        <option value="$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html" />
+        <option value="$PROJECT_DIR$/adminapp/views.py" />
       </list>
     </option>
   </component>
@@ -481,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571085480771</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
+      <created>1571112580286</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1571112580286</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189826000" />
+    <option name="totallyTimeSpent" value="196027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -638,13 +641,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="4" column="65" lean-forward="true" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authapp/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -713,20 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -921,16 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="96" column="21" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_image_create.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -941,13 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="25" selection-start-line="25" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -968,12 +933,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/http/request.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="522" column="38" selection-start-line="522" selection-start-column="38" selection-end-line="522" selection-end-column="38" />
+        <state relative-caret-position="376">
+          <caret line="485" column="48" selection-start-line="485" selection-start-column="48" selection-end-line="485" selection-end-column="48" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
