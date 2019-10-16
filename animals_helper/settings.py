@@ -119,6 +119,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.vk.VKOAuth2',
     'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
 )
 
 LOGIN_REDIRECT_URL = '/'
@@ -184,6 +185,11 @@ EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
 
+# проверяет совпадения по email при входе через соцсети
+# включена чтобы не было множества одинаковых пользователей
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.associate_by_email',
+)
 
 # ключи ВК
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7163751'
@@ -192,3 +198,18 @@ SOCIAL_AUTH_VK_OAUTH2_SECRET = 'xoNTlHt58J1pr6UQ5qxa'
 # ключи гугла
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '659908000422-u951chquomj00bigaimdd97rbns9e8kf'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '6lGjkUTyWRpzhiwMeVfFEbnx'
+
+
+
+# ключи фейсбука
+SOCIAL_AUTH_FACEBOOK_KEY = '391147618442915'
+SOCIAL_AUTH_FACEBOOK_SECRET = '70f271d25b6553a8cd4857f2f0e80b7c'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
+# ключи твиттер
+
+
+
