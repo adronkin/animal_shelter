@@ -50,6 +50,8 @@ class Shelter(Core):
     shelter_address = models.CharField(verbose_name='адрес', max_length=255, null=False, blank=False, unique=True)
     shelter_phone = models.CharField(verbose_name='телефон', max_length=17, null=False, blank=False, unique=True)
     shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
+    shelter_cord_width = models.IntegerField(verbose_name='координаты - ширина', null=False, blank=False)
+    shelter_cord_longitude = models.IntegerField(verbose_name='координаты - долгота', null=False, blank=False)
 
 
 class Donate(Core):
