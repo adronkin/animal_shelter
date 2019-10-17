@@ -2424,7 +2424,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .image-carusel-area .owl-dots {
     text-align: center;
     bottom: 5px;
-    margin-top: 50px;
+    margin-top: 10px;
     width: 100%;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -4039,43 +4039,33 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .shelter_section {
-    background-image: url("../../media/shelter/bg/bg_3.jpg");
-    background-repeat: repeat-y;
-    background-repeat: repeat-x;
-    margin-left: 5%;
-    margin-right: 5%;
+  background-image: url("../../media/shelter/bg/bg_3.jpg");
+  background-repeat: repeat-y;
+  background-repeat: repeat-x;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .pets_row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.owl-carousel {
-    height: 30vh;
-}
-
-
-.owl-carousel .owl-item img {
-    width: 100%;
-}
-
-.no-js .owl-carousel {
-    display: flex;
-    justify-content: center;
+.pets_row img{
+  height: 32vh;
 }
 
 .container_shelters_pets {
 
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.shelter_list {
-    display: block;
-    justify-content: space-between;
-    margin-left: 0;
-    margin-right: 5%;
+.shelter_list  {
+  display: block;
+  justify-content: space-between;
+  margin-left: 0;
+  margin-right: 5%;
 }
 
 .shelter_logo img {
