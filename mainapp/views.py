@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
@@ -107,6 +108,17 @@ def pet_list(request, page=1):
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
+
+
+# def shelter_list_for_map(request):
+#     # список приютов для отображения на карте - пока что для примера
+#
+#
+#     username = request.GET.get('username', None)
+#     data = {
+#         'is_taken': User.objects.filter(username__iexact=username).exists()
+#     }
+#     return JsonResponse(data)
 
 
 class About(TemplateView):
