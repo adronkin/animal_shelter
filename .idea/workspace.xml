@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adminapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainapp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/json/maps_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/maps_geocode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/maps_placemark.js" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals_helper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals_helper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="adminapp/migrations/" />
@@ -52,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -82,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="271">
+              <caret line="52" selection-start-line="52" selection-end-line="53" selection-end-column="96" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -190,7 +181,6 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_image_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/image_delete.html" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_create.html" />
-        <option value="$PROJECT_DIR$/mainapp/models.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_update.html" />
         <option value="$PROJECT_DIR$/mainapp/admin.py" />
         <option value="$PROJECT_DIR$/adminapp/forms.py" />
@@ -198,6 +188,7 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html" />
         <option value="$PROJECT_DIR$/adminapp/views.py" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/mainapp/models.py" />
       </list>
     </option>
   </component>
@@ -401,7 +392,7 @@
       <workItem from="1570332445593" duration="79000" />
       <workItem from="1570561050836" duration="17411000" />
       <workItem from="1571249103086" duration="8720000" />
-      <workItem from="1571337404202" duration="311000" />
+      <workItem from="1571337404202" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -529,11 +520,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571112580286</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="merge with alyonkazz">
+      <created>1571337994593</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1571337994593</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205058000" />
+    <option name="totallyTimeSpent" value="206172000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -562,10 +560,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.4985694" visible="true" weight="0.33630574" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4985694" weight="0.33630574" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.49928468" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.26496816" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.26496816" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.26496816" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -666,13 +664,13 @@
     <MESSAGE value="добавил контекстный процессор для меню, &#10;подключил его в settings,&#10;реализовал модели меню и менеджера меню в mainapp.models,&#10;создал mainmenu.html в includes и выполнил его включение в блок mainmenu base.html" />
     <MESSAGE value="поправил стили - округлил кнопки, уменьшил размер шрифта на главной странице, удалил пару JS.&#10;подправил шаблоны, добавил кастомный логотип на странице приюта.&#10;отрефакторил view и urls.&#10;мелкие правки модели меню и сигналов" />
     <MESSAGE value="синхронизировал с изменениями других участников из develop-ветки.&#10;удалил неиспользуемые шаблоны, SCSS.&#10;удалил {% load static %} из шаблонов, где статика не используется" />
-    <MESSAGE value="merge with alyonkazz" />
     <MESSAGE value="merge with towardsbackwards" />
     <MESSAGE value="Merge branch 'pet_modal_form' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;mainapp/urls.py&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="adminapp:&#10;-pet_detail.html&#10;-views" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
+    <MESSAGE value="merge with alyonkazz" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge with alyonkazz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -992,16 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-629">
@@ -1016,6 +1004,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="449" column="26" selection-start-line="449" selection-start-column="26" selection-end-line="449" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="52" selection-start-line="52" selection-end-line="53" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
