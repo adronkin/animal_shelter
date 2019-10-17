@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adminapp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainapp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainapp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/json/maps_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/maps_geocode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/maps_placemark.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="adminapp/migrations/" />
@@ -33,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="435">
               <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -47,9 +57,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
               <caret line="449" column="26" selection-start-line="449" selection-start-column="26" selection-end-line="449" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="630">
               <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
             </state>
           </provider>
@@ -78,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="1335">
               <caret line="89" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -145,7 +152,6 @@
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/shelter_list.html" />
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/shelter_detail.html" />
         <option value="$PROJECT_DIR$/static/scss/theme/_home.scss" />
-        <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/run.bat" />
         <option value="$PROJECT_DIR$/animals_helper/settings.py" />
         <option value="$PROJECT_DIR$/mainapp/templates/mainapp/includes/inc-main_banner_big.html" />
@@ -191,6 +197,7 @@
         <option value="$PROJECT_DIR$/adminapp/urls.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html" />
         <option value="$PROJECT_DIR$/adminapp/views.py" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
       </list>
     </option>
   </component>
@@ -205,13 +212,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
@@ -252,6 +263,17 @@
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
               <item name="mainapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -285,6 +307,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,6 +401,7 @@
       <workItem from="1570332445593" duration="79000" />
       <workItem from="1570561050836" duration="17411000" />
       <workItem from="1571249103086" duration="8720000" />
+      <workItem from="1571337404202" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -509,7 +533,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204747000" />
+    <option name="totallyTimeSpent" value="205058000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -523,7 +547,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -538,10 +562,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4985694" weight="0.33630574" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.4985694" visible="true" weight="0.33630574" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.49928468" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.26496816" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.26496816" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.26496816" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -662,9 +686,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/pet_popup.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -893,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1330">
-          <caret line="3019" column="16" selection-start-line="3019" selection-start-column="16" selection-end-line="3019" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -953,7 +967,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="435">
           <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -961,13 +975,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="630">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -981,20 +992,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html">
+    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="1335">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="3049" selection-start-line="3049" selection-end-line="3049" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="449" column="26" selection-start-line="449" selection-start-column="26" selection-end-line="449" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
