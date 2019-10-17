@@ -95,7 +95,7 @@ dropdown dropdown_animal {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* добавил центрирование поиска (Павел) */
-    background-color: #fff;
+    /* background-color: #fff;  это не нужно, т.к. это просто контейнер, содержащий поля поиска (Павел) */
     border-radius: 5px;
     transition: all .5s ease;
     position: relative;
