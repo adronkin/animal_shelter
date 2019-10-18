@@ -94,7 +94,8 @@ dropdown dropdown_animal {
 .search {
     display: flex;
     flex-wrap: wrap;
-    background-color: #fff;
+    justify-content: center; /* добавил центрирование поиска (Павел) */
+    /* background-color: #fff;  это не нужно, т.к. это просто контейнер, содержащий поля поиска (Павел) */
     border-radius: 5px;
     transition: all .5s ease;
     position: relative;
@@ -109,14 +110,13 @@ dropdown dropdown_animal {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .search_input {
     display: flex;
-    width: 600px;
+    width: 50vw;  /* изменил длину на 50% видимой части экрана (Павел) */
     border-radius: 5px;
-    float: left;
+    justify-content: center;
     padding-left: 10px;
     font-size: 15px;
     height: 40px;
@@ -125,4 +125,12 @@ dropdown dropdown_animal {
 
 .result {
     width: 900px;
+}
+
+
+/* добавлено (Павел) */
+.search_fields {
+    width: 50vw;
+    display: inline-flex;
+    justify-content: center;
 }
