@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
-from mainapp.models import Pet, Shelter
+from mainapp.models import Pet, Shelter, PetCategory
 
 
 class Index(TemplateView):
@@ -84,6 +84,7 @@ def pet_card(request, pk):
 
     context = {
         'title': 'карточка питомца',
+        'pet_class': pet.pet_category,
         'pet': pet,
         'shelter': pet.pet_shelter,
         'year_output': get_year_output(year=pet.age),
@@ -95,8 +96,7 @@ def pet_card(request, pk):
 def pet_list(request, page=1):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
-
-    paginator = Paginator(pets, 4)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
+    paginator = Paginator(pets, 4)
     try:
         pets_paginator = paginator.page(page)
     except PageNotAnInteger:
@@ -110,6 +110,28 @@ def pet_list(request, page=1):
     }
     return render(request, 'mainapp/pets.html', content)
 
+def cat_list(request, page=1):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    cats = Pet.objects.filter(pet_category_id=5)
+    pet_class = PetCategory.objects.get(id=5)
+    content = {
+        'pet_class': pet_class,
+        'title': title,
+        'pets': cats,
+    }
+    return render(request, 'mainapp/cats.html', content)
+
+
+def dog_list(request, page=1):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    dogs = Pet.objects.filter(pet_category_id=6)
+    pet_class = PetCategory.objects.get(id=6)
+    content = {
+    'pet_class': pet_class,
+        'title': title,
+        'pets': dogs,
+    }
+    return render(request, 'mainapp/dogs.html', content)
 
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
