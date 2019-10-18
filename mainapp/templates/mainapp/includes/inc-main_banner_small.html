@@ -6,6 +6,10 @@
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
                     {{ title|capfirst }}
+                    {% if pet_class %}
+                        <br>
+                    <h2 style="text-transform: lowercase; color: whitesmoke">({{ pet_class }})</h2>
+                    {% endif %}
                 </h1>
                 <p class="text-white link-nav"><a href="/">Home </a>
                     <span class="lnr lnr-arrow-right"></span>{{ title }}
