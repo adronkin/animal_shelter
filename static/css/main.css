@@ -51,7 +51,7 @@
 
 body {
     color: #777777;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Century Gothic Regular';
     font-size: 14px;
     font-weight: 300;
     line-height: 1.625em;
@@ -118,7 +118,7 @@ a, a:focus, a:hover {
 
 h1, h2, h3,
 h4, h5, h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Century Gothic Regular';
     color: #222222;
     line-height: 1.2em !important;
     margin-bottom: 0;
@@ -4052,7 +4052,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .pets_row img{
-  height: 32vh;
+  max-height: 32vh;
 }
 
 .container_shelters_pets {
@@ -4064,13 +4064,22 @@ body.mobile-nav-active #mobile-nav-toggle {
 .shelter_list  {
   display: block;
   justify-content: space-between;
-  margin-left: 0;
+  margin-left: 5%;
   margin-right: 5%;
 }
 
+.shelter_logo {
+
+}
+
 .shelter_logo img {
-    height: 150px;
+    max-height: 150px;
     opacity: 0.8;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
 
 .shelter_info {
@@ -4111,8 +4120,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .my_img-fluid {
     object-fit: cover; /* Do not scale the image */
-    object-position: center; /* Center the image within the element */
-    height: 350px;
+    object-position: top; /* Center the image within the element */
+    height: 35vh;
+
 }
 
 .my_img-fluid img {
