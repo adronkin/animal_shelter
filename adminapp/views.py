@@ -13,7 +13,8 @@ from django.views.generic.detail import SingleObjectMixin
 
 from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
-    ImageUpdateForm, ShelterPetWithImagesFormset
+    ImageUpdateForm\
+    # , ShelterPetWithImagesFormset
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, Core
 
 
