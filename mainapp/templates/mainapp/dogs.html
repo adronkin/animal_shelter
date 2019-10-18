@@ -1,86 +1,50 @@
 {% extends 'mainapp/base.html' %}
-{% load static %}
 
 {% block main_banner %}
-  {% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% include 'mainapp/includes/inc-main_banner_small.html' %}
 {% endblock %}
 
 {% block content %}
-    <!-- Start cat-list Area -->
-    <section class="cat-list-area section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
+<!-- Start cat-list Area -->
+<section class="cat-list-area section-gap">
+    <div class="container">
+        <div class="row">
+            {% for pet in pets %}
+            <div class="col-lg-3 col-md-6">
+                <a href="{% url 'mainapp:pet_card' pet.pk %}">
                     <div class="single-cat-list">
-                        <img src="{% static 'img/dg1.jpg' %}" alt="" class="img-fluid">
+                        <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
                         <div class="overlay">
-                            <div class="text">Siamese Dog</div>
+                            <div class="text">{{pet.name}}</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg2.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
+                    <!--------------------------- Modal start --------------------------->
+                    <div class="modal fade" id="myModal_{{ pet.pk }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Карточка питомца: {{ pet.name }}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {% include 'mainapp/includes/pet_card_include.html' %}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg3.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg4.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg5.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg6.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg7.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                        <img src="{% static 'img/dg8.jpg' %}" alt="" class="img-fluid">
-                        <div class="overlay">
-                            <div class="text">Siamese Dog</div>
-                        </div>
-                    </div>
-                </div>
+                    <!--------------------------- Modal end --------------------------->
+
+                </a>
+                <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal_{{ pet.pk }}">
+                    Карточка питомца
+                </button>
             </div>
+            {% endfor %}
         </div>
-    </section>
-    <!-- End cat-list Area -->
+    </div>
+</section>
+<!-- End cat-list Area -->
 {% endblock %}
 
-
 {% block call_to_action %}
-    {% include 'mainapp/includes/inc-call_to_action.html' %}
+<!-- Button trigger modal -->
 {% endblock %}

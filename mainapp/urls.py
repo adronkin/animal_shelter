@@ -2,8 +2,8 @@ from os.path import abspath, basename, dirname
 from django.urls import path, include
 from .views import (
     Index, ShelterList, ShelterDetail, shelter_card, PetList, pet_list, pet_card,
-    Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements
-)
+    Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements,
+    SearchView, cat_list, dog_list)
 
 app_name = basename(dirname(abspath(__file__)))
 
@@ -14,6 +14,8 @@ urlpatterns = [
     path('shelter/<int:pk>/', shelter_card, name='shelter_card'),
     path('pets/adopted/', PetList.as_view(), name='adopted'),
     path('pets/', pet_list, name='pet_list'),
+    path('cats/', cat_list, name='cat_list'),
+    path('dogs/', dog_list, name='dog_list'),
     path('pets/<int:pk>/', pet_card, name='pet_card'),
     path('pets/page/<int:page>/', pet_list, name='page'),
 
@@ -26,4 +28,6 @@ urlpatterns = [
     path('blog-home/', BlogHome.as_view(), name='blog-home'),
     path('blog-single/', BlogSingle.as_view(), name='blog-single'),
     path('elements/', Elements.as_view(), name='elements'),
+    path('search/list/', SearchView.as_view(), name='search_list'),
+
 ]

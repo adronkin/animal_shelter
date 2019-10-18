@@ -12,10 +12,11 @@
                 <div>
                     {% for img in pet.images.all %}
                         <a href="{{ img.image.url }}">
-                            <img src="{{ img.image.url }}" alt="">
+                            <img style="height: 200px" src="{{ img.image.url }}" alt="">
                         </a>
                     {% endfor %}
                     <h1>{{pet.name}}</h1>
+					<p>{{pet.description}}</p>
                     <p>Приют: <a href="{% url 'mainapp:shelter_card' shelter.pk %}">{{pet.pet_shelter}}</a></p>
                     <p>Порода: {{pet.pet_breed}}</p>
                     <p>Пол: {{pet.pet_gender}}</p>

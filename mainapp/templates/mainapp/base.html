@@ -21,9 +21,13 @@
             {{ title|capfirst }}
         {% endblock %}
     </title>
+
+    <!-- подтверждение прав на домен для гугла -->
+    <meta name="google-site-verification" content="kmrtTwuSc63keHHO2EY1Iel1hwtw0OCmW0eEJfmhors" />
+
     {% block css %}
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-                <!--CSS ============================================= -->
+        <!--CSS ============================================= -->
         <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
         <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -32,13 +36,13 @@
         <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/search_style.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/CenturyGothicRegular/CenturyGothic.css' %}">
     {% endblock %}
     {% block js %}
-                <!--JS ============================================= -->
+        <!--JS ============================================= -->
         <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
         <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
-        <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
         <script src="{% static 'js/easing.min.js' %}"></script>
         <script src="{% static 'js/hoverIntent.js' %}"></script>
         <script src="{% static 'js/superfish.min.js' %}"></script>
@@ -48,12 +52,16 @@
         <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'js/pet_popup.js' %}"></script>
+        {#   scripts for yandex map     #}
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e56d97fe-c1d0-4c05-82c8-94663aaf9a57"
+                type="text/javascript"></script>
+        <script src="{% static 'js/maps_placemark.js' %}" type="text/javascript"></script>
     {% endblock %}
 </head>
 <body>
 
 {% block main_menu %}
-    <header id="header" id="home">
+    <header id="header" id="home" class="header-unscrolled">
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">

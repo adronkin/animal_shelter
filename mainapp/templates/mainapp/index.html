@@ -5,6 +5,8 @@
     {% include 'mainapp/includes/inc-main_banner_big.html' %}
 {% endblock %}
 
+
+
 {% block content %}
     <!-- Start image-carusel Area -->
     <section class="image-carusel-area">
@@ -52,7 +54,9 @@
         </div>
     </section>
     <!-- End image-carusel Area -->
-
+{% block search %}
+    {% include 'mainapp/includes/search_list.html' %}
+{% endblock %}
     <!-- Start callto-top Area -->
     <section class="callto-top-area section-gap">
         <div class="container">

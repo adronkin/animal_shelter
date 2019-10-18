@@ -16,7 +16,8 @@
                         {% csrf_token %}
                         {{ form.as_p }}
                         <p>Вы уверены что хотите удалить "{{ object.image }}"? </p>
-                        <input type="submit" class="" value="Подтверждаю">
+                        <a href="{{ return_page }}" class="btn btn-default">Назад</a>
+                        <input type="submit" class="" value="Удалить">
                     </form>
                 </div>
             </div>

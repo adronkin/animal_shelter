@@ -1,8 +1,9 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import JsonResponse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
-from mainapp.models import Pet, Shelter
+from mainapp.models import Pet, Shelter, PetCategory
 
 
 class Index(TemplateView):
@@ -19,11 +20,25 @@ class ShelterList(ListView):
     """ страница списка приютов """
     model = Shelter
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ShelterList, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        context['title'] = 'Приюты'
+        return context
+
 
 class ShelterDetail(DetailView):
     """ страница списка приютов """
     model = Shelter
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(DetailView, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        return context
 
 def shelter_card(request, pk):
     shelter = get_object_or_404(Shelter, pk=pk)
@@ -39,44 +54,37 @@ class PetList(ListView):
     model = Pet
 
 
-# удалить?
-# def pet_list(request):
-#     title = 'СПИСОК ПИТОМЦЕВ'
-#     pets = Pet.objects.all()
-#     content = {
-#         'title': title,
-#         'pets': pets,
-#     }
-#     return render(request, 'mainapp/pets.html', content)
+def get_year_output(year):
+    year_output = 'год(-а)'
+
+    if year == 1:
+        year_output = 'год'
+    elif 4 >= year >= 2:
+        year_output = 'года'
+    elif 20 >= year >= 5:
+        year_output = 'лет'
+
+    return year_output
+
+
+def get_month_output(month):
+
+    if month == 1:
+        month_output = 'месяц'
+    elif 4 >= month >= 2:
+        month_output = 'месяца'
+    elif 12 >= month >= 5 or month == 0:
+        month_output = 'месяцев'
+
+    return month_output
 
 
 def pet_card(request, pk):
-    def get_year_output(year):
-        year_output = 'год(-а)'
-
-        if year == 1:
-            year_output = 'год'
-        elif 4 >= year >= 2:
-            year_output = 'года'
-        elif 20 >= year >= 5:
-            year_output = 'лет'
-
-        return year_output
-
-    def get_month_output(month):
-
-        if month == 1:
-            month_output = 'месяц'
-        elif 4 >= month >= 2:
-            month_output = 'месяца'
-        elif 12 >= month >= 5 or month == 0:
-            month_output = 'месяцев'
-
-        return month_output
-
     pet = get_object_or_404(Pet, pk=pk)
+
     context = {
         'title': 'карточка питомца',
+        'pet_class': pet.pet_category,
         'pet': pet,
         'shelter': pet.pet_shelter,
         'year_output': get_year_output(year=pet.age),
@@ -88,8 +96,7 @@ def pet_card(request, pk):
 def pet_list(request, page=1):
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
-
-    paginator = Paginator(pets, 1)  # < Пока пагинация по 1 пету на страницу, как добавим больше - сделаем больше
+    paginator = Paginator(pets, 4)
     try:
         pets_paginator = paginator.page(page)
     except PageNotAnInteger:
@@ -103,10 +110,43 @@ def pet_list(request, page=1):
     }
     return render(request, 'mainapp/pets.html', content)
 
+def cat_list(request, page=1):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    cats = Pet.objects.filter(pet_category_id=5)
+    pet_class = PetCategory.objects.get(id=5)
+    content = {
+        'pet_class': pet_class,
+        'title': title,
+        'pets': cats,
+    }
+    return render(request, 'mainapp/cats.html', content)
+
+
+def dog_list(request, page=1):
+    title = 'СПИСОК ПИТОМЦЕВ'
+    dogs = Pet.objects.filter(pet_category_id=6)
+    pet_class = PetCategory.objects.get(id=6)
+    content = {
+    'pet_class': pet_class,
+        'title': title,
+        'pets': dogs,
+    }
+    return render(request, 'mainapp/dogs.html', content)
 
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
+
+
+# def shelter_list_for_map(request):
+#     # список приютов для отображения на карте - пока что для примера
+#
+#
+#     username = request.GET.get('username', None)
+#     data = {
+#         'is_taken': User.objects.filter(username__iexact=username).exists()
+#     }
+#     return JsonResponse(data)
 
 
 class About(TemplateView):
@@ -148,3 +188,20 @@ class BlogSingle(TemplateView):
 class Elements(TemplateView):
     """Страница демострации"""
     template_name = 'mainapp/elements.html'
+
+
+class SearchView(ListView):
+    """форма поиска"""
+    template_name = 'mainapp/includes/search_list.html'
+    model = Pet
+    def get_queryset(self):
+        super(SearchView, self).get_queryset()
+        query = self.request.GET.get('search')
+
+        if query:
+            query = self.model.objects.filter(name__icontains=query)
+
+        else:
+            query = self.model.objects.all()
+
+        return query

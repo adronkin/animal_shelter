@@ -17,6 +17,7 @@
                         <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
                         <div class="overlay">
                             <div class="text">{{pet.name}}</div>
+                            {{ pet.pet_category.id }}
                         </div>
                     </div>
                     <!--------------------------- Modal start --------------------------->
@@ -63,7 +64,4 @@
 
 {% block call_to_action %}
 <!-- Button trigger modal -->
-
-{% include 'mainapp/includes/inc-call_to_action.html' %}
-
 {% endblock %}
