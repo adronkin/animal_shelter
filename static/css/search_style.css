@@ -114,7 +114,7 @@ dropdown dropdown_animal {
 
 .search_input {
     display: flex;
-    width: 50vw;  /* изменил длину на 50% видимой части экрана (Павел) */
+    width: 50vw; /* изменил длину на 50% видимой части экрана (Павел) */
     border-radius: 5px;
     justify-content: center;
     padding-left: 10px;

@@ -4039,33 +4039,33 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .shelter_section {
-  background-image: url("../../media/shelter/bg/bg_3.jpg");
-  background-repeat: repeat-y;
-  background-repeat: repeat-x;
-  margin-left: 5%;
-  margin-right: 5%;
+    background-image: url("../../media/shelter/bg/bg_3.jpg");
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .pets_row {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.pets_row img{
-  max-height: 32vh;
+.pets_row img {
+    max-height: 32vh;
 }
 
 .container_shelters_pets {
 
-  margin-left: 5%;
-  margin-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-.shelter_list  {
-  display: block;
-  justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
+.shelter_list {
+    display: block;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .shelter_logo {
