@@ -1,17 +1,19 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.context_processors import csrf
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views import generic
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView, FormView
+from django.views.generic.detail import SingleObjectMixin
 
 from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
-    ImageUpdateForm
+    ImageUpdateForm, ShelterPetWithImagesFormset
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, Core
 
 
@@ -21,6 +23,7 @@ from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Pictu
 # TODO убрать template_name
 # TODO добавить валидацию через form
 # TODO image для приюта
+# TODO список питомцев для приюта
 
 
 class SettingsList(TemplateView):
@@ -425,36 +428,75 @@ class PetList(ListView):
 #         return context
 
 
+class PetCreate(SingleObjectMixin, FormView):
+    """Создание нового питомца"""
+
+    model = Shelter
+    template_name = 'adminapp/pet/pet_create.html'
+
+    def get (self, requesr, *args, **kwargs):
+        # The Pet we're editing:
+        self.object = self.get_object(queryset=Shelter.objects.all())
+        return super().get(requesr, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        # The Pet we're uploading for:
+        self.object = self.get_object(queryset=Pet.objects.all())
+        return super().post(request, *args, **kwargs)
+
+    def get_form(self, form_class=None):
+        # Use our big formset of formsets, and pass in the Publisher object.
+        return ShelterPetWithImagesFormset(**self.get_form_kwargs(), instance=self.object)
+
+    def form_valid(self, form):
+        # If the form is valid, redirect to the supplied URL.
+        form.save()
+
+        messages.add_message(
+            self.request,
+            messages.SUCCESS,
+            'Изменения сохранены.'
+        )
+
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse_lazy('adminapp:shelter_detail', args=[self.object.shelter.pk])
+        # else
+        # return reverse('adminapp:shelter_detail', kwargs={'pk': self.object.pk})
+
+
+
 # def jojo(request):
 #     PetFormSet = inlineformset_factory(Core, Pet, Picture, fields='__all__')
 #     return render_to_response('adminapp/pet/pet_create.html', {
 #         'formset': PetFormSet,
 #     })
 
-@login_required
-def some_view(request, main_id=None, redirect_notice=None):
-    c = {}
-    c.update(csrf(request))
-    c.update({'redirect_notice':redirect_notice})
-
-    NestedFormset = inlineformset_factory(Core, Pet, Picture, fields='name', can_delete=False, )
-    main = None
-    if main_id :
-        main = Core.objects.get(id=id)
-
-    if request.method == 'POST':
-        main_form = Core(request.POST, instance=main, prefix='mains')
-        formset = NestedFormset(request.POST, request.FILES, instance=main, prefix='nesteds')
-        if main_form.is_valid() and formset.is_valid():
-            r = main_form.save(commit=False)
-            formset.save()
-            r.save()
-            return HttpResponseRedirect('/Home_url/')
-    else:
-        main_form = Core(instance=main, prefix='mains')
-        formset = NestedFormset(instance=main, prefix='nesteds')
-    c.update({'main_form':main_form, 'formset': formset, 'main_id': main_id})
-    return render_to_response('App_name/Main_nesteds.html', c, context_instance=RequestContext(request))
+# @login_required
+# def some_view(request, main_id=None, redirect_notice=None):
+#     c = {}
+#     c.update(csrf(request))
+#     c.update({'redirect_notice':redirect_notice})
+#
+#     NestedFormset = inlineformset_factory(Core, Pet, Picture, fields='name', can_delete=False, )
+#     main = None
+#     if main_id :
+#         main = Core.objects.get(id=id)
+#
+#     if request.method == 'POST':
+#         main_form = Core(request.POST, instance=main, prefix='mains')
+#         formset = NestedFormset(request.POST, request.FILES, instance=main, prefix='nesteds')
+#         if main_form.is_valid() and formset.is_valid():
+#             r = main_form.save(commit=False)
+#             formset.save()
+#             r.save()
+#             return HttpResponseRedirect('/Home_url/')
+#     else:
+#         main_form = Core(instance=main, prefix='mains')
+#         formset = NestedFormset(instance=main, prefix='nesteds')
+#     c.update({'main_form':main_form, 'formset': formset, 'main_id': main_id})
+#     return render_to_response('App_name/Main_nesteds.html', c, context_instance=RequestContext(request))
 
 
 class PetUpdate(generic.UpdateView):

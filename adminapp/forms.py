@@ -1,4 +1,6 @@
 from django import forms
+from django.forms.models import inlineformset_factory, BaseInlineFormSet
+
 from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
 
 
@@ -85,3 +87,44 @@ class ImageUpdateForm(forms.ModelForm):
     class Meta:
         model = Picture
         fields = ('image',)
+
+
+# Набор форм для редактирования изображений относящихся к питомцу
+PetImageFormset = inlineformset_factory(
+    Pet,
+    Picture,
+    fields=('image',),
+    extra=1
+)
+
+
+class BasePetsWithImagesFormset(BaseInlineFormSet):
+    """Форма для редактирования питомцев принадлежащих приюту, и изображений принадлежащих питомцам"""
+
+    def add_fields(self, form, index):
+        super().add_fields(form, index)
+
+        # Сохраняем formset для изображений питомцев во вложенном свойстве
+        form.nested = PetImageFormset(
+            instance=form.instance,
+            data=form.data if form.is_bound else None,
+            files=form.files if form.is_bound else None,
+            prefix='petimage-%s-%s' % (
+                form.prefix,
+                PetImageFormset.get_default_prefix()
+            )
+        )
+
+
+ShelterPetWithImagesFormset = inlineformset_factory(
+    Shelter,
+    Pet,
+    Picture,
+    formset=BasePetsWithImagesFormset,
+    # необходимо указать хотя бы одно поле Pet:
+    fields=('name',),
+    extra=1,
+    # Если не нужно удалять приюты:
+    # can_delete=False
+
+)

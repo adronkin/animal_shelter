@@ -26,8 +26,8 @@ urlpatterns = [
     path('breed/delete/<int:pk>/', adminapp.BreedDelete.as_view(), name='breed_delete'),
 
     path('pet_list/', adminapp.PetList.as_view(), name='pet_list'),
-    # path('pet/create/', adminapp.PetCreate.as_view(), name='pet_create'),
-    path('pet/create/', adminapp.some_view, name='pet_create'),
+    path('pet/create/', adminapp.PetCreate.as_view(), name='pet_create'),
+    # path('pet/create/', adminapp.some_view, name='pet_create'),
     path('pet/read/<int:pk>/', adminapp.PetDetail.as_view(), name='pet_detail'),
     path('pet/update/<int:pk>/', adminapp.PetUpdate.as_view(), name='pet_update'),
     path('pet/delete/<int:pk>/', adminapp.PetDelete.as_view(), name='pet_delete'),

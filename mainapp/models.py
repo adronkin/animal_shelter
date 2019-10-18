@@ -36,7 +36,11 @@ class Picture(Core):
         verbose_name_plural = 'Картинки'
 
     image = models.ImageField(upload_to='images')
-    related_obj = models.ForeignKey(Core, verbose_name='изображения', null=True, blank=True, related_name='images', on_delete=models.CASCADE)
+    related_obj = models.ForeignKey(Core,
+                                    verbose_name='изображения',
+                                    null=True, blank=True,
+                                    related_name='images',
+                                    on_delete=models.CASCADE)
 
 
 class City(Core):
@@ -46,17 +50,22 @@ class City(Core):
 class Shelter(Core):
     """ Класс-модель приюта/питомника """
     shelter_logo = models.ImageField(upload_to='shelter/images', verbose_name='логотип приюта', blank=True)
-    shelter_city = models.ForeignKey(City, verbose_name='город', related_name='shelters', null=False, blank=False, on_delete=models.PROTECT)
+    shelter_city = models.ForeignKey(City, verbose_name='город', related_name='shelters',
+                                     null=False, blank=False, on_delete=models.PROTECT)
     shelter_address = models.CharField(verbose_name='адрес', max_length=255, null=False, blank=False, unique=True)
     shelter_phone = models.CharField(verbose_name='телефон', max_length=17, null=False, blank=False, unique=True)
     shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
-    shelter_cord_width = models.IntegerField(verbose_name='координаты - ширина', default=0)
+    shelter_cord_latitude = models.IntegerField(verbose_name='координаты - широта', default=0)
     shelter_cord_longitude = models.IntegerField(verbose_name='координаты - долгота', default=0)
 
 
 class Donate(Core):
     """ Класс для финансовой помощи - Сбер, ЯндексДеньги, PayPal... """
-    account = models.ForeignKey(Shelter, verbose_name='реквизиты счетов', blank=True, related_name='accounts', on_delete=models.PROTECT)
+    account = models.ForeignKey(Shelter,
+                                verbose_name='реквизиты счетов',
+                                blank=True,
+                                related_name='accounts',
+                                on_delete=models.PROTECT)
 
 
 class Social(Core):
@@ -139,7 +148,8 @@ class Menu(Core):
     seen_guests = models.BooleanField('виден незарегистрированным пользователям', default=True)
     seen_users = models.BooleanField('виден зарегистрированным пользователям', default=False)
     seen_shelters = models.BooleanField('виден приютам', default=False)
-    parent = models.ForeignKey('self', verbose_name='суперкласс меню', null=True, blank=True, related_name='submenus', on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', verbose_name='суперкласс меню', null=True, blank=True, related_name='submenus',
+                               on_delete=models.CASCADE)
 
     objects = MenuManager()
 
