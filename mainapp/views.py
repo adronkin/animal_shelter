@@ -40,6 +40,7 @@ class ShelterDetail(DetailView):
         context['pets_list'] = Pet.objects.all()
         return context
 
+
 def shelter_card(request, pk):
     shelter = get_object_or_404(Shelter, pk=pk)
     context = {
@@ -68,7 +69,6 @@ def get_year_output(year):
 
 
 def get_month_output(month):
-
     if month == 1:
         month_output = 'месяц'
     elif 4 >= month >= 2:
@@ -110,6 +110,7 @@ def pet_list(request, page=1):
     }
     return render(request, 'mainapp/pets.html', content)
 
+
 def cat_list(request, page=1):
     title = 'СПИСОК ПИТОМЦЕВ'
     cats = Pet.objects.filter(pet_category_id=5)
@@ -127,26 +128,58 @@ def dog_list(request, page=1):
     dogs = Pet.objects.filter(pet_category_id=6)
     pet_class = PetCategory.objects.get(id=6)
     content = {
-    'pet_class': pet_class,
+        'pet_class': pet_class,
         'title': title,
         'pets': dogs,
     }
     return render(request, 'mainapp/dogs.html', content)
+
 
 class Contact(TemplateView):
     """ Страница контактов интернет-магазина """
     template_name = 'mainapp/contact.html'
 
 
-# def shelter_list_for_map(request):
-#     # список приютов для отображения на карте - пока что для примера
-#
-#
-#     username = request.GET.get('username', None)
-#     data = {
-#         'is_taken': User.objects.filter(username__iexact=username).exists()
-#     }
-#     return JsonResponse(data)
+def shelter_list_for_map(request):
+    # список приютов для отображения на карте
+    shelters = Shelter.objects.values_list('id')
+
+    data = {
+        "type": "FeatureCollection",
+    }
+
+    features = []
+
+    for i in shelters:
+        shelter = get_object_or_404(Shelter, pk=i)
+
+        shelter_id = i
+        shelter_coordinates = [shelter.shelter_cord_latitude, shelter.shelter_cord_longitude]
+        shelter_name = "Приют " + shelter.name
+
+        shelter_marker = {
+            "type": "Feature",
+            "id": shelter_id,
+            "geometry": {
+                "type": "Point",
+                "coordinates": shelter_coordinates
+            },
+            "properties": {
+                "balloonContent": shelter_name,
+                "hintContent": shelter_name
+            },
+            "options": {
+                "preset": "islands#blueDogIcon"
+            }
+        }
+
+        features.append(shelter_marker)
+
+    features_dict = {"features": features}
+    data.update(features_dict)
+
+    print('111111', data)
+    return JsonResponse(data)
 
 
 class About(TemplateView):
@@ -194,6 +227,7 @@ class SearchView(ListView):
     """форма поиска"""
     template_name = 'mainapp/includes/search_list.html'
     model = Pet
+
     def get_queryset(self):
         super(SearchView, self).get_queryset()
         query = self.request.GET.get('search')

@@ -27,7 +27,7 @@ function init() {
 
     $.ajax({
         // В файле data.json заданы геометрия, опции и данные меток .
-        url: "/static/js/json/maps_data.json"
+        url: "json_data/"
     }).done(function (data) {
         objectManager.add(data);
     });
