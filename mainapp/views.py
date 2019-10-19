@@ -155,7 +155,9 @@ def shelter_list_for_map(request):
 
         shelter_id = i
         shelter_coordinates = [shelter.shelter_cord_latitude, shelter.shelter_cord_longitude]
-        shelter_name = "Приют " + shelter.name
+        shelter_name = "Приют " + shelter.name + \
+                       "<br>Адрес: " + str(shelter.shelter_city) + \
+                       ", " + shelter.shelter_address
 
         shelter_marker = {
             "type": "Feature",
@@ -178,7 +180,6 @@ def shelter_list_for_map(request):
     features_dict = {"features": features}
     data.update(features_dict)
 
-    print('111111', data)
     return JsonResponse(data)
 
 
