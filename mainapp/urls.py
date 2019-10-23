@@ -3,7 +3,7 @@ from django.urls import path, include
 from .views import (
     Index, ShelterList, ShelterDetail, shelter_card, PetList, pet_list, pet_card,
     Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements,
-    SearchView, cat_list, dog_list)
+    SearchView, cat_list, dog_list, shelter_list_for_map)
 
 app_name = basename(dirname(abspath(__file__)))
 
@@ -21,6 +21,7 @@ urlpatterns = [
 
     path('', Index.as_view(), name='index'),
     path('contact/', Contact.as_view(), name='contact'),
+    path('contact/json_data/', shelter_list_for_map, name='json_data'),
     path('about/', About.as_view(), name='about'),
     path('cats/', Cats.as_view(), name='cats'),
     path('dogs/', Dogs.as_view(), name='dogs'),
@@ -29,5 +30,4 @@ urlpatterns = [
     path('blog-single/', BlogSingle.as_view(), name='blog-single'),
     path('elements/', Elements.as_view(), name='elements'),
     path('search/list/', SearchView.as_view(), name='search_list'),
-
 ]
