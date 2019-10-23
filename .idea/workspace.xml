@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animals_helper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/registration/login.html" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="adminapp/migrations/" />
@@ -408,7 +408,7 @@
       <workItem from="1571249103086" duration="8720000" />
       <workItem from="1571337404202" duration="6010000" />
       <workItem from="1571428740570" duration="264000" />
-      <workItem from="1571642041327" duration="12353000" />
+      <workItem from="1571642041327" duration="12615000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -557,11 +557,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571812418795</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="mainapp test">
+      <created>1571817001523</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571817001523</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223849000" />
+    <option name="totallyTimeSpent" value="224111000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -702,7 +709,8 @@
     <MESSAGE value="merge with alyonkazz" />
     <MESSAGE value="merge with Artur" />
     <MESSAGE value="working on Picture output and Pet model in one create form" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on Picture output and Pet model in one create form" />
+    <MESSAGE value="mainapp test" />
+    <option name="LAST_COMMIT_MESSAGE" value="mainapp test" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_detail.html">

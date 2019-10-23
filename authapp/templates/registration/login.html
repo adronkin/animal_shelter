@@ -18,15 +18,21 @@
             </form>
         </div>
     </div>
+
     <a class="social" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
      ВКонтакте
     </a>
+
     <a class="social" href="{% url 'social:begin' 'google-oauth2' %}?next=/">
      Google
     </a>
-    </a>
+
     <a class="social" href="{% url 'social:begin' 'facebook' %}?next=/">
      Facebook
+    </a>
+
+    <a class="social" href="{% url 'social:begin' 'odnoklassniki-oauth2' %}?next=/">
+     Одноклассники
     </a>
 
 {% endblock %}
