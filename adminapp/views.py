@@ -13,8 +13,8 @@ from django.views.generic.detail import SingleObjectMixin
 
 from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
-    ImageUpdateForm\
-    # , ShelterPetWithImagesFormset
+    ImageUpdateForm
+    # ShelterPetWithImagesFormset
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, Core
 
 
@@ -435,7 +435,7 @@ class PetCreate(SingleObjectMixin, FormView):
     model = Shelter
     template_name = 'adminapp/pet/pet_create.html'
 
-    def get (self, requesr, *args, **kwargs):
+    def get(self, requesr, *args, **kwargs):
         # The Pet we're editing:
         self.object = self.get_object(queryset=Shelter.objects.all())
         return super().get(requesr, *args, **kwargs)
@@ -445,9 +445,9 @@ class PetCreate(SingleObjectMixin, FormView):
         self.object = self.get_object(queryset=Pet.objects.all())
         return super().post(request, *args, **kwargs)
 
-    def get_form(self, form_class=None):
-        # Use our big formset of formsets, and pass in the Publisher object.
-        return ShelterPetWithImagesFormset(**self.get_form_kwargs(), instance=self.object)
+    # def get_form(self, form_class=None):
+    #     # Use our big formset of formsets, and pass in the Publisher object.
+    #     return ShelterPetWithImagesFormset(**self.get_form_kwargs(), instance=self.object)
 
     def form_valid(self, form):
         # If the form is valid, redirect to the supplied URL.
@@ -465,7 +465,6 @@ class PetCreate(SingleObjectMixin, FormView):
         return reverse_lazy('adminapp:shelter_detail', args=[self.object.shelter.pk])
         # else
         # return reverse('adminapp:shelter_detail', kwargs={'pk': self.object.pk})
-
 
 
 # def jojo(request):
