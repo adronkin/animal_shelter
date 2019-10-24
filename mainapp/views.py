@@ -56,6 +56,7 @@ class PetList(ListView):
 
 
 def get_year_output(year):
+    """ вывод года с правильным окончанием """
     year_output = 'год(-а)'
 
     if year == 1:
@@ -69,6 +70,7 @@ def get_year_output(year):
 
 
 def get_month_output(month):
+    """ вывод месяца с правильным окончанием """
     if month == 1:
         month_output = 'месяц'
     elif 4 >= month >= 2:
@@ -141,7 +143,7 @@ class Contact(TemplateView):
 
 
 def shelter_list_for_map(request):
-    # список приютов для отображения на карте
+    """ Cписок приютов для отображения на карте """
     shelters = Shelter.objects.values_list('id')
 
     data = {
