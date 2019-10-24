@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="mainapp views.py - добавила комментарии">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_db.json" beforeDir="false" afterPath="$PROJECT_DIR$/test_db.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,40 +30,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>banner-content</find>
-      <find>border</find>
-      <find>'mainapp/</find>
-      <find>default_manager</find>
-      <find>PetAdminUpdateForm</find>
-      <find>update.html</find>
-      <find>_update.html</find>
-      <find>Image</find>
-      <find>form</find>
-      <find>pet_form</find>
-      <find>image</find>
-      <find>succes</find>
-      <find>Category</find>
-      <find>f'Категория: {self.object.petcategory.name}'</find>
-      <find>Deteil</find>
-      <find>Detail</find>
-      <find>success</find>
-      <find>shelter_li</find>
-      <find>_create</find>
-      <find>_update</find>
-      <find>Picture</find>
-      <find>HttpResponseRedirect</find>
-      <find>.pk</find>
-      <find>PictureInline</find>
-      <find>is_form_persisted</find>
-      <find>ForeignKey</find>
-      <find>menu</find>
-      <find>ptr_id</find>
-      <find>63</find>
-      <find>pet</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -70,11 +39,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="MERGE" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="57" />
-    <option name="width" value="1440" />
-    <option name="height" value="843" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -326,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571817001523</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="mainapp views.py - добавила комментарии">
+      <created>1571916024249</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1571916024249</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -387,7 +358,8 @@
     <MESSAGE value="merge with Artur" />
     <MESSAGE value="working on Picture output and Pet model in one create form" />
     <MESSAGE value="mainapp test" />
-    <option name="LAST_COMMIT_MESSAGE" value="mainapp test" />
+    <MESSAGE value="mainapp views.py - добавила комментарии" />
+    <option name="LAST_COMMIT_MESSAGE" value="mainapp views.py - добавила комментарии" />
   </component>
   <component name="masterDetails">
     <states>
