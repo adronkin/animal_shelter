@@ -1,15 +1,11 @@
 {% load static %}
 
 
-{% block search %}
-<div class="search_conteiner container">
+<div class="search_conteiner">
     <div class="search">
-        <form action="{% url 'mainapp:search_list' %}" method="get">
+        <form action="{% url 'mainapp:search_result_list' %}" method="get">
             <input class="search_input" type="text" name="search" placeholder="введите запрос...">
-
-<div class="search_fields">
-
-            <button type="submit" class="btn btn-outline-primary btn-lo">Найти</button>
+            <button type="submit" class="btn btn_search btn-outline-primary btn-lo">Найти</button>
             <div class="dropdown">
                 <div class="select">
                     <span>Выбор города</span>
@@ -18,11 +14,11 @@
                 <ul class="dropdown-menu">
                     <li>
                         Москва
-                        <input type="checkbox" name="sort_city" value="city">
+                        <input class="input_check" type="checkbox" name="sort_city" value="Москва">
                     </li>
                     <li>
-                        Краснодар
-                        <input type="checkbox" name="sort_city" value="city">
+                        Санкт-Петербург
+                        <input class="input_check" type="checkbox" name="sort_city" value="Санкт-Петербург">
                     </li>
                 </ul>
             </div>
@@ -34,11 +30,11 @@
                 <ul class="dropdown-menu">
                     <li>
                     Собаки
-                    <input type="checkbox" name="sort_animal" value="animal">
+                    <input class="input_check" type="checkbox" name="sort_animal" value="6">
                     </li>
                     <li>
                         Кошки
-                        <input type="checkbox" name="sort_animal" value="animal">
+                        <input class="input_check" type="checkbox" name="sort_animal" value="5">
                     </li>
                 </ul>
             </div>
@@ -48,26 +44,23 @@
                     <i class="fa fa-chevron-left"></i>
                 </div>
                 <ul class="dropdown-menu">
-                    <li>длинная<input type="checkbox" name="sort_wool" value="long"></li>
-                    <li>короткая<input type="checkbox" name="sort_wool" value="short"></li>
+                    <li>Средняя длина шерсти<input class="input_check" type="checkbox" name="sort_wool" value="Средняя длина шерсти"></li>
+                    <li>Длинношерстный<input class="input_check" type="checkbox" name="sort_wool" value="Длинношерстный"></li>
                 </ul>
             </div>
-
-</div>
-
         </form>
-        <div class="result">
+        <div class="search_result">
             <ul>
+                <h3 class="{% if request.resolver_match.url_name == 'index' %}hidden{% endif %}">Результат поиска:</h3>
                 {% for n in object_list %}
-                    <li>
-                        <a href="">
-                            {{ n }}
-                        </a>
-                    </li>
+                <li>
+                    <a href="{% url 'mainapp:pet_card' n.pk %}">
+                        {{ n }}
+                    </a>
+                </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 </div>
 
-{% endblock %}

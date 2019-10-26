@@ -226,17 +226,23 @@ class Elements(TemplateView):
 
 class SearchView(ListView):
     """форма поиска"""
-    template_name = 'mainapp/includes/search_list.html'
+    template_name = 'mainapp/search_result_list.html'
     model = Pet
 
     def get_queryset(self):
-        super(SearchView, self).get_queryset()
-        query = self.request.GET.get('search')
+        queryset = super().get_queryset()
+        search = self.request.GET.get('search')
+        sort_city = self.request.GET.get('sort_city')
+        sort_wool = self.request.GET.get('sort_wool')
+        sort_animal = self.request.GET.get('sort_animal')
 
-        if query:
-            query = self.model.objects.filter(name__icontains=query)
+        if search:
+            queryset = queryset.filter(name__icontains=search.title())
+        if sort_city:
+            queryset = queryset.filter(pet_shelter__shelter_city__name=sort_city)
+        if sort_wool:
+            queryset = queryset.filter(pet_wool_length__name=sort_wool)
+        if sort_animal:
+            queryset = queryset.filter(pet_category_id=sort_animal)
 
-        else:
-            query = self.model.objects.all()
-
-        return query
+        return queryset
