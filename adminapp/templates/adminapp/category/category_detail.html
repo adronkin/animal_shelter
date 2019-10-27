@@ -1,0 +1,33 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1>{{ petcategory.name }}</h1>
+                    <p>{{ petcategory.description }}</p>
+                    <p>
+                        <a href="{% url 'adminapp:category_update' object.pk %}"
+                           class="btn btn-danger">
+                            редактировать
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'adminapp:category_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

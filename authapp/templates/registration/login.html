@@ -1,0 +1,38 @@
+{% extends  'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <h1 class="text-center">Авторизация</h1>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Войдите в свой аккаунт</h4>
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+
+                {{ form|crispy }}
+
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="social" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+     ВКонтакте
+    </a>
+
+    <a class="social" href="{% url 'social:begin' 'google-oauth2' %}?next=/">
+     Google
+    </a>
+
+    <a class="social" href="{% url 'social:begin' 'facebook' %}?next=/">
+     Facebook
+    </a>
+
+    <a class="social" href="{% url 'social:begin' 'odnoklassniki-oauth2' %}?next=/">
+     Одноклассники
+    </a>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.815724,
+          37.56084
+        ]
+      },
+      "properties": {
+        "balloonContent": "Содержимое балуна0 - название приюта",
+        "clusterCaption": "Еще одна метка",
+        "hintContent": "Текст подсказки - название приюта"
+      },
+      "options": {
+        "preset": "islands#blueDogIcon"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.715724,
+          37.66084
+        ]
+      },
+      "properties": {
+        "balloonContent": "Содержимое балуна1 - название приюта",
+        "clusterCaption": "Еще одна метка",
+        "hintContent": "Текст подсказки - название приюта"
+      },
+      "options": {
+        "preset": "islands#blueDogIcon"
+      }
+    }
+  ]
+}

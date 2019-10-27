@@ -1,0 +1,66 @@
+{% load static %}
+
+
+<div class="search_conteiner">
+    <div class="search">
+        <form action="{% url 'mainapp:search_result_list' %}" method="get">
+            <input class="search_input" type="text" name="search" placeholder="введите запрос...">
+            <button type="submit" class="btn btn_search btn-outline-primary btn-lo">Найти</button>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Выбор города</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                        Москва
+                        <input class="input_check" type="checkbox" name="sort_city" value="Москва">
+                    </li>
+                    <li>
+                        Санкт-Петербург
+                        <input class="input_check" type="checkbox" name="sort_city" value="Санкт-Петербург">
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Выбрать животное</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>
+                    Собаки
+                    <input class="input_check" type="checkbox" name="sort_animal" value="6">
+                    </li>
+                    <li>
+                        Кошки
+                        <input class="input_check" type="checkbox" name="sort_animal" value="5">
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                    <span>Тип шерсти</span>
+                    <i class="fa fa-chevron-left"></i>
+                </div>
+                <ul class="dropdown-menu">
+                    <li>Средняя длина шерсти<input class="input_check" type="checkbox" name="sort_wool" value="Средняя длина шерсти"></li>
+                    <li>Длинношерстный<input class="input_check" type="checkbox" name="sort_wool" value="Длинношерстный"></li>
+                </ul>
+            </div>
+        </form>
+        <div class="search_result">
+            <ul>
+                <h3 class="{% if request.resolver_match.url_name == 'index' %}hidden{% endif %}">Результат поиска:</h3>
+                {% for n in object_list %}
+                <li>
+                    <a href="{% url 'mainapp:pet_card' n.pk %}">
+                        {{ n }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+

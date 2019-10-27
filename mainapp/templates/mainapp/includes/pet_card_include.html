@@ -1,0 +1,23 @@
+{% block content %}
+<!-- Start cat-list Area -->
+<div class="pet-modal-form" style="display: block">
+        {% for img in pet.images.all %}
+        <a href="{{ img.image.url }}"><img style="height: 200px" src="{{ img.image.url }}" alt=""></a>
+        {% endfor %}
+		<br>
+        Приют: {{pet.pet_shelter}}<br>
+        Питомец: {{ pet.pet_category }}
+        Порода: {{pet.pet_breed}}<br>
+        Пол: {{pet.pet_gender}}<br>
+        Возраст:
+        {{pet.age}} {{ year_output }},{{pet.month}} {{ month_output }}<br> лет
+        Размер: {{pet.pet_size}}<br>
+        Длина шерсти: {{pet.pet_wool_length}}<br>
+        Цвет: {{pet.pet_color}}<br>
+        Характер: {{pet.pet_character}}<br>
+        Состояние: {{pet.pet_status}}<br>
+        Город: {{pet.pet_shelter.shelter_city}}<br>
+        Связаться по телефону {{ pet.pet_shelter.shelter_phone }}<br>
+</div>
+<!-- End cat-list Area -->
+{% endblock %}
