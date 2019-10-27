@@ -29,5 +29,5 @@ urlpatterns = [
     path('blog-home/', BlogHome.as_view(), name='blog-home'),
     path('blog-single/', BlogSingle.as_view(), name='blog-single'),
     path('elements/', Elements.as_view(), name='elements'),
-    path('search/list/', SearchView.as_view(), name='search_list'),
+    path('search/result/list/', SearchView.as_view(), name='search_result_list'),
 ]
