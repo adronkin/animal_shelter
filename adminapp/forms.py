@@ -1,8 +1,8 @@
 from PIL import Image
 from django import forms
-from django.core.files import File
 from django.forms.models import inlineformset_factory, BaseInlineFormSet
 from django.utils.translation import ugettext_lazy as _
+from django.core.files import File
 from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
 
 
@@ -86,33 +86,35 @@ class BreedUpdateForm(forms.ModelForm):
 
 
 class ImageUpdateForm(forms.ModelForm):
-    # class Meta:
-    #     model = Picture
-    #     fields = ('image',)
+    class Meta:
+        model = Picture
+        fields = ('image',)
+
+
+class PhotoForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput())
     y = forms.FloatField(widget=forms.HiddenInput())
-    width = forms.FloatField(widget=forms.HiddenInput())
-    height = forms.FloatField(widget=forms.HiddenInput())
+    image_width = forms.FloatField(widget=forms.HiddenInput())
+    image_height = forms.FloatField(widget=forms.HiddenInput())
 
     class Meta:
         model = Picture
-        fields = ('image', 'x', 'y', 'width', 'height', )
+        fields = ('image', 'x', 'y', 'image_height', 'image_width')
 
     def save(self):
-        photo = super(ImageUpdateForm, self).save()
+        photo = super(PhotoForm, self).save(commit=False)
 
         x = self.cleaned_data.get('x')
         y = self.cleaned_data.get('y')
-        w = self.cleaned_data.get('width')
-        h = self.cleaned_data.get('height')
+        w = self.cleaned_data.get('image_width')
+        h = self.cleaned_data.get('image_height')
 
-        image = Image.open(photo.file)
-        cropped_image = image.crop((x, y, w+x, h+y))
+        image = Image.open(photo.image)
+        cropped_image = image.crop((x, y, w + x, h + y))
         resized_image = cropped_image.resize((262, 350), Image.ANTIALIAS)
-        resized_image.save(photo.file.path)
+        resized_image.save(photo.image.path)
 
-        return photo
-
+        return super(PhotoForm, self).save(commit=True)
 
 # Набор форм для редактирования изображений относящихся к питомцу
 # PetImageFormset = inlineformset_factory(

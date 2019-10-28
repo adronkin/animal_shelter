@@ -38,8 +38,8 @@ urlpatterns = [
     path('shelter/update/<int:pk>/', adminapp.ShelterUpdate.as_view(), name='shelter_update'),
     path('shelter/delete/<int:pk>/', adminapp.ShelterDelete.as_view(), name='shelter_delete'),
 
-    # path('create/image/', adminapp.ImageCreate.as_view(model=Picture), name='image_create'),
-    path('create/image/', adminapp.photo_list, name='image_create'),
+    path('create/image/', adminapp.ImageCreate.as_view(model=Picture), name='image_create'),
+    # path('update/image/<int:pk>/', adminapp.PhotoView.as_view(), name='image_update'),
     path('update/image/<int:pk>/', adminapp.ImageUpdate.as_view(model=Picture), name='image_update'),
     path('delete/image/<int:pk>/', adminapp.ImageDelete.as_view(model=Picture), name='image_delete'),
 ]
