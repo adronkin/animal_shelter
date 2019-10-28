@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect, render, get_object_or_404
 from django.template import RequestContext
 from django.template.context_processors import csrf
 from django.urls import reverse_lazy, reverse
@@ -604,6 +604,18 @@ class ImageUpdate(UpdateView):
         data = super(ImageUpdate, self).get_context_data(**kwargs)
         data['return_page'] = self.request.META.get('HTTP_REFERER')
         return data
+
+
+def photo_list(request):
+    photos = Picture.objects.all()
+    if request.method == 'POST':
+        form = ImageUpdateForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('photo_list')
+    else:
+        form = ImageUpdateForm()
+    return render(request, 'adminapp/image_create.html', {'form': form, 'photos': photos})
 
 
 class ImageDelete(DeleteView):

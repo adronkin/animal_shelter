@@ -1,4 +1,6 @@
+from PIL import Image
 from django import forms
+from django.core.files import File
 from django.forms.models import inlineformset_factory, BaseInlineFormSet
 from django.utils.translation import ugettext_lazy as _
 from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
@@ -84,9 +86,32 @@ class BreedUpdateForm(forms.ModelForm):
 
 
 class ImageUpdateForm(forms.ModelForm):
+    # class Meta:
+    #     model = Picture
+    #     fields = ('image',)
+    x = forms.FloatField(widget=forms.HiddenInput())
+    y = forms.FloatField(widget=forms.HiddenInput())
+    width = forms.FloatField(widget=forms.HiddenInput())
+    height = forms.FloatField(widget=forms.HiddenInput())
+
     class Meta:
         model = Picture
-        fields = ('image',)
+        fields = ('image', 'x', 'y', 'width', 'height', )
+
+    def save(self):
+        photo = super(ImageUpdateForm, self).save()
+
+        x = self.cleaned_data.get('x')
+        y = self.cleaned_data.get('y')
+        w = self.cleaned_data.get('width')
+        h = self.cleaned_data.get('height')
+
+        image = Image.open(photo.file)
+        cropped_image = image.crop((x, y, w+x, h+y))
+        resized_image = cropped_image.resize((262, 350), Image.ANTIALIAS)
+        resized_image.save(photo.file.path)
+
+        return photo
 
 
 # Набор форм для редактирования изображений относящихся к питомцу
