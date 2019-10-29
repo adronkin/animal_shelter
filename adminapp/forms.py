@@ -85,13 +85,13 @@ class BreedUpdateForm(forms.ModelForm):
         }
 
 
+# class ImageUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Picture
+#         fields = ('image',)
+
+
 class ImageUpdateForm(forms.ModelForm):
-    class Meta:
-        model = Picture
-        fields = ('image',)
-
-
-class PhotoForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput())
     y = forms.FloatField(widget=forms.HiddenInput())
     image_width = forms.FloatField(widget=forms.HiddenInput())

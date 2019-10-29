@@ -13,7 +13,7 @@ from django.views.generic.detail import SingleObjectMixin
 
 from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
-    ImageUpdateForm, PhotoForm
+    ImageUpdateForm
 # ShelterPetWithImagesFormset
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, Core
 
@@ -605,24 +605,24 @@ class ImageUpdate(UpdateView):
         data['return_page'] = self.request.META.get('HTTP_REFERER')
         return data
 
-    def get(self, request, pk):
-        photos = Picture.objects.all()
-        form = PhotoForm
-        context = {
-            'photos': photos,
-            'form': form
-        }
-        return render(request, 'adminapp/image_create.html', context)
-
-    def post(self, request, pk):
-        form = PhotoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Image has been saved")
-            return redirect('adminapp:image_update')
-        else:
-            messages.error(request, "Correct the following errors")
-            return redirect('adminapp:image_update')
+    # def get(self, request, pk):
+    #     photos = Picture.objects.all()
+    #     form = ImageUpdateForm
+    #     context = {
+    #         'photos': photos,
+    #         'form': form
+    #     }
+    #     return render(request, 'adminapp/image_create.html', context)
+    #
+    # def post(self, request, pk):
+    #     form = ImageUpdateForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         messages.success(request, "Image has been saved")
+    #         return redirect('adminapp:image_update')
+    #     else:
+    #         messages.error(request, "Correct the following errors")
+    #         return redirect('adminapp:image_update')
 
 
 class ImageDelete(DeleteView):

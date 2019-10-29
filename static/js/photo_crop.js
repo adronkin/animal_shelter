@@ -20,8 +20,8 @@ $(function () {
         $image.cropper({
             viewMode: 1,
             aspectRatio: 1 / 1,
-            minCropBoxWidth: 200,
-            minCropBoxHeight: 200,
+            minCropBoxWidth: 263,
+            minCropBoxHeight: 350,
             ready: function () {
                 $image.cropper("setCanvasData", canvasData);
                 $image.cropper("setCropBoxData", cropBoxData);
