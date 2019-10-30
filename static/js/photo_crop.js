@@ -19,7 +19,7 @@ $(function () {
     $("#modalCrop").on("shown.bs.modal", function () {
         $image.cropper({
             viewMode: 1,
-            aspectRatio: 1 / 1,
+            aspectRatio: 263 / 350,
             minCropBoxWidth: 263,
             minCropBoxHeight: 350,
             ready: function () {
