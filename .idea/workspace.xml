@@ -45,15 +45,16 @@
     </option>
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectId" id="1SpoIWJmGebW8LWaWDQIOETX2M6" />
+  <component name="ProjectId" id="1SsXTv8imuA48L0Yia4PkQnrA25" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django-Crop-Upload-Image-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -141,7 +142,7 @@
       <workItem from="1571337404202" duration="6010000" />
       <workItem from="1571428740570" duration="264000" />
       <workItem from="1571642041327" duration="12615000" />
-      <workItem from="1572269821982" duration="4259000" />
+      <workItem from="1572353293783" duration="564000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -304,17 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1571916024249</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="photo_crop.js работает при редактировании фото пета (сохранение не работает)">
+      <created>1572280918495</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1572280918495</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
-  </component>
-  <component name="TodoView" selected-index="3">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -335,7 +334,13 @@
       <map>
         <entry key="Branch">
           <value>
-            <list />
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="alyonkazz" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
         <entry key="User">
@@ -367,18 +372,10 @@
     <MESSAGE value="mainapp test" />
     <MESSAGE value="mainapp views.py - добавила комментарии" />
     <MESSAGE value="merge Vagan" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge Vagan" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/adminapp/views.py</url>
-          <line>586</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Cropper.js (не работает)" />
+    <MESSAGE value="Cropper.js c css и js (не работает)" />
+    <MESSAGE value="photo_crop.js работает при редактировании фото пета (сохранение не работает)" />
+    <option name="LAST_COMMIT_MESSAGE" value="photo_crop.js работает при редактировании фото пета (сохранение не работает)" />
   </component>
   <component name="masterDetails">
     <states>

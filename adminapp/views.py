@@ -2,19 +2,19 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, redirect, render, get_object_or_404
+from django.shortcuts import render_to_response, render, redirect
 from django.template import RequestContext
 from django.template.context_processors import csrf
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views import generic
+from django.views import generic, View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView, FormView
 from django.views.generic.detail import SingleObjectMixin
 
 from adminapp import forms
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
     ImageUpdateForm
-    # ShelterPetWithImagesFormset
+# ShelterPetWithImagesFormset
 from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, Core
 
 
@@ -605,17 +605,24 @@ class ImageUpdate(UpdateView):
         data['return_page'] = self.request.META.get('HTTP_REFERER')
         return data
 
-
-def photo_list(request):
-    photos = Picture.objects.all()
-    if request.method == 'POST':
-        form = ImageUpdateForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('photo_list')
-    else:
-        form = ImageUpdateForm()
-    return render(request, 'adminapp/image_create.html', {'form': form, 'photos': photos})
+    # def get(self, request, pk):
+    #     photos = Picture.objects.all()
+    #     form = ImageUpdateForm
+    #     context = {
+    #         'photos': photos,
+    #         'form': form
+    #     }
+    #     return render(request, 'adminapp/image_create.html', context)
+    #
+    # def post(self, request, pk):
+    #     form = ImageUpdateForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         messages.success(request, "Image has been saved")
+    #         return redirect('adminapp:image_update')
+    #     else:
+    #         messages.error(request, "Correct the following errors")
+    #         return redirect('adminapp:image_update')
 
 
 class ImageDelete(DeleteView):

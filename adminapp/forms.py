@@ -1,8 +1,11 @@
+from io import BytesIO
+
 from PIL import Image
 from django import forms
-from django.core.files import File
+from django.core.files.base import ContentFile
 from django.forms.models import inlineformset_factory, BaseInlineFormSet
 from django.utils.translation import ugettext_lazy as _
+from django.core.files import File
 from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
 
 
@@ -85,34 +88,50 @@ class BreedUpdateForm(forms.ModelForm):
         }
 
 
+# class ImageUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Picture
+#         fields = ('image',)
+
+
 class ImageUpdateForm(forms.ModelForm):
-    # class Meta:
-    #     model = Picture
-    #     fields = ('image',)
     x = forms.FloatField(widget=forms.HiddenInput())
     y = forms.FloatField(widget=forms.HiddenInput())
-    width = forms.FloatField(widget=forms.HiddenInput())
-    height = forms.FloatField(widget=forms.HiddenInput())
+    image_width = forms.FloatField(widget=forms.HiddenInput())
+    image_height = forms.FloatField(widget=forms.HiddenInput())
 
     class Meta:
         model = Picture
-        fields = ('image', 'x', 'y', 'width', 'height', )
+        fields = ('image', 'x', 'y', 'image_height', 'image_width')
 
-    def save(self):
-        photo = super(ImageUpdateForm, self).save()
-
+    def save(self, *args, **kwargs):
+        photo = super(ImageUpdateForm, self).save(commit=False)
+        img = Image.open(photo.image)
+        new_image_io = BytesIO()
         x = self.cleaned_data.get('x')
         y = self.cleaned_data.get('y')
-        w = self.cleaned_data.get('width')
-        h = self.cleaned_data.get('height')
+        w = self.cleaned_data.get('image_width')
+        h = self.cleaned_data.get('image_height')
 
-        image = Image.open(photo.file)
-        cropped_image = image.crop((x, y, w+x, h+y))
-        resized_image = cropped_image.resize((262, 350), Image.ANTIALIAS)
-        resized_image.save(photo.file.path)
+        image = Image.open(photo.image)
+        cropped_image = image.crop((x, y, w + x, h + y))
+        resized = cropped_image.resize((263, 350), Image.ANTIALIAS)
 
-        return photo
+        if img.format == 'JPEG':
+            resized.save(new_image_io, format='JPEG')
+        elif img.format == 'PNG':
+            resized.save(new_image_io, format='PNG')
 
+        temp_name = photo.image.name
+        photo.image.delete(save=False)
+
+        photo.image.save(
+            temp_name,
+            content=ContentFile(new_image_io.getvalue()),
+            save=False
+        )
+
+        return super(ImageUpdateForm, self).save(*args, **kwargs)
 
 # Набор форм для редактирования изображений относящихся к питомцу
 # PetImageFormset = inlineformset_factory(
