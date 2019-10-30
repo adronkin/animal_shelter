@@ -592,9 +592,9 @@ class ImageUpdate(UpdateView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    def form_valid(self, form):
-        form.instance.related_obj_id = self.kwargs.get('pk')
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.instance.related_obj_id = self.kwargs.get('pk')
+    #     return super().form_valid(form)
 
     def get_success_url(self, **kwargs):
         # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
