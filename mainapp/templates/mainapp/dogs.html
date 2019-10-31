@@ -16,12 +16,13 @@
                                 <img src="{{ pet.images.first.image.url }}" alt="" class="img-fluid">
                                 <div class="overlay">
                                     <div class="text">
-                                        {{ pet.name }},
-                                        {% if pet.age == 0 %} {{ pet.month }} мес.,
+
+                                        <p class="text_pet-info">{{ pet.name }},</p>
+                                        <p class="text_pet-info">{% if pet.age == 0 %} {{ pet.month }} мес.,
                                         {% elif pet.age >= 1 and pet.age <= 4 %} {{ pet.age }} г.,
                                         {% else %} {{ pet.age }} лет,
-                                        {% endif %}
-                                        {{ pet.pet_status }}
+                                        {% endif %}</p>
+                                        <p>{{ pet.pet_status }}</p>
                                     </div>
                                 </div>
                             </div>

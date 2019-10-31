@@ -3017,9 +3017,14 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding: 10%;
     top: 80%;
     left: 30%;
-    transform: translate(-50%, -50%);
+    transform: translate(-35%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+    display: block;
+}
+
+.text_pet-info {
+        margin: 0;
 }
 
 .Volunteer-form-area .select-option .nice-select {

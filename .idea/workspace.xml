@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572448760786</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="К имени, при наведении на питомца, добавлен его статус и возраст">
+      <created>1572539174264</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1572539174264</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="внес 1 приют и 1 питомца" />
     <MESSAGE value="обновил репозиторий из test-2" />
     <MESSAGE value="удалил ненужные изображения и миграции" />
     <MESSAGE value="добавил контекстный процессор для меню, &#10;подключил его в settings,&#10;реализовал модели меню и менеджера меню в mainapp.models,&#10;создал mainmenu.html в includes и выполнил его включение в блок mainmenu base.html" />
@@ -417,7 +420,8 @@
     <MESSAGE value="photo_crop.js (добавила файлы):&#10; + работает редактирование при выборе фото пета&#10; + сохранение фото в media\images&#10; - фото не привязано к пету&#10; - реализовано только в ImageUpdate adminapp" />
     <MESSAGE value="photo_crop.js (добавила файлы):&#10; + работает редактирование при выборе фото пета&#10; + сохранение фото в media\images&#10; - фото не привязано к пету:&#10;   - в ImageUpdate adminapp работает замена фото&#10; - реализовано только в ImageUpdate adminapp" />
     <MESSAGE value="photo_crop.js (добавила файлы):&#10; + работает редактирование при выборе фото пета&#10; + сохранение фото в media\images&#10; - фото не привязано к пету:&#10;   - в ImageUpdate adminapp работает как замена фото&#10; - реализовано только в ImageUpdate adminapp&#10; + рамка поправлена" />
-    <option name="LAST_COMMIT_MESSAGE" value="photo_crop.js (добавила файлы):&#10; + работает редактирование при выборе фото пета&#10; + сохранение фото в media\images&#10; - фото не привязано к пету:&#10;   - в ImageUpdate adminapp работает как замена фото&#10; - реализовано только в ImageUpdate adminapp&#10; + рамка поправлена" />
+    <MESSAGE value="К имени, при наведении на питомца, добавлен его статус и возраст" />
+    <option name="LAST_COMMIT_MESSAGE" value="К имени, при наведении на питомца, добавлен его статус и возраст" />
   </component>
   <component name="masterDetails">
     <states>
