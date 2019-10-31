@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/image_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
