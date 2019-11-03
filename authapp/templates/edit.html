@@ -3,6 +3,9 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
+
+
+
 <form action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 <div class="profile_container">{{ system_form|crispy }}</div>
@@ -11,4 +14,22 @@
 <input class="form-control" type="submit" value="сохранить"></form>
     <button class="btn btn-round form-control last">
 <a href="{% url 'main:index' %}" class="">на главную</a></button>
+    <hr>
+    Мои зарезервированные питомцы:<br>
+        {% for item in reserve_pets %}
+                    <span class="pet_name">{{ item.pet.name }}</span><br>
+        {{ item.pet.pet_wool_length }}<br>
+        <button class="btn btn-round">
+            <a href="{% url 'reserve:remove' item.pk %}" class="">
+                удалить
+            </a>
+        </button>
+        <img src="{{item.pet.images.first.image.url}}" alt="" class="img-fluid">
+        <br>
+        <br>
+
+        {% endfor %}
+    <br>
+    <br>
+    <br>
 {% endblock %}

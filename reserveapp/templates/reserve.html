@@ -1,0 +1,25 @@
+{% load static %}
+<title>{{ title }}</title>
+Тут будут отображаться "зарезервированные" питомцы.
+    {% for item in reserve_pets %}
+                    <span class="pet_name">{{ item.pet.name }}</span><br>
+        {{ item.pet.pet_wool_length }}<br>
+        <button class="btn btn-round">
+            <a href="{% url 'reserve:remove' item.pk %}" class="">
+                удалить
+            </a>
+        </button>
+        <img style="width: 300px" src="{{item.pet.images.first.image.url}}" alt="" class="img-fluid">
+        <br><br>
+                <a href="{% url 'main:index' %}"> <!-- абстрактная ссылка на создание заявки -->
+        <br><br>
+        Отправить заявку в приют!
+        </a>
+    {% endfor %}
+    {% if reserve_pets %}
+            <div class="order_create">
+    </div>
+                <p>После подтверждения заявки зарезервированные питомцы из резерва будут перемещены в раздел "Мои заявки"</p>
+                </div>
+        <a href="{% url 'main:index' %}">на главную</a>
+    {% endif %}

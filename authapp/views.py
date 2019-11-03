@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 
 from authapp.models import ActivateUser
 from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm
+from mainapp.models import Pet
+from reserveapp.models import Reserve
 
 
 def register(response):
@@ -61,7 +63,7 @@ def verify(request, email, activation_key):
 @transaction.atomic
 def edit(request):
     title = 'Edit profile'
-
+    reserve_pets = Reserve.objects.filter(user=request.user)
     if request.method == 'POST':
         user_form = ActivateEditForm(request.POST, request.FILES, instance=request.user.activateuser)
         system_form = SystemEditForm(request.POST, instance=request.user)
@@ -75,5 +77,5 @@ def edit(request):
     else:
         user_form = ActivateEditForm(instance=request.user.activateuser)
         system_form = SystemEditForm(instance=request.user)
-    content = {'title': title,  'user_form': user_form, 'system_form': system_form}
+    content = {'title': title,  'user_form': user_form, 'system_form': system_form, 'reserve_pets': reserve_pets}
     return render(request, 'edit.html', content)
