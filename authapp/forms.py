@@ -53,3 +53,17 @@ class ActivateEditForm(UserChangeForm):
         for field_name, field in self.fields.items():
             if field_name == 'password':
                 field.widget = forms.HiddenInput()
+
+
+class TypeOfUserEditForm(UserChangeForm):
+
+    class Meta:
+        model = ActivateUser
+        fields = ('is_shelter',)
+        exclude = ('activation_key', 'activation_key_expires', 'user', 'tagline', 'age')
+
+    def __init__(self, *args, **kwargs):
+        super(TypeOfUserEditForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            if field_name == 'password':
+                field.widget = forms.HiddenInput()

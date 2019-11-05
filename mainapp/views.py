@@ -1,9 +1,25 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
+from django.urls import reverse
+from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
+from authapp.models import ActivateUser
 from mainapp.models import Pet, Shelter, PetCategory
+
+
+def check_user(request):
+    if request.user.is_authenticated:
+        user = get_object_or_404(ActivateUser, user=request.user)
+        if user.is_shelter is None:
+            return HttpResponseRedirect(reverse('auth:type_of_user'))
+        else:
+            return HttpResponseRedirect(reverse('main:index'))
+    else:
+        return HttpResponseRedirect(reverse('main:index'))
 
 
 class Index(TemplateView):

@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="К имени, при наведении на питомца, добавлен его статус и возраст">
+      <change afterPath="$PROJECT_DIR$/authapp/templates/type_of_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alyonkazz" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +54,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django-Crop-Upload-Image-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/authapp/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -59,19 +64,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\authapp\templates" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
+      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\mainapp\templates\mainapp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/category" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\mainapp\templates\mainapp" />
-      <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\authapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -138,6 +143,7 @@
       <workItem from="1571428740570" duration="264000" />
       <workItem from="1571642041327" duration="12615000" />
       <workItem from="1572353293783" duration="564000" />
+      <workItem from="1572946486344" duration="11207000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
