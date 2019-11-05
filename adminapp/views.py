@@ -120,6 +120,15 @@ class ShelterDelete(DeleteView):
         context['title'] = 'Удаление приюта'
         return context
 
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.is_active:
+            self.object.is_active = False
+        else:
+            self.object.is_active = True
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
 
 class CategoryList(ListView):
     """"Выводит список категорий"""
@@ -393,7 +402,6 @@ class BreedDelete(DeleteView):
         else:
             self.object.is_active = True
         self.object.save()
-
         return HttpResponseRedirect(self.get_success_url())
 
 
