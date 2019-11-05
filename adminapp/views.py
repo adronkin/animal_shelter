@@ -412,98 +412,27 @@ class PetList(ListView):
         return context
 
 
-# class PetCreate(CreateView):
-#     """Создание нового питомца"""
-#     model = Pet
-#     form_class = PetUpdateForm
-#     template_name = 'adminapp/pet/pet_create.html'
-#     success_url = reverse_lazy('adminapp:pet_list')
-#
-#     @method_decorator(user_passes_test(lambda x: x.is_superuser))
-#     def dispatch(self, *args, **kwargs):
-#         return super().dispatch(*args, **kwargs)
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['title'] = 'Добавить питомца'
-#         return context
-
-
-class PetCreate(SingleObjectMixin, FormView):
+class PetCreate(CreateView):
     """Создание нового питомца"""
-
-    model = Shelter
+    model = Pet
+    form_class = PetUpdateForm
     template_name = 'adminapp/pet/pet_create.html'
+    success_url = reverse_lazy('adminapp:pet_list')
 
-    def get(self, requesr, *args, **kwargs):
-        # The Pet we're editing:
-        self.object = self.get_object(queryset=Shelter.objects.all())
-        return super().get(requesr, *args, **kwargs)
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
-    def post(self, request, *args, **kwargs):
-        # The Pet we're uploading for:
-        self.object = self.get_object(queryset=Pet.objects.all())
-        return super().post(request, *args, **kwargs)
-
-    # def get_form(self, form_class=None):
-    #     # Use our big formset of formsets, and pass in the Publisher object.
-    #     return ShelterPetWithImagesFormset(**self.get_form_kwargs(), instance=self.object)
-
-    def form_valid(self, form):
-        # If the form is valid, redirect to the supplied URL.
-        form.save()
-
-        messages.add_message(
-            self.request,
-            messages.SUCCESS,
-            'Изменения сохранены.'
-        )
-
-        return HttpResponseRedirect(self.get_success_url())
-
-    def get_success_url(self):
-        return reverse_lazy('adminapp:shelter_detail', args=[self.object.shelter.pk])
-        # else
-        # return reverse('adminapp:shelter_detail', kwargs={'pk': self.object.pk})
-
-
-# def jojo(request):
-#     PetFormSet = inlineformset_factory(Core, Pet, Picture, fields='__all__')
-#     return render_to_response('adminapp/pet/pet_create.html', {
-#         'formset': PetFormSet,
-#     })
-
-# @login_required
-# def some_view(request, main_id=None, redirect_notice=None):
-#     c = {}
-#     c.update(csrf(request))
-#     c.update({'redirect_notice':redirect_notice})
-#
-#     NestedFormset = inlineformset_factory(Core, Pet, Picture, fields='name', can_delete=False, )
-#     main = None
-#     if main_id :
-#         main = Core.objects.get(id=id)
-#
-#     if request.method == 'POST':
-#         main_form = Core(request.POST, instance=main, prefix='mains')
-#         formset = NestedFormset(request.POST, request.FILES, instance=main, prefix='nesteds')
-#         if main_form.is_valid() and formset.is_valid():
-#             r = main_form.save(commit=False)
-#             formset.save()
-#             r.save()
-#             return HttpResponseRedirect('/Home_url/')
-#     else:
-#         main_form = Core(instance=main, prefix='mains')
-#         formset = NestedFormset(instance=main, prefix='nesteds')
-#     c.update({'main_form':main_form, 'formset': formset, 'main_id': main_id})
-#     return render_to_response('App_name/Main_nesteds.html', c, context_instance=RequestContext(request))
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Добавить питомца'
+        return context
 
 
 class PetUpdate(generic.UpdateView):
     """Редактирование карточки питомца"""
     model = Pet
-    form_class = forms.PetUpdateForm
-    image_form = forms.ImageUpdateForm
+    form_class = PetUpdateForm
     template_name = 'adminapp/pet/pet_update.html'
     success_url = reverse_lazy('adminapp:pet_list')
 
@@ -567,9 +496,8 @@ class PetDetail(DetailView):
 class ImageCreate(CreateView):
     """Реализует добавление изображений"""
     model = Picture
+    form_class = ImageUpdateForm
     template_name = 'adminapp/image_create.html'
-    success_url = reverse_lazy('adminapp:pet_create')
-    fields = ('image',)
 
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -578,6 +506,15 @@ class ImageCreate(CreateView):
     def form_valid(self, form):
         form.instance.related_obj_id = self.kwargs.get('pk')
         return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+        # return self.request.META.get('HTTP_REFERER')
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageCreate, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
 
 
 class ImageUpdate(UpdateView):
