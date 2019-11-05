@@ -17,7 +17,6 @@
                         <a href="{% url 'adminapp:image_update' object.pk %}" class="">добавить изображение</a>
                         {% for img in object.images.all %}
                             <img src="{{ img.image.url }}" alt="">
-                            <a href="{% url 'adminapp:image_update' img.pk %}" class="">редактировать изображение</a>
                             <a href="{% url 'adminapp:image_delete' img.pk %}" class="">удалить изображение</a>
                         {% endfor %}
                         <input class="form-control" type="submit" value="сохранить">
