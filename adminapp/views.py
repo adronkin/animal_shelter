@@ -509,7 +509,6 @@ class ImageCreate(CreateView):
 
     def get_success_url(self, **kwargs):
         return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
-        # return self.request.META.get('HTTP_REFERER')
 
     def get_context_data(self, **kwargs):
         data = super(ImageCreate, self).get_context_data(**kwargs)
@@ -523,15 +522,13 @@ class ImageUpdate(UpdateView):
     form_class = ImageUpdateForm
     template_name = 'adminapp/image_create.html'
 
-    # fields = ('image',)
-
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
-    # def form_valid(self, form):
-    #     form.instance.related_obj_id = self.kwargs.get('pk')
-    #     return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
 
     def get_success_url(self, **kwargs):
         # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
@@ -553,8 +550,7 @@ class ImageDelete(DeleteView):
         return super().dispatch(*args, **kwargs)
 
     def get_success_url(self, **kwargs):
-        # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
-        return self.request.META.get('HTTP_REFERER')
+        return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
 
     def get_context_data(self, **kwargs):
         data = super(ImageDelete, self).get_context_data(**kwargs)
