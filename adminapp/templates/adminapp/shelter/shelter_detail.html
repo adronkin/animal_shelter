@@ -37,6 +37,21 @@
                             удалить
                         </a>
                     </p>
+                    <h2>Питомцы приюта:</h2>
+                    <div class="row">
+                        {% for pet in shelter.pets.all %}
+                            <div class="col-lg-3 col-md-6">
+                                <a href="{% url 'adminapp:pet_detail' pet.pk %}">
+                                    <div class="single-cat-list">
+                                        <img src="{{ pet.images.first.image.url }}" alt="" class="img-fluid">
+                                        <div class="overlay">
+                                            <div class="text">{{ pet.name }}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
