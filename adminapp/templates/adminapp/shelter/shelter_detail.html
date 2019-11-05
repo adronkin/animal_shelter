@@ -17,6 +17,8 @@
                         </a>
                     {% endfor %}
                     <h1>{{ shelter.name }}</h1>
+                    <p>Логотип:</p>
+                    <img src="{{ shelter.shelter_logo.url }}" alt="">
                     <p>{{ shelter.description }}</p>
                     <p>Город: {{ shelter.shelter_city }}</p>
                     <p>Адрес: {{ shelter.shelter_address }}</p>
