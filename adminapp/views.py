@@ -501,7 +501,7 @@ class PetDetail(DetailView):
         return context
 
 
-class ImageCreate(CreateView):
+class ImageCreatePet(CreateView):
     """Реализует добавление изображений"""
     model = Picture
     form_class = ImageUpdateForm
@@ -519,7 +519,30 @@ class ImageCreate(CreateView):
         return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
 
     def get_context_data(self, **kwargs):
-        data = super(ImageCreate, self).get_context_data(**kwargs)
+        data = super(ImageCreatePet, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
+
+
+class ImageCreateShelter(CreateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = ImageUpdateForm
+    template_name = 'adminapp/image_create.html'
+
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('adminapp:shelter_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageCreateShelter, self).get_context_data(**kwargs)
         data['return_page'] = self.request.META.get('HTTP_REFERER')
         return data
 

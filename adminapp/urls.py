@@ -37,7 +37,8 @@ urlpatterns = [
     path('shelter/update/<int:pk>/', adminapp.ShelterUpdate.as_view(), name='shelter_update'),
     path('shelter/delete/<int:pk>/', adminapp.ShelterDelete.as_view(), name='shelter_delete'),
 
-    path('pet/update/<int:pk>/create/image/', adminapp.ImageCreate.as_view(model=Picture), name='image_create'),
+    path('pet/update/<int:pk>/create/image/', adminapp.ImageCreatePet.as_view(model=Picture), name='image_create_pet'),
+    path('shelter/update/<int:pk>/create/image/', adminapp.ImageCreateShelter.as_view(model=Picture), name='image_create_shelter'),
     path('update/image/<int:pk>/', adminapp.ImageUpdate.as_view(model=Picture), name='image_update'),
     path('delete/image/<int:pk>/', adminapp.ImageDelete.as_view(model=Picture), name='image_delete'),
 ]
