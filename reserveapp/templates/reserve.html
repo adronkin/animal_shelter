@@ -1,6 +1,6 @@
 {% load static %}
 <title>{{ title }}</title>
-Тут будут отображаться "зарезервированные" питомцы.
+Ваши избранные питомцы
     {% for item in reserve_pets %}
                     <span class="pet_name">{{ item.pet.name }}</span><br>
         {{ item.pet.pet_wool_length }}<br>
@@ -19,7 +19,7 @@
     {% if reserve_pets %}
             <div class="order_create">
     </div>
-                <p>После подтверждения заявки зарезервированные питомцы из резерва будут перемещены в раздел "Мои заявки"</p>
+                <p>После подтверждения заявки избранные питомцы будут перемещены в раздел "Мои заявки"</p>
                 </div>
         <a href="{% url 'main:index' %}">на главную</a>
     {% endif %}
