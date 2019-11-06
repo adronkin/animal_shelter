@@ -3,9 +3,6 @@ from io import BytesIO
 from PIL import Image
 from django import forms
 from django.core.files.base import ContentFile
-from django.forms.models import inlineformset_factory, BaseInlineFormSet
-from django.utils.translation import ugettext_lazy as _
-from django.core.files import File
 from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
 
 

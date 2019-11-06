@@ -54,6 +54,12 @@
                             </div>
                         {% endfor %}
                     </div>
+                    <p>
+                        <a href="{% url 'adminapp:pet_create_in_shelter' object.pk %}"
+                           class="btn btn-danger">
+                            Добавить питомца
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
