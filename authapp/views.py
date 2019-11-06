@@ -8,7 +8,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 from authapp.models import ActivateUser
-from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm, TypeOfUserEditForm, ShelterEditForm
+from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm, TypeOfUserEditForm
 from reserveapp.models import Reserve
 
 

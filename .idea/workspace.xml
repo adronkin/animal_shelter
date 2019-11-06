@@ -1,57 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="К имени, при наведении на питомца, добавлен его статус и возраст">
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_BU84VCd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_JEFMbbA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_N8AWvWB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_XmBvQF3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_XzEEshl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_ZPj992d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_n7WQMLN.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1540024758199966676_sIUBobz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Diego_1_c2HQ5ob.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Diego_2_eteL0tP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Diego_3_juPeZHS.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Diego_4_Q5kidAh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Diego_5_xkT2105.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Emmy_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Emmy_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Emmy_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Emmy_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Hitch_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Hitch_12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Hitch_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Hitch_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Leva_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Leva_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Leva_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Leva_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Martin_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Martin_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Martin_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Miron_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Miron_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Miron_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Sonya.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Sonya_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Sonya_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/Sonya_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/ct1_2Iyji81.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/ct1_qNNMYTu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/kitty1_1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/kitty1_2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/kitty1_3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/puppies_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/puppies_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/puppies_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/shelter/images/1.jpg" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2364">
@@ -83,22 +36,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
+        <entry file="file://$PROJECT_DIR$/authapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="107">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authapp/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-156">
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authapp/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="16" />
+            <state relative-caret-position="282">
+              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -142,6 +114,7 @@
       <find>Pet</find>
       <find>petc</find>
       <find>petcr</find>
+      <find>active_user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,8 +135,9 @@
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_create.html" />
         <option value="$PROJECT_DIR$/adminapp/urls.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html" />
-        <option value="$PROJECT_DIR$/authapp/views.py" />
         <option value="$PROJECT_DIR$/adminapp/views.py" />
+        <option value="$PROJECT_DIR$/authapp/views.py" />
+        <option value="$PROJECT_DIR$/mainapp/models.py" />
       </list>
     </option>
   </component>
@@ -191,6 +165,11 @@
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
               <item name="adminapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="authapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -549,15 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573065834163</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="into develop from alyonkazz">
+      <created>1573070366248</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1573070366248</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5031000" />
+    <option name="totallyTimeSpent" value="6899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -605,7 +590,14 @@
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
-              <option name="COLUMN_ORDER" />
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
@@ -633,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="синхронизировал с изменениями других участников из develop-ветки.&#10;удалил неиспользуемые шаблоны, SCSS.&#10;удалил {% load static %} из шаблонов, где статика не используется" />
     <MESSAGE value="merge with towardsbackwards" />
     <MESSAGE value="Merge branch 'pet_modal_form' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;mainapp/urls.py&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="adminapp:&#10;-pet_detail.html&#10;-views" />
@@ -658,30 +649,14 @@
     <MESSAGE value="Добавление изображения к редактируемому питомцу" />
     <MESSAGE value="Удаление изображения из карточки питомка (активность False)" />
     <MESSAGE value="Создание нового питомца, но без добавление изображения (добавить изображение через редактирование)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание нового питомца, но без добавление изображения (добавить изображение через редактирование)" />
+    <MESSAGE value="into develop from alyonkazz" />
+    <option name="LAST_COMMIT_MESSAGE" value="into develop from alyonkazz" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,6 +684,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminapp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authapp/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/adminapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2364">
@@ -719,10 +720,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html">
+    <entry file="file://$PROJECT_DIR$/authapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        <state relative-caret-position="-156">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
         </state>
       </provider>
     </entry>
