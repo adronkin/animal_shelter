@@ -3,12 +3,13 @@ from django.urls import path, include
 from .views import (
     Index, ShelterList, ShelterDetail, shelter_card, PetList, pet_list, pet_card,
     Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements,
-    SearchView, cat_list, dog_list, shelter_list_for_map)
+    SearchView, cat_list, dog_list, shelter_list_for_map, check_user)
 
 app_name = basename(dirname(abspath(__file__)))
 
 urlpatterns = [
-    path('', Index.as_view(), name='index'),
+    path('', check_user, name='check_user'),
+    path('index', Index.as_view(), name='index'),
     path('shelters/', ShelterList.as_view(), name='shelters'),
     path('shelters/<int:pk>/', ShelterDetail.as_view(), name='shelter_detail'),
     path('shelter/<int:pk>/', shelter_card, name='shelter_card'),
@@ -19,7 +20,7 @@ urlpatterns = [
     path('pets/<int:pk>/', pet_card, name='pet_card'),
     path('pets/page/<int:page>/', pet_list, name='page'),
 
-    path('', Index.as_view(), name='index'),
+    path('index', Index.as_view(), name='index'),
     path('contact/', Contact.as_view(), name='contact'),
     path('contact/json_data/', shelter_list_for_map, name='json_data'),
     path('about/', About.as_view(), name='about'),

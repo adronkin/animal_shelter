@@ -8,8 +8,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 from authapp.models import ActivateUser
-from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm
-from mainapp.models import Pet
+from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm, TypeOfUserEditForm
 from reserveapp.models import Reserve
 
 
@@ -79,3 +78,20 @@ def edit(request):
         system_form = SystemEditForm(instance=request.user)
     content = {'title': title,  'user_form': user_form, 'system_form': system_form, 'reserve_pets': reserve_pets}
     return render(request, 'edit.html', content)
+
+
+@transaction.atomic
+def edit_type_of_user(request):
+    title = 'Edit profile'
+
+    if request.method == 'POST':
+        user_form = TypeOfUserEditForm(request.POST, request.FILES, instance=request.user.activateuser, auto_id=False)
+        if user_form.is_valid():
+            user_form.save()
+            print()
+            return HttpResponseRedirect(reverse('main:index'))
+
+    else:
+        user_form = TypeOfUserEditForm(instance=request.user.activateuser, auto_id=False)
+    content = {'title': title,  'user_form': user_form}
+    return render(request, 'type_of_user.html', content)

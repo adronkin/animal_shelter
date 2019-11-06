@@ -2,24 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="К имени, при наведении на питомца, добавлен его статус и возраст">
-      <change afterPath="$PROJECT_DIR$/reserveapp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/templates/reserve.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reserveapp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authapp/templates/type_of_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals_helper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals_helper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/cats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/dogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/pet_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/pet_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/pets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_1_c2HQ5ob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_2_eteL0tP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_3_juPeZHS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_4_Q5kidAh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_5_xkT2105.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_3.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +134,7 @@
     <findStrings>
       <find>get_formset_class</find>
       <find>ImageUpdate</find>
+      <find>Pet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,6 +156,7 @@
         <option value="$PROJECT_DIR$/adminapp/views.py" />
         <option value="$PROJECT_DIR$/adminapp/urls.py" />
         <option value="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_detail.html" />
+        <option value="$PROJECT_DIR$/authapp/views.py" />
       </list>
     </option>
   </component>
@@ -160,11 +184,6 @@
               <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
               <item name="adminapp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animals_helper" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animals_helper" type="462c0819:PsiDirectoryNode" />
-              <item name="mainapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -520,10 +539,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3200000" />
+    <option name="totallyTimeSpent" value="3682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -541,9 +561,9 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" visible="true" weight="0.25987262" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.25987262" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.25987262" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.29299363" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.29299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
