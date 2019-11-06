@@ -14,7 +14,7 @@ from mainapp.models import Pet, Shelter, PetCategory
 def check_user(request):
     if request.user.is_authenticated:
         user = get_object_or_404(ActivateUser, user=request.user)
-        if user.is_shelter is None:
+        if user.is_shelter != 'SHELTER' and user.is_shelter != 'USER':
             return HttpResponseRedirect(reverse('auth:type_of_user'))
         else:
             return HttpResponseRedirect(reverse('main:index'))

@@ -3,40 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Diego_1_c2HQ5ob.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Diego_2_eteL0tP.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Diego_3_juPeZHS.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Diego_4_Q5kidAh.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Diego_5_xkT2105.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Emmy_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Emmy_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Emmy_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Emmy_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Hitch_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Hitch_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Hitch_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Hitch_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Leva_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Leva_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Leva_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Leva_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Martin_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Martin_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Martin_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Miron_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Miron_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Miron_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Sonya.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Sonya_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Sonya_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/Sonya_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/kitty1_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/kitty1_2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/kitty1_3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/puppies_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/puppies_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/puppies_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +55,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/authapp/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -170,7 +144,12 @@
       <workItem from="1571428740570" duration="264000" />
       <workItem from="1571642041327" duration="12615000" />
       <workItem from="1572353293783" duration="564000" />
-      <workItem from="1572946486344" duration="12251000" />
+      <workItem from="1572946486344" duration="12872000" />
+      <workItem from="1572995549500" duration="2000" />
+      <workItem from="1573040089139" duration="4850000" />
+      <workItem from="1573058439494" duration="171000" />
+      <workItem from="1573058623383" duration="451000" />
+      <workItem from="1573059099696" duration="5077000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -396,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572972977154</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="обрезанные картинки">
+      <created>1572975920936</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1572975920936</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="удалил ненужные изображения и миграции" />
     <MESSAGE value="добавил контекстный процессор для меню, &#10;подключил его в settings,&#10;реализовал модели меню и менеджера меню в mainapp.models,&#10;создал mainmenu.html в includes и выполнил его включение в блок mainmenu base.html" />
     <MESSAGE value="поправил стили - округлил кнопки, уменьшил размер шрифта на главной странице, удалил пару JS.&#10;подправил шаблоны, добавил кастомный логотип на странице приюта.&#10;отрефакторил view и urls.&#10;мелкие правки модели меню и сигналов" />
     <MESSAGE value="синхронизировал с изменениями других участников из develop-ветки.&#10;удалил неиспользуемые шаблоны, SCSS.&#10;удалил {% load static %} из шаблонов, где статика не используется" />
@@ -461,7 +446,8 @@
     <MESSAGE value="photo_crop.js (добавила файлы):&#10; + работает редактирование при выборе фото пета&#10; + сохранение фото в media\images&#10; - фото не привязано к пету:&#10;   - в ImageUpdate adminapp работает как замена фото&#10; - реализовано только в ImageUpdate adminapp&#10; + рамка поправлена" />
     <MESSAGE value="К имени, при наведении на питомца, добавлен его статус и возраст" />
     <MESSAGE value="Добавлена проверка приют/пользователь при входе" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена проверка приют/пользователь при входе" />
+    <MESSAGE value="обрезанные картинки" />
+    <option name="LAST_COMMIT_MESSAGE" value="обрезанные картинки" />
   </component>
   <component name="masterDetails">
     <states>

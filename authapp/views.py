@@ -1,14 +1,14 @@
 from django.contrib import auth
 from django.db import transaction
 from django.http import HttpResponse
-from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
+from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404, render_to_response
 from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth.models import User
 
 from authapp.models import ActivateUser
-from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm, TypeOfUserEditForm
+from authapp.forms import RegisterForm, ActivateEditForm, SystemEditForm, TypeOfUserEditForm, ShelterEditForm
 
 
 def register(response):
@@ -75,7 +75,8 @@ def edit(request):
     else:
         user_form = ActivateEditForm(instance=request.user.activateuser)
         system_form = SystemEditForm(instance=request.user)
-    content = {'title': title,  'user_form': user_form, 'system_form': system_form}
+
+    content = {'title': title, 'user_form': user_form, 'system_form': system_form}
     return render(request, 'edit.html', content)
 
 
@@ -92,5 +93,5 @@ def edit_type_of_user(request):
 
     else:
         user_form = TypeOfUserEditForm(instance=request.user.activateuser, auto_id=False)
-    content = {'title': title,  'user_form': user_form}
+    content = {'title': title, 'user_form': user_form}
     return render(request, 'type_of_user.html', content)

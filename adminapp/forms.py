@@ -37,7 +37,7 @@ class ShelterUpdateForm(forms.ModelForm):
     class Meta:
         model = Shelter
         fields = ('name', 'description', 'sort', 'is_active', 'shelter_logo', 'shelter_city', 'shelter_address',
-                  'shelter_phone', 'shelter_email',)
+                  'shelter_phone', 'shelter_email', 'active_user',)
         labels = {
             'name': 'Название приюта',
             'description': 'Описание',

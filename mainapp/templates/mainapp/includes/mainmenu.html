@@ -20,13 +20,26 @@
             {% endif %}
             <li class="mainmenu menu-has-children"><a href="{% url 'auth:edit' %}">
                 {% if user.first_name %} {{ user.first_name }} {% else %}
-                {{ user.username }} {% endif %}</a>
+                    {{ user.username }} {% endif %}</a>
                 <ul>
                     {% if user.is_superuser %}
                         <li>
                             <a href="{% url 'adminapp:pet_list' %}">
                                 Администрирование
                             </a>
+                        </li>
+                    {% endif %}
+                    {% if user.activateuser.is_shelter == 'SHELTER' %}
+                        <li>
+                        <a href="{% url 'adminapp:shelter_create' %}">
+                            Личный кабинет приюта
+                        </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{% url 'auth:edit' %}">
+                            Личный кабинет
+                        </a>
                         </li>
                     {% endif %}
                     <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
