@@ -11,6 +11,7 @@
             <p>Город: {{object.pet_shelter.shelter_city}}</p>
             {% for img in object.images.all %}
                 <a href="{% url 'mainapp:pet_card' object.pk %}"> <img src="{{ img.image.url }}" alt=""> </a>
+                <a href="{% url 'reserve:add' pet.pk %}"> Добавить в избранное </a>
             {% endfor %}
             <br><hr>
 

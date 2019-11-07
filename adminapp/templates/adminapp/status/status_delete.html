@@ -10,13 +10,16 @@
     <section class="cat-list-area section-gap">
         <div class="container">
             <div class="row">
+                <div>
+                    <h3>Вы подтверждаете удаление категории "{{ petstatus.name }}"?</h3>
                     <form method="post">
                         {% csrf_token %}
-                        <input class="btn btn-danger" type="submit" value="удалить">
+                        <input class="button_admin_add text-uppercase" type="submit" value="удалить">
                     </form>
-                    <a href="{% url 'adminapp:status_list' %}" class="btn btn-success">
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:status_list' %}">
                         отмена
                     </a>
+                </div>
             </div>
         </div>
     </section>

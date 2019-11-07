@@ -13,7 +13,7 @@
                     <div class="banner-content col-lg-8 col-md-12">
                         <h1 class="text-uppercase" style="color: black;">
                             Нам нужна Ваша помощь. <br>
-                            Питомцев, в поисках дома: {{ pets }}. <br>
+                            Питомцев, в поисках дома: {{ not_adopted }}. <br>
                             Питомцев, нашедших дом: {{ adopted }}.
                             {{ pets }}
                         </h1>
@@ -28,32 +28,34 @@
 {% endblock %}
 
 {% block content %}
+
         <br>
         <p>{{ object.name }}</p>
         <p>{{ object.shelter_city }} {{ object.shelter_address }}</p>
         <p>{{ object.shelter_phone }}</p>
         <p>{{ object.shelter_email }}</p>
         <br><hr>
-        <h1>Наши питомцы:</h1>
-        <section class="shelter-list-image-carusel-area">
-            <div class="container_shelters_pets">
-                <div class="pets_row">
-                    <div class="active-image-carusel">
-                        {% for pet in pets_list %}
+            <h1 style="text-align: center">Наши питомцы:</h1>
+    <section style="margin-top:0px" class="image-carusel-area">
+        <div class="container">
+            <div class="row">
+                <div class="active-image-carusel">
+                    {% for pet in pets_list %}
                         {% if pet.pet_shelter_id == object.pk %}
-                        <div class="single-image-carusel">
-                    <button type="button" id="mymodal" data-toggle="modal" data-target="#myModal_{{ pet.pk }}">
-                                <img src="{{ pet.images.all.0.image.url }}" alt="{{ pet.name }}">
-                    </button>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-
-
+                    <div class="single-image-carusel center_cropped">
+                    <a href="{% url 'mainapp:pet_card' pet.pk %}">
+                        <img class="img-fluid " src="{{pet.images.first.image.url}}" alt="">
+                    </a>
                     </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
+        </div>
                     <!--------------------------- Modal start (засунуть в карусель) --------------------------->
+
+<!-- МОДАЛКА ОТКЛЮЧИЛАСЬ КОГДА ЗАМЕНИЛ ПЕТОВ НА КАРУСЕЛЬ ИЗ ГЛАВНОЙ СТРАНИЦЫ, ПОТОМ ПОЧИНЮ -->
+    
         {% for pet in pets_list %}
 
                         <div class="col-lg-3 col-md-6">

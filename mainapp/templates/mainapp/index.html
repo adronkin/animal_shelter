@@ -13,42 +13,13 @@
         <div class="container">
             <div class="row">
                 <div class="active-image-carusel">
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c1.jpg' %}" alt="">
+                    {% for pet in pets_row %}
+                    <div class="single-image-carusel center_cropped">
+                    <a href="{% url 'mainapp:pet_card' pet.pk %}">
+                        <img class="img-fluid " src="{{pet.images.first.image.url}}" alt="">
+                    </a>
                     </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c2.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c3.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c4.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c1.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c2.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c3.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c4.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c1.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c2.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c3.jpg' %}" alt="">
-                    </div>
-                    <div class="single-image-carusel">
-                        <img class="img-fluid" src="{% static 'img/c4.jpg' %}" alt="">
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'django_extensions',
+    'reserveapp'
 ]
 
 
@@ -116,12 +117,13 @@ DATABASES = {
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-# AUTH_USER_MODEL = 'authapp.'
+#AUTH_USER_MODEL = 'authapp.models.User'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.vk.VKOAuth2',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.odnoklassniki.OdnoklassnikiOAuth2',
 )
 
 LOGIN_REDIRECT_URL = '/'
@@ -211,7 +213,10 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
-# ключи твиттер
+# ключи одноклассники
+SOCIAL_AUTH_ODNOKLASSNIKI_OAUTH2_KEY = '512000077349'
+SOCIAL_AUTH_ODNOKLASSNIKI_OAUTH2_SECRET = '78AD1C99110CC6664A6259F2'
+SOCIAL_AUTH_ODNOKLASSNIKI_OAUTH2_PUBLIC_NAME = 'CGCPCGJGDIHBABABA'
 
 
 

@@ -12,22 +12,15 @@
             <div class="row">
                 {% for object in object_list %}
                     <div class="col-lg-3 col-md-6">
-                        <a href="{% url 'adminapp:breed_detail' object.pk %}">
-                            <div class="single-cat-list">
-                                <div >
-                                    <div >{{ object.name }}</div>
-                                </div>
-                            </div>
+                        <a class="button_admin text-uppercase" href="{% url 'adminapp:breed_detail' object.pk %}">
+                            {{ object.name }}
                         </a>
                     </div>
                 {% endfor %}
             </div>
-            <p>
-                <a href="{% url 'adminapp:breed_create' %}"
-                   class="btn btn-danger">
-                    добавить породу
-                </a>
-            </p>
+            <a class="button_admin_add text-uppercase" href="{% url 'adminapp:breed_create' %}">
+                добавить породу
+            </a>
         </div>
     </section>
     <!-- End cat-list Area -->

@@ -14,11 +14,6 @@
                     <form class="form-horizontal" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <a href="{% url 'adminapp:image_create' %}" class="">добавить изображение</a>
-                        {% for img in object.images.all %}
-                            <img src="{{ img.image.url }}" alt="">
-                            <a href="{% url 'adminapp:image_delete' img.pk %}" class="">удалить изображение</a>
-                        {% endfor %}
                         <input class="form-control" type="submit" value="сохранить">
                     </form>
                     <a href="{% url 'adminapp:shelter_list' %}"

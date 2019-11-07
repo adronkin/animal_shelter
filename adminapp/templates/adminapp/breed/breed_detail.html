@@ -14,18 +14,12 @@
                     <h1>{{ petbreed.name }}</h1>
                     <p>{{ petbreed.description }}</p>
                     <p>{{ petbreed.is_active }}</p>
-                    <p>
-                        <a href="{% url 'adminapp:breed_update' object.pk %}"
-                           class="btn btn-danger">
-                            редактировать
-                        </a>
-                    </p>
-                    <p>
-                        <a href="{% url 'adminapp:breed_delete' object.pk %}"
-                           class="btn btn-danger">
-                            удалить
-                        </a>
-                    </p>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:breed_update' object.pk %}">
+                        редактировать
+                    </a>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:breed_delete' object.pk %}">
+                        удалить
+                    </a>
                 </div>
             </div>
         </div>

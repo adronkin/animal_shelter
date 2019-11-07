@@ -1,10 +1,13 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.db.models.signals import post_save
+from django.conf import settings
 
 
 class Core(models.Model):
     """ Класс ядро - родитель всех классов-моделей """
+
     class Meta:
         ordering = ('-is_active', 'sort', 'name')
         verbose_name = 'Ядро'
@@ -16,6 +19,9 @@ class Core(models.Model):
     is_active = models.BooleanField(verbose_name='активен ли объект', default=True, db_index=True)
     created = models.DateTimeField(verbose_name='создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='обновлен', auto_now=True)
+    active_user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                    on_delete=models.CASCADE,
+                                    related_name='basket')
 
     def __str__(self):
         return f'{self.name}' if self.name else ''
@@ -30,6 +36,7 @@ class Core(models.Model):
 
 class Picture(Core):
     """ Класс изображений - родитель для других моделей использующих изображения """
+
     class Meta:
         ordering = ('sort', 'updated')
         verbose_name = 'Картинка'
@@ -57,6 +64,7 @@ class Shelter(Core):
     shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
     shelter_cord_latitude = models.IntegerField(verbose_name='координаты - широта', default=0)
     shelter_cord_longitude = models.IntegerField(verbose_name='координаты - долгота', default=0)
+
 
 
 class Donate(Core):
@@ -132,12 +140,14 @@ class Pet(Core):
 
 class MenuManager(models.Manager):
     """ Менеджер меню """
+
     def get_menu(self, attr):
         return self.filter(name=attr, parent_id__isnull=True).first()
 
 
 class Menu(Core):
     """ Модель меню """
+
     class Meta:
         ordering = ('parent_id', 'sort', 'name')
         verbose_name = 'Элемент меню'

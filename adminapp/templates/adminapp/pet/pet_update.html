@@ -14,7 +14,7 @@
                     <form class="form-horizontal" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <a href="{% url 'adminapp:image_update' object.pk %}" class="">добавить изображение</a>
+                        <a href="{% url 'adminapp:image_create_pet' object.pk %}" class="">добавить изображение</a>
                         {% for img in object.images.all %}
                             <img src="{{ img.image.url }}" alt="">
                             <a href="{% url 'adminapp:image_delete' img.pk %}" class="">удалить изображение</a>

@@ -17,6 +17,7 @@
                         </a>
                     {% endfor %}
                     <h1>{{ pet.name }}</h1>
+                    <p>Активность: {{ pet.is_active }}</p>
                     <p>Приют: <a href="{% url 'adminapp:shelter_detail' shelter.pk %}">{{ pet.pet_shelter }}</a></p>
                     <p>Порода: {{ pet.pet_breed }}</p>
                     <p>Пол: {{ pet.pet_gender }}</p>

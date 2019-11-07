@@ -18,8 +18,9 @@
             {% if user.avatar %}
                 <li><img src="{{ user.avatar.url }}" width="40" alt="" style="border-radius: 50%"></li>
             {% endif %}
-            <li class="mainmenu menu-has-children"><a href="/">{% if user.first_name %} {{ user.first_name }} {% else %}
-                {{ user.username }} {% endif %}</a>
+            <li class="mainmenu menu-has-children"><a href="{% url 'auth:edit' %}">
+                {% if user.first_name %} {{ user.first_name }} {% else %}
+                    {{ user.username }} {% endif %}</a>
                 <ul>
                     {% if user.is_superuser %}
                         <li>
@@ -28,12 +29,26 @@
                             </a>
                         </li>
                     {% endif %}
-                    <li class=""><a href="{% url 'logout' %}">Выйти</a></li>
+                    {% if user.activateuser.is_shelter == 'SHELTER' %}
+                        <li>
+                        <a href="{% url 'adminapp:shelter_create' %}">
+                            Личный кабинет приюта
+                        </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{% url 'auth:edit' %}">
+                            Личный кабинет
+                        </a>
+                        </li>
+                    {% endif %}
+                    <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
                 </ul>
             </li>
         {% else %}
-            <li class="mainmenu"><a href="{% url 'login' %}">Войти</a></li>
-            <li class="mainmenu"><a href="{% url 'register' %}">Регистрация</a></li>
+            <li class="mainmenu"><a href="{% url 'auth:login' %}">Войти</a></li>
+            <li class="mainmenu"><a href="{% url 'auth:register' %}">Регистрация</a></li>
         {% endif %}
+        <li class="mainmenu"><a href="{% url 'reserve:view' %}">Мои питомцы</a></li>
     </ul>
 </nav><!-- #nav-menu-container -->

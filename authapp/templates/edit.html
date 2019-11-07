@@ -1,0 +1,21 @@
+{% extends  'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+
+
+<form action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="profile_container">{{ system_form|crispy }}</div>
+<div class="profile_container">{{ edit_form|crispy }}</div>
+<div class="profile_container">{{ user_form|crispy }}</div>
+<input class="form-control" type="submit" value="сохранить"></form>
+    <button class="btn btn-round form-control last">
+<a href="{% url 'main:index' %}" class="">на главную</a></button>
+    <hr>
+    <br>
+    <br>
+    <br>
+{% endblock %}

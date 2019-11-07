@@ -1,0 +1,67 @@
+{% extends 'mainapp/base.html' %}
+
+{% block main_banner %}
+{% include 'mainapp/includes/inc-main_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+<!-- Start cat-list Area -->
+<section class="cat-list-area section-gap">
+    <div class="container">
+        <div class="row">
+            {% for pet in adopted_pets %}
+            <div class="col-lg-3 col-md-6">
+                <a href="{% url 'mainapp:pet_card' pet.pk %}">
+
+                    <div class="single-cat-list">
+                        <img src="{{pet.images.first.image.url}}" alt="" class="img-fluid">
+                        <div class="overlay">
+                            <div class="text">{{pet.name}}</div>
+                            {{ pet.pet_category.id }}
+                        </div>
+                    </div>
+                    <!--------------------------- Modal start --------------------------->
+                    <div class="modal fade" id="myModal_{{ pet.pk }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Карточка питомца: {{ pet.name }}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {% include 'mainapp/includes/pet_card_include.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------------------------- Modal end --------------------------->
+
+                </a>
+                <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal_{{ pet.pk }}">
+                    Карточка питомца
+                </button>
+            </div>
+
+            {% endfor %}
+
+        </div>
+                    <!--------------------------- Paginator start --------------------------->
+    <div class="paginator">
+{% if pets.has_previous %}
+    <a href="{% url 'mainapp:page' pets.previous_page_number %}"> PREVIOUS</a>
+{% endif %}
+<span class="current">
+    страница {{ pets.number }} из {{ pets.paginator.num_pages }}
+</span>
+{% if pets.has_next %}
+    <a href="{% url 'mainapp:page' pets.next_page_number %}"> NEXT</a>
+{% endif %}
+</div>
+                    <!--------------------------- Paginator end --------------------------->
+    </div>
+</section>
+<!-- End cat-list Area -->
+{% endblock %}
+
+{% block call_to_action %}
+<!-- Button trigger modal -->
+{% endblock %}

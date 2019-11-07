@@ -10,6 +10,7 @@
     <section class="cat-list-area section-gap">
         <div class="container">
             <div class="row">
+                <p>Вы подтверждаете удаление питомца: {{ pet.name }}?</p>
                     <form method="post">
                         {% csrf_token %}
                         <input class="btn btn-danger" type="submit" value="удалить">

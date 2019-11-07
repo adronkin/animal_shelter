@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'mainapp/includes/inc-main_banner_big.html' %}
+{% endblock %}
+
+
+{% block content %}
+{% block search %}
+    {% include 'mainapp/includes/search_list.html' %}
+{% endblock %}
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{% extends  'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <p>Добро пожаловать на сайт Takemehome!</p>
+    <p>Для продолжения работы, пожалуйста, уточните, являетесь ли вы приютом? </p>
+    <form action="{% url 'auth:type_of_user' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="profile_container">{{ user_form|crispy }}</div>
+        <input class="form-control" type="submit" value="подтвердить"></form>
+{% endblock %}

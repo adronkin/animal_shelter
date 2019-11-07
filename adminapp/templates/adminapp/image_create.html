@@ -5,21 +5,72 @@
     {% include 'adminapp/includes/inc-admin_banner_small.html' %}
 {% endblock %}
 
-{% block content %}
-    <!-- Start cat-list Area -->
-    <section class="cat-list-area section-gap">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <h2 class="">Добавить изображение</h2>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <input type="submit" class="" value="Сохранить">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End cat-list Area -->
+{% block styles %}
+	<style type="text/css" media="screen">
+		/* Limit image width to avoid overflow the container */
+		img {
+		  max-width: 100%; /* This rule is very important, please do not ignore this! */
+		}
+	</style>
 {% endblock %}
+
+{% block title %}
+
+	Фото питомца
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+	<form method="post" enctype="multipart/form-data" id="formUpload">
+  		{% csrf_token %}
+  		{{ form.as_p }}
+  		<button type="submit" id="formUploadButton" style="display: none;">Save</button>
+	</form>
+
+	<!-- MODAL TO CROP THE IMAGE -->
+	<div class="modal fade" id="modalCrop">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	        <h4 class="modal-title">Выбор фото</h4>
+	      </div>
+	      <div class="modal-body modal-body_image">
+	        <img src="" id="image" style="max-width: 100%;">
+	      </div>
+	      <div class="modal-footer">
+	        <div class="btn-group pull-left" role="group">
+	          <button type="button" class="btn btn-default js-zoom-in">
+	            <span class="glyphicon glyphicon-zoom-in">+</span>
+	          </button>
+	          <button type="button" class="btn btn-default js-zoom-out">
+	            <span class="glyphicon glyphicon-zoom-out">-</span>
+	          </button>
+	        </div>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+	        <button type="button" class="btn btn-primary js-crop-and-upload">Выбрать</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- CONTAINER TO DISPLAY THE CROPPED IMAGES -->
+	<div class="row mt-4">
+	  {% for photo in photos %}
+	    <div class="col-sm-4 col-md-3">
+	    <a href="{{ photo.image.url }}" title="{{ photo.image }}">
+	      	<img src="{{ photo.image.url }}" width="250" height="250" class="thumbnail">
+	    </a>
+	    </div>
+	  {% endfor %}
+	</div>
+
+<!-- container ends here -->
+</div>
+
+{% endblock content %}
+

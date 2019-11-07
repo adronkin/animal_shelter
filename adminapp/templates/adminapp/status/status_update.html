@@ -13,12 +13,22 @@
                 <div>
                     <form class="form-horizontal" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {{ form.as_p }}
-                        <input class="form-control" type="submit" value="сохранить">
+                        <div>
+                            {% for field in form %}
+                                <div class="col-lg-9">
+                                    {{ field.label_tag }}
+                                    <div class="form-group">{{ field }}</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <input class="form-control button_admin text-uppercase" style="width: 500px" type="submit"
+                               value="сохранить">
                     </form>
-                    <a href="{% url 'adminapp:category_list' %}"
+
+                    <a class="button_admin_add text-uppercase" style="width: 500px"
+                       href="{% url 'adminapp:category_list' %}"
                        class="btn btn-primary form-control last">
-                        к списку категорий
+                        к списку статусов
                     </a>
                 </div>
             </div>
