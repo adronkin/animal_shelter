@@ -13,6 +13,7 @@ from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Pictu
 # TODO добавить валидацию через form
 # TODO Создание животного из карточки приюта
 # TODO Не настроено меню для городов
+# TODO реверс после отмены удаления категории
 
 class SettingsList(TemplateView):
     """Выводит список классов для редактирования"""

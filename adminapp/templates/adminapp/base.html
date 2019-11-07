@@ -66,40 +66,13 @@
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href={% url 'mainapp:index' %}><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
+                    <a href="/"><img src="{% static 'img/logo2.png' %}" alt="" title="" height="25"/></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="{% url 'adminapp:shelter_list' %}">Приюты</a></li>
                         <li><a href="{% url 'adminapp:pet_list' %}">Питомцы</a></li>
                         <li><a href="{% url 'adminapp:settings' %}">Настройки</a></li>
-                        {#                        <li><a href="{% url 'adminapp:category_list' %}">Categories</a></li>#}
-                        {#                        <li class="menu-has-children"><a href="">Blog</a>#}
-                        {#                            <ul>#}
-                        {#                                <li><a href="{% url 'mainapp:blog-home' %}">Blog Home</a></li>#}
-                        {#                                <li><a href="{% url 'mainapp:blog-single' %}">Blog Single</a></li>#}
-                        {#                            </ul>#}
-                        {#                        </li>#}
-                        {#                        <li><a href="{% url 'mainapp:contact' %}">Contact</a></li>#}
-                        {#                        <li>#}
-                        {#                            {% if user.is_authenticated %}#}
-                        {#                                <a href="{% url 'logout' %}">Logout</a>#}
-                        {#                            {% else %}#}
-                        {#                                <a href="{% url 'login' %}">Login</a>#}
-                        {#                            {% endif %}#}
-                        {#                        </li>#}
-                        {#                        <li class="menu-has-children"><a href="">Dropdown</a>#}
-                        {#                            <ul>#}
-                        {#                                <li><a href="{% url 'mainapp:elements' %}">Elements</a></li>#}
-                        {#                                <li><a href="#">Item</a></li>#}
-                        {#                                <li class="menu-has-children"><a href="">Level 2</a>#}
-                        {#                                    <ul>#}
-                        {#                                        <li><a href="#">Item 1</a></li>#}
-                        {#                                        <li><a href="#">Item 2</a></li>#}
-                        {#                                    </ul>#}
-                        {#                                </li>#}
-                        {#                            </ul>#}
-                        {#                        </li>#}
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>

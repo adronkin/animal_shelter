@@ -13,18 +13,13 @@
                 <div>
                     <h1>{{ petcategory.name }}</h1>
                     <p>{{ petcategory.description }}</p>
-                    <p>
-                        <a href="{% url 'adminapp:category_update' object.pk %}"
-                           class="btn btn-danger">
-                            редактировать
-                        </a>
-                    </p>
-                    <p>
-                        <a href="{% url 'adminapp:category_delete' object.pk %}"
-                           class="btn btn-danger">
-                            удалить
-                        </a>
-                    </p>
+                    <p>{{ petcategory.is_active }}</p>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:category_update' object.pk %}">
+                        редактировать
+                    </a>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:category_delete' object.pk %}">
+                        удалить
+                    </a>
                 </div>
             </div>
         </div>

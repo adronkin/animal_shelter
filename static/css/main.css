@@ -4348,3 +4348,33 @@ dropdown dropdown_animal {
 .modal-body_image {
     padding: 0;
 }
+
+.button_admin {
+    background-color: #9DA2AA;
+    line-height: 42px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid transparent;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    width: 240px;
+    margin: 15px;
+    text-align: center;
+}
+
+.button_admin_add {
+    background-color: #494D55;
+    line-height: 42px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid transparent;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    width: 240px;
+    margin: 15px;
+    text-align: center;
+}
