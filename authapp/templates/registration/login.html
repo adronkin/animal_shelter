@@ -14,25 +14,27 @@
 
                 {{ form|crispy }}
 
-                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
             </form>
         </div>
     </div>
 
+    <a class="btn btn-primary btn-block" href="{% url 'auth:register' %}">Регистрация</a>
+
     <a class="social" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
-     ВКонтакте
+        ВКонтакте
     </a>
 
     <a class="social" href="{% url 'social:begin' 'google-oauth2' %}?next=/">
-     Google
+        Google
     </a>
 
     <a class="social" href="{% url 'social:begin' 'facebook' %}?next=/">
-     Facebook
+        Facebook
     </a>
 
     <a class="social" href="{% url 'social:begin' 'odnoklassniki-oauth2' %}?next=/">
-     Одноклассники
+        Одноклассники
     </a>
 
 {% endblock %}
