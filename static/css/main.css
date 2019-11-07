@@ -4369,6 +4369,38 @@ dropdown dropdown_animal {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+/* ################
+    Стили для КАРУСЕЛИ ПИТОМЦЕВ на главной странице
+################ */
+
+.center_cropped a {
+  position: relative;
+  overflow: hidden;
+  height: 285px;
+  width: 320px;
+}
+
+.center_cropped img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.single-image-carusel a {
+    display: flex;
+    justify-content: center;
+}
+
+.reserve_block {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.reserve_pet_block {
+    margin: auto;
+}
+
 .button_admin {
     background-color: #9DA2AA;
     line-height: 42px;

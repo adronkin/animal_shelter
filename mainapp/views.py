@@ -25,8 +25,10 @@ def check_user(request):
 class Index(TemplateView):
     """ Главная страница """
     template_name = 'mainapp/index.html'
+    pets_row = Pet.objects.all()
     adopted = Pet.get_count('Уже дома')
     extra_context = {
+        'pets_row': pets_row,
         'adopted': adopted,
         'pets': Pet.get_count() - adopted,
     }
@@ -54,6 +56,8 @@ class ShelterDetail(DetailView):
         context = super(DetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the pets
         context['pets_list'] = Pet.objects.all()
+        context['adopted'] = Pet.get_count('Уже дома')
+        context['not_adopted'] = Pet.get_count() - context['adopted']
         return context
 
 
