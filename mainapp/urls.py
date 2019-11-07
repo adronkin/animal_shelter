@@ -1,9 +1,9 @@
 from os.path import abspath, basename, dirname
 from django.urls import path, include
 from .views import (
-    Index, ShelterList, ShelterDetail, shelter_card, PetList, pet_list, pet_card,
+    Index, ShelterList, ShelterDetail, shelter_card, pet_list, pet_card,
     Contact, About, Cats, Dogs, Volunteer, BlogHome, BlogSingle, Elements,
-    SearchView, cat_list, dog_list, shelter_list_for_map, check_user)
+    SearchView, cat_list, dog_list, shelter_list_for_map, check_user, adopted_list)
 
 app_name = basename(dirname(abspath(__file__)))
 
@@ -13,7 +13,7 @@ urlpatterns = [
     path('shelters/', ShelterList.as_view(), name='shelters'),
     path('shelters/<int:pk>/', ShelterDetail.as_view(), name='shelter_detail'),
     path('shelter/<int:pk>/', shelter_card, name='shelter_card'),
-    path('pets/adopted/', PetList.as_view(), name='adopted'),
+    path('pets/adopted/', adopted_list, name='adopted'),
     path('pets/', pet_list, name='pet_list'),
     path('cats/', cat_list, name='cat_list'),
     path('dogs/', dog_list, name='dog_list'),

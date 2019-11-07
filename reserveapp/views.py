@@ -9,7 +9,7 @@ from reserveapp.models import Reserve
 
 
 def reserve(request):
-    title = 'Мои зарезервированные питомцы'
+    title = 'Мои избранные питомцы'
     reserve_pets = Reserve.objects.filter(user=request.user)
 
     content = {
