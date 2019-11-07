@@ -58,6 +58,7 @@ class ShelterDetail(DetailView):
 
 
 def shelter_card(request, pk):
+    """ страница приюта """
     shelter = get_object_or_404(Shelter, pk=pk)
     context = {
         'title': shelter.name,
@@ -66,9 +67,7 @@ def shelter_card(request, pk):
     return render(request, 'mainapp/shelter_card.html', context)
 
 
-class PetList(ListView):
-    """ страница питомцев, нашедших дом """
-    model = Pet
+
 
 
 def get_year_output(year):
@@ -98,6 +97,7 @@ def get_month_output(month):
 
 
 def pet_card(request, pk):
+    """ страница питомца """
     pet = get_object_or_404(Pet, pk=pk)
 
     context = {
@@ -112,6 +112,7 @@ def pet_card(request, pk):
 
 
 def pet_list(request, page=1):
+    """ страница всех питомцев """
     title = 'СПИСОК ПИТОМЦЕВ'
     pets = Pet.objects.all()
     paginator = Paginator(pets, 4)
@@ -122,14 +123,37 @@ def pet_list(request, page=1):
     except EmptyPage:
         pets_paginator = paginator.page(paginator.num_pages)
 
+    adopted_pets = Pet.objects.filter(pet_status='22')
+
     content = {
         'title': title,
         'pets': pets_paginator,
+        'adopted_pets': adopted_pets,
     }
     return render(request, 'mainapp/pets.html', content)
 
 
+def adopted_list(request, page=1):
+    """ страница всех питомцев, которые дома """
+    title = 'СПИСОК ПИТОМЦЕВ, КОТОРЫЕ УЖЕ НАШЛИ СВОЙ ДОМ'
+    adopted_pets = Pet.objects.filter(pet_status='22')
+    paginator = Paginator(adopted_pets, 4)
+    try:
+        pets_paginator = paginator.page(page)
+    except PageNotAnInteger:
+        pets_paginator = paginator.page(1)
+    except EmptyPage:
+        pets_paginator = paginator.page(paginator.num_pages)
+
+    content = {
+        'title': title,
+        'pets': pets_paginator,
+        'adopted_pets': adopted_pets,
+    }
+    return render(request, 'mainapp/adopted.html', content)
+
 def cat_list(request, page=1):
+    """ страница только котов """
     title = 'СПИСОК ПИТОМЦЕВ'
     cats = Pet.objects.filter(pet_category_id=5)
     pet_class = PetCategory.objects.get(id=5)
@@ -142,6 +166,7 @@ def cat_list(request, page=1):
 
 
 def dog_list(request, page=1):
+    """ страница только собак """
     title = 'СПИСОК ПИТОМЦЕВ'
     dogs = Pet.objects.filter(pet_category_id=6)
     pet_class = PetCategory.objects.get(id=6)

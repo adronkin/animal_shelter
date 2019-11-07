@@ -4027,6 +4027,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 ################
 */
 
+.paginator {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
 /* ################
     Стили для модальных окон питомцев и списка приютов
 ################ */
@@ -4349,6 +4355,20 @@ dropdown dropdown_animal {
     padding: 0;
 }
 
+.telegram_icon {
+    height: 30px;
+    filter:invert(1);
+}
+
+.detail {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.row pt-120 pb-80 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 .button_admin {
     background-color: #9DA2AA;
     line-height: 42px;

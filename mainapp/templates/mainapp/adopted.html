@@ -9,7 +9,7 @@
 <section class="cat-list-area section-gap">
     <div class="container">
         <div class="row">
-            {% for pet in pets %}
+            {% for pet in adopted_pets %}
             <div class="col-lg-3 col-md-6">
                 <a href="{% url 'mainapp:pet_card' pet.pk %}">
 
@@ -39,7 +39,6 @@
                 <button type="button" id="mymodal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal_{{ pet.pk }}">
                     Карточка питомца
                 </button>
-            <a href="{% url 'reserve:add' pet.pk %}"> Добавить в избранное </a>
             </div>
 
             {% endfor %}
