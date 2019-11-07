@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,19 +69,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/category" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
       <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\mainapp\templates\mainapp" />
       <recent name="C:\Users\Sergey\PycharmProjects\animals_helper\authapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/category" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -148,6 +148,7 @@
       <workItem from="1571428740570" duration="264000" />
       <workItem from="1571642041327" duration="12615000" />
       <workItem from="1572353293783" duration="564000" />
+      <workItem from="1573132651971" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -408,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573070366248</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="кнопке регистации перенесена в Логин">
+      <created>1573130491518</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1573130491518</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merge with towardsbackwards" />
     <MESSAGE value="Merge branch 'pet_modal_form' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;mainapp/urls.py&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="adminapp:&#10;-pet_detail.html&#10;-views" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
@@ -473,7 +480,8 @@
     <MESSAGE value="Удаление изображения из карточки питомка (активность False)" />
     <MESSAGE value="Создание нового питомца, но без добавление изображения (добавить изображение через редактирование)" />
     <MESSAGE value="into develop from alyonkazz" />
-    <option name="LAST_COMMIT_MESSAGE" value="into develop from alyonkazz" />
+    <MESSAGE value="кнопке регистации перенесена в Логин" />
+    <option name="LAST_COMMIT_MESSAGE" value="кнопке регистации перенесена в Логин" />
   </component>
   <component name="masterDetails">
     <states>
