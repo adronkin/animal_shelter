@@ -56,6 +56,8 @@ class ShelterDetail(DetailView):
         context = super(DetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the pets
         context['pets_list'] = Pet.objects.all()
+        context['adopted'] = Pet.get_count('Уже дома')
+        context['not_adopted'] = Pet.get_count() - context['adopted']
         return context
 
 
