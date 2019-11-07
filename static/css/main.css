@@ -4152,6 +4152,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     justify-content: center;
 }
 
+
+
 .single-image-carusel img {
     margin: 0;
     padding: 0;
@@ -4368,4 +4370,25 @@ dropdown dropdown_animal {
 .row pt-120 pb-80 {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+/* ################
+    Стили для КАРУСЕЛИ ПИТОМЦЕВ на главной странице
+################ */
+
+.center_cropped a {
+  position: relative;
+  overflow: hidden;
+  height: 285px;
+  width: 320px;
+}
+
+.center_cropped img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.single-image-carusel a {
+    display: flex;
+    justify-content: center;
 }
