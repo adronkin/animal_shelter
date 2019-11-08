@@ -61,9 +61,7 @@ class Shelter(Core):
     shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
     shelter_cord_latitude = models.IntegerField(verbose_name='координаты - широта', default=0)
     shelter_cord_longitude = models.IntegerField(verbose_name='координаты - долгота', default=0)
-    active_user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                    on_delete=models.CASCADE,
-                                    related_name='user')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
 
 class Donate(Core):

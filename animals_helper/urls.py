@@ -26,6 +26,7 @@ urlpatterns = [
     path('adminapp/', include('adminapp.urls')),
     re_path(r'', include('mainapp.urls', namespace='main')),
     path('', include('social_django.urls', namespace='social')),
+    path('shelteradmin/', include('shelteradminapp.urls', namespace='shelteradmin')),
 
 ]
 
