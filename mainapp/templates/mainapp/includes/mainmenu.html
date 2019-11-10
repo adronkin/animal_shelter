@@ -31,15 +31,15 @@
                     {% endif %}
                     {% if user.activateuser.is_shelter == 'SHELTER' %}
                         <li>
-                        <a href="{% url 'adminapp:shelter_create' %}">
-                            Личный кабинет приюта
-                        </a>
+                            <a href="{% url 'adminapp:shelter_create' %}">
+                                Личный кабинет приюта
+                            </a>
                         </li>
                     {% else %}
                         <li>
                             <a href="{% url 'auth:edit' %}">
-                            Личный кабинет
-                        </a>
+                                Личный кабинет
+                            </a>
                         </li>
                     {% endif %}
                     <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
@@ -49,6 +49,8 @@
             <li class="mainmenu"><a href="{% url 'auth:login' %}">Войти</a></li>
 
         {% endif %}
-        <li class="mainmenu"><a href="{% url 'reserve:view' %}">Мои питомцы</a></li>
+        {% if user.is_authenticated %}
+            <li class="mainmenu"><a href="{% url 'reserve:view' %}">Избранное</a></li>
+        {% endif %}
     </ul>
-</nav><!-- #nav-menu-container -->
+</nav>
