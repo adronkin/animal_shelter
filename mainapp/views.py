@@ -102,7 +102,7 @@ def pet_card(request, pk):
     pet = get_object_or_404(Pet, pk=pk)
 
     context = {
-        'title': 'карточка питомца',
+        'title': 'Карточка питомца',
         'pet_class': pet.pet_category,
         'pet': pet,
         'shelter': pet.pet_shelter,
@@ -114,7 +114,7 @@ def pet_card(request, pk):
 
 def pet_list(request, page=1):
     """ страница всех питомцев """
-    title = 'СПИСОК ПИТОМЦЕВ'
+    title = 'Список питомцев'
     pets = Pet.objects.all()
     paginator = Paginator(pets, 4)
     try:
@@ -136,7 +136,7 @@ def pet_list(request, page=1):
 
 def adopted_list(request, page=1):
     """ страница всех питомцев, которые дома """
-    title = 'СПИСОК ПИТОМЦЕВ, КОТОРЫЕ УЖЕ НАШЛИ СВОЙ ДОМ'
+    title = 'Список питомцев, которые уже нашли дом'
     adopted_pets = Pet.objects.filter(pet_status='22')
     paginator = Paginator(adopted_pets, 4)
     try:
@@ -153,9 +153,10 @@ def adopted_list(request, page=1):
     }
     return render(request, 'mainapp/adopted.html', content)
 
+
 def cat_list(request, page=1):
     """ страница только котов """
-    title = 'СПИСОК ПИТОМЦЕВ'
+    title = 'Список питомцев'
     cats = Pet.objects.filter(pet_category_id=5)
     pet_class = PetCategory.objects.get(id=5)
     content = {
@@ -168,7 +169,7 @@ def cat_list(request, page=1):
 
 def dog_list(request, page=1):
     """ страница только собак """
-    title = 'СПИСОК ПИТОМЦЕВ'
+    title = 'Список питомцев'
     dogs = Pet.objects.filter(pet_category_id=6)
     pet_class = PetCategory.objects.get(id=6)
     content = {
