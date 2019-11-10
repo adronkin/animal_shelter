@@ -71,9 +71,6 @@ def shelter_card(request, pk):
     return render(request, 'mainapp/shelter_card.html', context)
 
 
-
-
-
 def get_year_output(year):
     """ вывод года с правильным окончанием """
     year_output = 'год(-а)'

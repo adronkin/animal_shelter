@@ -29,8 +29,8 @@
                 </div>
                 <ul class="dropdown-menu">
                     <li>
-                    Собаки
-                    <input class="input_check" type="checkbox" name="sort_animal" value="6">
+                        Собаки
+                        <input class="input_check" type="checkbox" name="sort_animal" value="6">
                     </li>
                     <li>
                         Кошки
@@ -44,22 +44,33 @@
                     <i class="fa fa-chevron-left"></i>
                 </div>
                 <ul class="dropdown-menu">
-                    <li>Средняя длина шерсти<input class="input_check" type="checkbox" name="sort_wool" value="Средняя длина шерсти"></li>
-                    <li>Длинношерстный<input class="input_check" type="checkbox" name="sort_wool" value="Длинношерстный"></li>
+                    <li>Средняя длина шерсти<input class="input_check" type="checkbox" name="sort_wool"
+                                                   value="Средняя длина шерсти"></li>
+                    <li>Длинношерстный<input class="input_check" type="checkbox" name="sort_wool"
+                                             value="Длинношерстный"></li>
                 </ul>
             </div>
         </form>
-        <div class="search_result">
-            <ul>
-                <h3 class="{% if request.resolver_match.url_name == 'index' %}hidden{% endif %}">Результат поиска:</h3>
+    </div>
+    <div class="result">
+        <h3 class="{% if request.resolver_match.url_name == 'index' %}hidden{% endif %}">Результат поиска:</h3>
+    </div>
+    <div class="cat-list-area search-section-gap">
+        <div class="container">
+            <div class="row">
                 {% for n in object_list %}
-                <li>
-                    <a href="{% url 'mainapp:pet_card' n.pk %}">
-                        {{ n }}
-                    </a>
-                </li>
+                    <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'mainapp:pet_card' n.pk %}">
+                            <div class="single-cat-list">
+                                <img src="{{ n.images.first.image.url }}" alt="" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="text">{{ n.name }}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </div>

@@ -4311,7 +4311,7 @@ dropdown dropdown_animal {
     font-size: 14px;
     color: #474747;
     text-align: left;
-    margin: 2px;
+    margin: 20px;
     width: 600px;
 }
 
@@ -4319,7 +4319,10 @@ dropdown dropdown_animal {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
 
+.search-section-gap {
+    padding: 40px 0;
 }
 
 .search_input {
@@ -4334,7 +4337,7 @@ dropdown dropdown_animal {
 }
 
 .result {
-    width: 900px;
+    width: 75%;
 }
 
 .input_check {
