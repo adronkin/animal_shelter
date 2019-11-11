@@ -11,7 +11,7 @@ class ShelterCreate(CreateView):
     model = Shelter
     form_class = ShelterUserUpdateForm
     template_name = 'shelteradminapp/shelter_create.html'
-    success_url = reverse_lazy('shelteradmin:shelter_list')
+    success_url = reverse_lazy('main:index')
 
     # @method_decorator(user_passes_test(lambda x: x.is_superuser))
     # def dispatch(self, *args, **kwargs):

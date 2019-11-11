@@ -30,18 +30,29 @@
                         </li>
                     {% endif %}
                     {% if user.activateuser.is_shelter == 'SHELTER' %}
-                        <li>
-                        <a href="{% url 'shelteradmin:shelter_create' %}">
-                            Создать приют
-                        </a>
-                        </li>
+
+                        {% if user.shelter.shelter_address == 'в' %}
+                            <li>
+                                <a href="{% url 'shelteradmin:shelter_create' %}">
+                                    Личный кабинет приюта
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'shelteradmin:shelter_create' %}">
+                                    Создать приют
+                                </a>
+                            </li>
+                        {% endif %}
+
                     {% else %}
                         <li>
                             <a href="{% url 'auth:edit' %}">
-                            Личный кабинет
-                        </a>
+                                Личный кабинет
+                            </a>
                         </li>
                     {% endif %}
+
                     <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
                 </ul>
             </li>

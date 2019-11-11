@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals_helper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animals_helper/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/views.py" afterDir="false" />
     </list>
@@ -160,6 +150,9 @@
       <workItem from="1571428740570" duration="264000" />
       <workItem from="1571642041327" duration="12615000" />
       <workItem from="1572353293783" duration="564000" />
+      <workItem from="1573336018410" duration="165000" />
+      <workItem from="1573428510154" duration="12000" />
+      <workItem from="1573468406473" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -427,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573209275522</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="стиль shelter_create.html">
+      <created>1573212144069</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1573212144069</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge branch 'pet_modal_form' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;mainapp/urls.py&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="adminapp:&#10;-pet_detail.html&#10;-views" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
@@ -492,7 +491,8 @@
     <MESSAGE value="Создание нового питомца, но без добавление изображения (добавить изображение через редактирование)" />
     <MESSAGE value="into develop from alyonkazz" />
     <MESSAGE value="startapp shelteradminapp" />
-    <option name="LAST_COMMIT_MESSAGE" value="startapp shelteradminapp" />
+    <MESSAGE value="стиль shelter_create.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="стиль shelter_create.html" />
   </component>
   <component name="masterDetails">
     <states>
