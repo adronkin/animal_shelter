@@ -7,10 +7,9 @@ from django.shortcuts import get_object_or_404
 from mainapp.models import Shelter
 from shelteradminapp.forms import ShelterUserUpdateForm
 
-# TODO В главном меню "Создать приют" не заменяется на "Личный кабинет приюта"
 # TODO Приют сохраняется в Core дважды - исправить
 # TODO В ShelterDetail при отсутсвии логитипа возникает ошибка - добавить дефолтное лого
-# TODO ShelterUpdate
+# TODO Описание приюта сохраняется в одну строку - исправить
 # TODO ShelterDelete
 # TODO отредактировать ЛК приюта
 # TODO PetCreate
