@@ -7,15 +7,14 @@ from django.views.generic import CreateView, TemplateView, DetailView, UpdateVie
 from django.shortcuts import get_object_or_404
 
 from mainapp.models import Shelter, Pet
-from shelteradminapp.forms import ShelterUserUpdateForm
+from shelteradminapp.forms import ShelterUserUpdateForm, PetUserUpdateForm
 
 
 # TODO Приют сохраняется в Core дважды - исправить
 # TODO В ShelterDetail при отсутсвии логитипа возникает ошибка - добавить дефолтное лого
 # TODO Описание приюта сохраняется в одну строку - исправить
 # TODO отредактировать ЛК приюта
-# TODO PetList
-# TODO PetCreate
+# TODO PetCreate - добавить картинки
 # TODO PetDetail
 # TODO PetUpdate
 # TODO PetDelete
@@ -132,3 +131,31 @@ class PetList(DeleteView):
 #         'pets': pets,
 #     }
 #     return render(request, 'shelteradminapp/pet_list.html', context)
+
+
+class PetCreate(CreateView):
+    """Создание нового питомца"""
+    model = Pet
+    form_class = PetUserUpdateForm
+    template_name = 'shelteradminapp/pet_create.html'
+    # success_url = reverse_lazy('main:index')
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Добавить питомца'
+        return context
+
+    def get_success_url(self):
+        # passing 'pk' from 'urls'
+        # capture that 'pk' as shelter_id and pass it to 'reverse_lazy()' function
+        shelter_id = self.kwargs['pk']
+        return reverse_lazy('shelteradmin:pet_list', kwargs={'pk': shelter_id})
+
+    def get_initials(self):
+        return {
+            'pet_shelter': self.kwargs['pk']
+        }

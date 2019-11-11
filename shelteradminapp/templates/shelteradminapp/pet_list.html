@@ -1,4 +1,4 @@
-{% extends 'adminapp/base.html' %}
+{% extends 'shelteradminapp/base.html' %}
 {% load static %}
 
 {% block main_banner %}
@@ -25,9 +25,9 @@
         </div>
     </section>
 
-{#    <a href="{% url 'shelteradmin:pet_create' %}"#}
-{#       class="btn btn-danger">#}
-{#        добавить питомца#}
-{#    </a>#}
+    <a href="{% url 'shelteradmin:pet_create' object.pk %}"
+       class="btn btn-danger">
+        добавить питомца
+    </a>
 
 {% endblock %}
