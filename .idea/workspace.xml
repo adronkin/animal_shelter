@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_update.html" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта">
+      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_office.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_office.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/views.py" afterDir="false" />
     </list>
@@ -430,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573479921083</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="создан личный кабинет приюта:&#10; + редактирование приюта">
+      <created>1573484220603</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1573484220603</updated>
+    </task>
+    <task id="LOCAL-00042" summary="создан личный кабинет приюта:&#10; + редактирование приюта">
+      <created>1573484286197</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1573484286197</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;db.sqlite3" />
     <MESSAGE value="Merge branch 'develop' of github.com:adronkin/animals_helper into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;db.sqlite3&#10;#&#9;mainapp/views.py" />
     <MESSAGE value="merge with alyonkazz" />
     <MESSAGE value="merge with Artur" />
@@ -495,7 +505,8 @@
     <MESSAGE value="startapp shelteradminapp" />
     <MESSAGE value="стиль shelter_create.html" />
     <MESSAGE value="создан личный кабинет приюта" />
-    <option name="LAST_COMMIT_MESSAGE" value="создан личный кабинет приюта" />
+    <MESSAGE value="создан личный кабинет приюта:&#10; + редактирование приюта" />
+    <option name="LAST_COMMIT_MESSAGE" value="создан личный кабинет приюта:&#10; + редактирование приюта" />
   </component>
   <component name="masterDetails">
     <states>

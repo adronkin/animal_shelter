@@ -33,12 +33,12 @@
                             редактировать
                         </a>
                     </p>
-{#                    <p>#}
-{#                        <a href="{% url 'adminapp:shelter_delete' object.pk %}"#}
-{#                           class="btn btn-danger">#}
-{#                            удалить#}
-{#                        </a>#}
-{#                    </p>#}
+                    <p>
+                        <a href="{% url 'shelteradmin:shelter_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
 {#                    <h2>Питомцы приюта:</h2>#}
 {#                    <div class="row">#}
 {#                        {% for pet in shelter.pets.all %}#}

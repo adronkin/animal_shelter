@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, TemplateView, DetailView, UpdateView
+from django.views.generic import CreateView, TemplateView, DetailView, UpdateView, DeleteView
 from django.shortcuts import get_object_or_404
 
 from mainapp.models import Shelter
@@ -36,10 +37,6 @@ class ShelterCreate(CreateView):
     form_class = ShelterUserUpdateForm
     template_name = 'shelteradminapp/shelter_create.html'
     success_url = reverse_lazy('main:index')
-
-    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
-    # def dispatch(self, *args, **kwargs):
-    #     return super().dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -77,4 +74,26 @@ class ShelterUpdate(UpdateView):
         # capture that 'pk' as shelter_id and pass it to 'reverse_lazy()' function
         shelter_id = self.kwargs['pk']
         return reverse_lazy('shelteradmin:shelter_detail', kwargs={'pk': shelter_id})
+
+
+class ShelterDelete(DeleteView):
+    """Удаление приюта"""
+    model = Shelter
+    template_name = 'shelteradminapp/shelter_delete.html'
+    success_url = reverse_lazy('main:index')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Удаление приюта'
+        return context
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.is_active:
+            self.object.is_active = False
+        else:
+            self.object.is_active = True
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
 
