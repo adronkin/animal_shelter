@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, TemplateView, DetailView
+from django.views.generic import CreateView, TemplateView, DetailView, UpdateView
 from django.shortcuts import get_object_or_404
 
 from mainapp.models import Shelter
@@ -26,9 +26,8 @@ class ShelterOffice(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Личный кабинет приюта'
-        # context['my_shelter'] = User.
-        # a = Shelter.objects.filter(user_id=4)
-        # context['my_kwargs'] = self.get_object(a)
+        # n_pk = kwargs.values('pk')
+        # context['my_shelter'] = Shelter.objects.filter(pk=n_pk)
         return context
 
 
@@ -61,4 +60,22 @@ class ShelterDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Приют'
         return context
+
+
+class ShelterUpdate(UpdateView):
+    """Редактирование приюта"""
+    model = Shelter
+    form_class = ShelterUserUpdateForm
+    template_name = 'shelteradminapp/shelter_update.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Редактирование'
+        return context
+
+    def get_success_url(self):
+        # passing 'pk' from 'urls'
+        # capture that 'pk' as shelter_id and pass it to 'reverse_lazy()' function
+        shelter_id = self.kwargs['pk']
+        return reverse_lazy('shelteradmin:shelter_detail', kwargs={'pk': shelter_id})
 

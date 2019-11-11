@@ -7,7 +7,7 @@ class ShelterUserUpdateForm(forms.ModelForm):
     class Meta:
         model = Shelter
         fields = '__all__'
-        exclude = ('shelter_cord_latitude', 'shelter_cord_longitude', 'is_active', 'created', 'updated')
+        exclude = ('shelter_cord_latitude', 'shelter_cord_longitude', 'is_active', 'created', 'updated', 'sort')
         labels = {
             'name': 'Название приюта',
             'description': 'Описание',

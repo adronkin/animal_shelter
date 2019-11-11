@@ -72,11 +72,11 @@
                     <ul class="nav-menu">
                         {% for i in user.shelter_set.all %}
                             {% if i.shelter_address %}
-                                <li class="mainmenu menu-has-children">
-                                    <a href="{% url 'shelteradmin:shelter_create' %}">Редактировать</a>
-                                <ul>
-{#                                    <li><a href="{% url 'shelteradmin:shelter_update' %}"></a></li>#}
-                                </ul>
+                                <li class="mainmenu">
+                                    <a href="{% url 'shelteradmin:shelter_detail' i.pk %}">Приют</a>
+                                </li>
+                                <li class="mainmenu">
+{#                                    <a href="{% url 'shelteradmin:shelter_detail' i.pk %}">Питомцы</a>#}
                                 </li>
                             {% else %}
                                 <li><a href="{% url 'shelteradmin:shelter_create' %}">Создать приют</a></li>
