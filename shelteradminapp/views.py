@@ -1,18 +1,20 @@
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, TemplateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, TemplateView, DetailView, UpdateView, DeleteView, ListView
 from django.shortcuts import get_object_or_404
 
-from mainapp.models import Shelter
+from mainapp.models import Shelter, Pet
 from shelteradminapp.forms import ShelterUserUpdateForm
+
 
 # TODO Приют сохраняется в Core дважды - исправить
 # TODO В ShelterDetail при отсутсвии логитипа возникает ошибка - добавить дефолтное лого
 # TODO Описание приюта сохраняется в одну строку - исправить
-# TODO ShelterDelete
 # TODO отредактировать ЛК приюта
+# TODO PetList
 # TODO PetCreate
 # TODO PetDetail
 # TODO PetUpdate
@@ -97,3 +99,36 @@ class ShelterDelete(DeleteView):
         return HttpResponseRedirect(self.get_success_url())
 
 
+class PetList(DeleteView):
+    model = Shelter
+    template_name = 'shelteradminapp/pet_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Питомцы'
+        # Add in a QuerySet of all the pets
+        context['pets_list'] = Pet.objects.all()
+        return context
+
+
+# def pet_list(request, pk, page=1):
+#     """Выводит всех питомцев приюта"""
+#     pk = int(pk)
+#
+#     shelter = get_object_or_404(Shelter, pk=pk)
+#     pets = shelter.pet_set.all()
+#
+#     paginator = Paginator(pets, 2)
+#     try:
+#         pets = paginator.page(page)
+#     except PageNotAnInteger:
+#         pets = paginator.page(1)
+#     except EmptyPage:
+#         pets = paginator.page(paginator.num_pages)
+#
+#     context = {
+#         'title': 'раздел каталога',
+#         'shelter': shelter,
+#         'pets': pets,
+#     }
+#     return render(request, 'shelteradminapp/pet_list.html', context)

@@ -70,20 +70,18 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        {% for i in user.shelter_set.all %}
-                            {% if i.shelter_address %}
+                        {% if user.shelter_set.all %}
+                            {% for i in user.shelter_set.all %}
                                 <li class="mainmenu">
                                     <a href="{% url 'shelteradmin:shelter_detail' i.pk %}">Приют</a>
                                 </li>
                                 <li class="mainmenu">
-{#                                    <a href="{% url 'shelteradmin:shelter_detail' i.pk %}">Питомцы</a>#}
+                                    <a href="{% url 'shelteradmin:pet_list' i.pk %}">Питомцы</a>
                                 </li>
-                            {% else %}
-                                <li><a href="{% url 'shelteradmin:shelter_create' %}">Создать приют</a></li>
-                            {% endif %}
-                        {% endfor %}
-                        {#                        <li><a href="{% url 'adminapp:pet_list' %}">Питомцы</a></li>#}
-                        {#                        <li><a href="{% url 'adminapp:settings' %}">Настройки</a></li>#}
+                            {% endfor %}
+                        {% else %}
+                            <li><a href="{% url 'shelteradmin:shelter_create' %}">Создать приют</a></li>
+                        {% endif %}
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>

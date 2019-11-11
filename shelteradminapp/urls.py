@@ -13,7 +13,7 @@ urlpatterns = [
     path('shelter/delete/<int:pk>/', shelteradminapp.ShelterDelete.as_view(), name='shelter_delete'),
     # path('shelter/update/<int:pk>/pet/create/', adminapp.PetCreateInShelter.as_view(), name='pet_create_in_shelter'),
 
-    # path('pet_list/', adminapp.PetList.as_view(), name='pet_list'),
+    path('pet_list/<int:pk>/', shelteradminapp.PetList.as_view(), name='pet_list'),
     # path('pet/create/', adminapp.PetCreate.as_view(), name='pet_create'),
     # path('pet/create/', adminapp.PetCreateInShelter.as_view(), name='pet_create_in_shelter'),
     # path('pet/read/<int:pk>/', adminapp.PetDetail.as_view(), name='pet_detail'),
