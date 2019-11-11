@@ -4,11 +4,12 @@
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
-                <h1 class="text-white">
-                    {{ title|capfirst }}
-                </h1>
-                <p class="text-white link-nav"><a href="{% url 'mainapp:index' %}">Home </a>
-                    <span class="lnr lnr-arrow-right"></span>{{ title }}
+                <p class="text-white link-nav"><a href="/">Главная </a>
+                    {% if pet_class %}
+                        <span class="lnr lnr-arrow-right"> {{ title }} ({{ pet_class }})</span>
+                    {% else %}
+                        <span class="lnr lnr-arrow-right"> {{ title }}</span>
+                    {% endif %}
                 </p>
             </div>
         </div>

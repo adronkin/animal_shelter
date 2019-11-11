@@ -48,17 +48,19 @@
                     {% else %}
                         <li>
                             <a href="{% url 'auth:edit' %}">
-                                Личный кабинет
-                            </a>
+                            Личный кабинет
+                        </a>
                         </li>
                     {% endif %}
-
                     <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
                 </ul>
             </li>
         {% else %}
             <li class="mainmenu"><a href="{% url 'auth:login' %}">Войти</a></li>
+
         {% endif %}
-        <li class="mainmenu"><a href="{% url 'reserve:view' %}">Мои питомцы</a></li>
+        {% if user.is_authenticated %}
+            <li class="mainmenu"><a href="{% url 'reserve:view' %}">Избранное</a></li>
+        {% endif %}
     </ul>
 </nav><!-- #nav-menu-container -->
