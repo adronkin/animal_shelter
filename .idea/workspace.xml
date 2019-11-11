@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/shelter_office.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/includes/mainmenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelteradminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,25 +36,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>get_formset_class</find>
-      <find>ImageUpdate</find>
-      <find>Pet</find>
-      <find>petc</find>
-      <find>petcr</find>
-      <find>active_user</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alyonkazz" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1SsXTv8imuA48L0Yia4PkQnrA25" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -59,7 +53,9 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
+    <property name="ToolWindowDatabase Changes.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/shelteradminapp/views.py" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -71,19 +67,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp" />
-      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/category" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp" />
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
     </key>
   </component>
   <component name="RunDashboard">

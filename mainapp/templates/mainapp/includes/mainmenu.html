@@ -39,8 +39,8 @@
                             </li>
                         {% else %}
                             <li>
-                                <a href="{% url 'shelteradmin:shelter_create' %}">
-                                    Создать приют
+                                <a href="{% url 'shelteradmin:shelter_office' user.id %}">
+                                    Личный кабинет приюта
                                 </a>
                             </li>
                         {% endif %}
