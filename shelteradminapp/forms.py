@@ -3,6 +3,7 @@ from django import forms
 from io import BytesIO
 
 from django.core.files.base import ContentFile
+from django.forms import inlineformset_factory
 
 from mainapp.models import Shelter, Pet, Picture
 
@@ -53,6 +54,9 @@ class PetUserUpdateForm(forms.ModelForm):
         }
 
 
+# PetImageFormset = inlineformset_factory(Pet, Picture, fields=('image',), can_delete=False)
+
+
 class ImageUserUpdateForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput())
     y = forms.FloatField(widget=forms.HiddenInput())
@@ -91,3 +95,4 @@ class ImageUserUpdateForm(forms.ModelForm):
         )
 
         return super(ImageUserUpdateForm, self).save(*args, **kwargs)
+

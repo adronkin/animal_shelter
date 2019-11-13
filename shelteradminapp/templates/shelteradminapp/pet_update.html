@@ -1,0 +1,33 @@
+{% extends 's/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <a href="{% url 'adminapp:image_create_pet' object.pk %}" class="">добавить изображение</a>
+                        {% for img in object.images.all %}
+                            <img src="{{ img.image.url }}" alt="">
+                            <a href="{% url 'adminapp:image_delete' img.pk %}" class="">удалить изображение</a>
+                        {% endfor %}
+                        <input class="form-control" type="submit" value="сохранить">
+                    </form>
+                    <a href="{% url 'shelteradminapp:pet_list' %}"
+                       class="btn btn-primary form-control last">
+                        к списку питомцев
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}
