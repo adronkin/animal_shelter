@@ -11,7 +11,7 @@
             <div class="row">
                 <div>
                     {% for img in pet.images.all %}
-                        <a href="{{ img.image.url }}">
+                        <a data-fancybox="gallery" href="{{ img.image.url }}">
                             <img style="height: 200px" src="{{ img.image.url }}" alt="">
                         </a>
                     {% endfor %}
