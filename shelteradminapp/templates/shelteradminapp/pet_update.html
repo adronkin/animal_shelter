@@ -1,5 +1,6 @@
 {% extends 'shelteradminapp/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block main_banner %}
     {% include 'adminapp/includes/inc-admin_banner_small.html' %}
@@ -9,11 +10,11 @@
     <!-- Start cat-list Area -->
     <section class="cat-list-area section-gap">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div>
                     <form class="form-horizontal" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        {{ form|crispy }}
                         <a href="{% url 'adminapp:image_create_pet' object.pk %}" class="">добавить изображение</a>
                         {% for img in object.images.all %}
                             <img src="{{ img.image.url }}" alt="">
