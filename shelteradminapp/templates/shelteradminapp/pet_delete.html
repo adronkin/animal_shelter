@@ -15,7 +15,7 @@
                         {% csrf_token %}
                         <input class="btn btn-danger" type="submit" value="удалить">
                     </form>
-                    <a href="{% url 'shelteradminapp:pet_list' %}" class="btn btn-success">
+                    <a href="{% url 'shelteradmin:pet_list' object.pet_shelter.pk %}" class="btn btn-success">
                         отмена
                     </a>
             </div>

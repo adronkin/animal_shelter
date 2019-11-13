@@ -15,8 +15,8 @@ urlpatterns = [
     path('<int:pk>/pet_list/', shelteradminapp.PetList.as_view(), name='pet_list'),
     path('<int:pk>/pet/create/', shelteradminapp.PetCreate.as_view(), name='pet_create'),
     path('pet/read/<int:pk>/', shelteradminapp.PetDetail.as_view(), name='pet_detail'),
-    path('<int:pk>/pet/update/<int:pet_pk>/', shelteradminapp.PetUpdate.as_view(), name='pet_update'),
-    path('<int:pk>/pet/delete/<int:pet_pk>/', shelteradminapp.PetDelete.as_view(), name='pet_delete'),
+    path('pet/update/<int:pk>/', shelteradminapp.PetUpdate.as_view(), name='pet_update'),
+    path('pet/delete/<int:pk>/', shelteradminapp.PetDelete.as_view(), name='pet_delete'),
 
     # path('pet/update/<int:pk>/create/image/', adminapp.ImageCreatePet.as_view(model=Picture), name='image_create_pet'),
     # path('shelter/update/<int:pk>/create/image/', adminapp.ImageCreateShelter.as_view(model=Picture), name='image_create_shelter'),

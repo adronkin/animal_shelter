@@ -1,4 +1,4 @@
-{% extends 's/base.html' %}
+{% extends 'shelteradminapp/base.html' %}
 {% load static %}
 
 {% block main_banner %}
@@ -21,7 +21,7 @@
                         {% endfor %}
                         <input class="form-control" type="submit" value="сохранить">
                     </form>
-                    <a href="{% url 'shelteradminapp:pet_list' %}"
+                    <a href="{% url 'shelteradminapp:pet_list' object.pet_shelter.pk %}"
                        class="btn btn-primary form-control last">
                         к списку питомцев
                     </a>

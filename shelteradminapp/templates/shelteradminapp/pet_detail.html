@@ -32,18 +32,18 @@
                     <p>Состояние: {{ pet.pet_status }}</p>
                     <p>Город: {{ shelter.shelter_city }}</p>
                     <p>Связаться по телефону {{ shelter.shelter_phone }}</p>
-{#                    <p>#}
-{#                        <a href="{% url 'shelteradminapp:pet_update' object.pk %}"#}
-{#                           class="btn btn-danger">#}
-{#                            редактировать#}
-{#                        </a>#}
-{#                    </p>#}
-{#                    <p>#}
-{#                        <a href="{% url 'shelteradminapp:pet_delete' object.pk %}"#}
-{#                           class="btn btn-danger">#}
-{#                            удалить#}
-{#                        </a>#}
-{#                    </p>#}
+                    <p>
+                        <a href="{% url 'shelteradminapp:pet_update' object.pk %}"
+                           class="btn btn-danger">
+                            редактировать
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'shelteradminapp:pet_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
