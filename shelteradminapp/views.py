@@ -194,6 +194,79 @@ class ImageCreate(CreateView):
     template_name = 'shelteradminapp/includes/inc__image_create.html'
 
 
+class ImageCreatePet(CreateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = f.ImageUserUpdateForm
+    template_name = 'shelteradminapp/image_create.html'
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('shelteradmin:pet_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageCreatePet, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
+
+
+class ImageCreateShelter(CreateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = f.ImageUserUpdateForm
+    template_name = 'shelteradminapp/image_create.html'
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('shelteradmin:shelter_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageCreateShelter, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
+
+
+class ImageUpdate(UpdateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = f.ImageUserUpdateForm
+    template_name = 'shelteradminapp/image_create.html'
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        # return reverse_lazy('adminapp:pet_detail', args=[self.object.related_obj.pk])
+        # return self.request.META.get('HTTP_REFERER')
+
+        return reverse_lazy('shelteradmin:shelter_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageUpdate, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
+
+
+class ImageDelete(DeleteView):
+    """Реализует удаление изоражений"""
+    model = Picture
+    template_name = 'shelteradminapp/image_delete.html'
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('shelteradmin:pet_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(ImageDelete, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        return data
+
 
 
 
