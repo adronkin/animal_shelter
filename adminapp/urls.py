@@ -25,6 +25,12 @@ urlpatterns = [
     path('breed/update/<int:pk>/', adminapp.BreedUpdate.as_view(), name='breed_update'),
     path('breed/delete/<int:pk>/', adminapp.BreedDelete.as_view(), name='breed_delete'),
 
+    path('city/list/', adminapp.CityList.as_view(), name='city_list'),
+    path('city/create/', adminapp.CityCreate.as_view(), name='city_create'),
+    path('city/read/<int:pk>/', adminapp.CityDetail.as_view(), name='city_detail'),
+    path('city/update/<int:pk>/', adminapp.CityUpdate.as_view(), name='city_update'),
+    path('city/delete/<int:pk>/', adminapp.CityDelete.as_view(), name='city_delete'),
+
     path('pet_list/', adminapp.PetList.as_view(), name='pet_list'),
     path('pet/create/', adminapp.PetCreate.as_view(), name='pet_create'),
     path('pet/create/', adminapp.PetCreateInShelter.as_view(), name='pet_create_in_shelter'),

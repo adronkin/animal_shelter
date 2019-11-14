@@ -1,0 +1,28 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1>{{ city.name }}</h1>
+                    <p>{{ city.description }}</p>
+                    <p>{{ city.is_active }}</p>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:city_update' object.pk %}">
+                        редактировать
+                    </a>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:city_delete' object.pk %}">
+                        удалить
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

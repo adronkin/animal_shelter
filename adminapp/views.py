@@ -6,8 +6,8 @@ from django.views import generic
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
 
 from adminapp.forms import CategoryUpdateForm, StatusUpdateForm, BreedUpdateForm, PetUpdateForm, ShelterUpdateForm, \
-    ImageUpdateForm
-from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture
+    ImageUpdateForm, CityUpdateForm
+from mainapp.models import Shelter, PetCategory, Pet, PetStatus, PetBreed, Picture, City
 
 
 # TODO добавить валидацию через form
@@ -595,4 +595,96 @@ class BreedDelete(DeleteView):
         else:
             self.object.is_active = True
         self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class CityList(ListView):
+    """"Выводит список городов"""
+    model = City
+    template_name = 'adminapp/city/city_list.html'
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Список городов'
+        return context
+
+
+class CityCreate(CreateView):
+    """Создает новый город"""
+    model = City
+    form_class = CityUpdateForm
+    template_name = 'adminapp/city/city_update.html'
+    success_url = reverse_lazy('adminapp:city_list')
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Создание города'
+        return context
+
+
+class CityUpdate(UpdateView):
+    """Редактирование города"""
+    model = City
+    form_class = CityUpdateForm
+    template_name = 'adminapp/city/city_update.html'
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Город/редактирование'
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('adminapp:city_detail', args=[self.object.city.pk])
+
+
+class CityDetail(DetailView):
+    """Выводит информацию о городах"""
+    model = City
+    template_name = 'adminapp/city/city_detail.html'
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = f'Город: {self.object.city.name}'
+        return context
+
+
+class CityDelete(DeleteView):
+    """Удаление города"""
+    model = City
+    template_name = 'adminapp/city/city_delete.html'
+    success_url = reverse_lazy('adminapp:city_list')
+
+    # @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Город/удаление'
+        return context
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.is_active:
+            self.object.is_active = False
+        else:
+            self.object.is_active = True
+        self.object.save()
+
         return HttpResponseRedirect(self.get_success_url())

@@ -1,0 +1,36 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div>
+                            {% for field in form %}
+                                <div class="col-lg-9">
+                                    {{ field.label_tag }}
+                                    <div class="form-group">{{ field }}</div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <input class="form-control button_admin text-uppercase" style="width: 500px" type="submit"
+                               value="сохранить">
+                    </form>
+                    <a class="button_admin_add text-uppercase" style="width: 500px"
+                       href="{% url 'adminapp:breed_list' %}">
+                        к списку городов
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

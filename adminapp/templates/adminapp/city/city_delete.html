@@ -1,0 +1,27 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h3>Вы подтверждаете удаление породы "{{ city.name }}"?</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input class="button_admin_add text-uppercase" type="submit" value="удалить">
+                    </form>
+                    <a class="button_admin_add text-uppercase" href="{% url 'adminapp:city_list' %}">
+                        отмена
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

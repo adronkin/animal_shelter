@@ -3,7 +3,7 @@ from io import BytesIO
 from PIL import Image
 from django import forms
 from django.core.files.base import ContentFile
-from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture
+from mainapp.models import PetCategory, PetStatus, Pet, Shelter, Picture, City, PetBreed
 
 
 class PetUpdateForm(forms.ModelForm):
@@ -76,11 +76,22 @@ class StatusUpdateForm(forms.ModelForm):
 
 class BreedUpdateForm(forms.ModelForm):
     class Meta:
-        model = PetStatus
+        model = PetBreed
         fields = ('name', 'description', 'is_active')
         labels = {
             'name': 'Наименование породы',
             'description': 'Описание породы',
+            'is_active': 'Активность',
+        }
+
+
+class CityUpdateForm(forms.ModelForm):
+    class Meta:
+        model = City
+        fields = ('name', 'description', 'is_active')
+        labels = {
+            'name': 'Город',
+            'description': 'Описание города',
             'is_active': 'Активность',
         }
 
