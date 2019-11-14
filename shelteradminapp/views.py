@@ -16,9 +16,7 @@ from shelteradminapp import forms as f
 # TODO Описание приюта сохраняется в одну строку - исправить
 # TODO отредактировать ЛК приюта
 # TODO PetCreate - добавить картинки
-# TODO PetDetail
-# TODO PetUpdate
-# TODO PetDelete
+# TODO ImageCreate/ImageUpdate добавить вывод существующих фото
 
 
 class ShelterOffice(DetailView):
@@ -124,16 +122,40 @@ class PetCreate(CreateView):
         context['title'] = 'Добавить питомца'
         return context
 
-    def get_success_url(self):
-        # passing 'pk' from 'urls'
-        # capture that 'pk' as shelter_id and pass it to 'reverse_lazy()' function
-        shelter_id = self.kwargs['pk']
-        return reverse_lazy('shelteradmin:pet_list', kwargs={'pk': shelter_id})
+    # def get_success_url(self):
+    #     # passing 'pk' from 'urls'
+    #     # capture that 'pk' as shelter_id and pass it to 'reverse_lazy()' function
+    #     shelter_id = self.kwargs['pk']
+    #     return reverse_lazy('shelteradmin:pet_list', kwargs={'pk': shelter_id})
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('shelteradmin:pet_create_img', args=[self.object.pk])
 
     def get_initials(self):
         return {
             'pet_shelter': self.kwargs['pk']
         }
+
+
+class PetCreateImage(CreateView):
+    """Реализует добавление изображений"""
+    model = Picture
+    form_class = f.ImageUserUpdateForm
+    template_name = 'shelteradminapp/pet_create_image.html'
+
+    def form_valid(self, form):
+        form.instance.related_obj_id = self.kwargs.get('pk')
+        return super().form_valid(form)
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('shelteradmin:pet_detail', args=[self.object.related_obj.pk])
+
+    def get_context_data(self, **kwargs):
+        data = super(PetCreateImage, self).get_context_data(**kwargs)
+        data['return_page'] = self.request.META.get('HTTP_REFERER')
+        # data['photos'] = Picture.objects.filter(related_obj_id=self.kwargs.get('pk'))
+        data['pet'] = get_object_or_404(Pet, pk=self.kwargs.get('pk'))
+        return data
 
 
 class PetUpdate(generic.UpdateView):
@@ -188,12 +210,6 @@ class PetDetail(DetailView):
         return context
 
 
-class ImageCreate(CreateView):
-    model = Picture
-    form_class = f.ImageUserUpdateForm
-    template_name = 'shelteradminapp/includes/inc__image_create.html'
-
-
 class ImageCreatePet(CreateView):
     """Реализует добавление изображений"""
     model = Picture
@@ -210,6 +226,8 @@ class ImageCreatePet(CreateView):
     def get_context_data(self, **kwargs):
         data = super(ImageCreatePet, self).get_context_data(**kwargs)
         data['return_page'] = self.request.META.get('HTTP_REFERER')
+        # data['photos'] = Picture.objects.filter(related_obj_id=self.kwargs.get('pk'))
+        data['pet'] = get_object_or_404(Pet, pk=self.kwargs.get('pk'))
         return data
 
 
@@ -266,7 +284,4 @@ class ImageDelete(DeleteView):
         data = super(ImageDelete, self).get_context_data(**kwargs)
         data['return_page'] = self.request.META.get('HTTP_REFERER')
         return data
-
-
-
 

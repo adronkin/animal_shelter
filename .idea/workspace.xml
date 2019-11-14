@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/image_delete.html" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; +- при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)&#10; + добавлено создание, редактирование и удалиние фото питомцев">
+      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/pet_create_image.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/pet_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/pet_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/image_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/image_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelteradminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/views.py" afterDir="false" />
     </list>
@@ -64,19 +64,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp" />
-      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp\includes" />
-      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
-      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp\includes" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
       <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/status" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp" />
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp\templates\shelteradminapp\includes" />
+      <recent name="C:\Users\Alyonkazz\PycharmProjects\animals_helper\animals_helper\shelteradminapp" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/shelter" />
+      <recent name="$PROJECT_DIR$/adminapp/templates/adminapp/pet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -147,7 +147,9 @@
       <workItem from="1573428510154" duration="12000" />
       <workItem from="1573468406473" duration="897000" />
       <workItem from="1573568250200" duration="641000" />
-      <workItem from="1573646706435" duration="10956000" />
+      <workItem from="1573646706435" duration="13032000" />
+      <workItem from="1573732532773" duration="68000" />
+      <workItem from="1573732626772" duration="3591000" />
     </task>
     <task id="LOCAL-00001" summary="Поправил модель mainapp - создал родительский класс, реализовал модель изображений и наследования. Подключил админ-панель, зарегал модели. Поправил главный диспетчер url, добавил диспетчер url mainapp. Реализовал и подключил медиа-контент. Создал суперпользователя, выполнил миграции, немного наполнил БД для проверки.">
       <created>1569765294517</created>
@@ -485,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573661903652</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)&#10; + добавлено создание, редактирование и удалиние фото питомцев">
+      <created>1573662640516</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1573662640516</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="merge Vagan" />
     <MESSAGE value="Cropper.js (не работает)" />
     <MESSAGE value="Cropper.js c css и js (не работает)" />
     <MESSAGE value="photo_crop.js работает при редактировании фото пета (сохранение не работает)" />
@@ -550,7 +558,8 @@
     <MESSAGE value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце" />
     <MESSAGE value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца" />
     <MESSAGE value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)" />
-    <option name="LAST_COMMIT_MESSAGE" value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)" />
+    <MESSAGE value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)&#10; + добавлено создание, редактирование и удалиние фото питомцев" />
+    <option name="LAST_COMMIT_MESSAGE" value="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; - при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)&#10; + добавлено создание, редактирование и удалиние фото питомцев" />
   </component>
   <component name="masterDetails">
     <states>
