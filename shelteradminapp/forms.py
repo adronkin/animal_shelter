@@ -78,7 +78,7 @@ class ImageUserUpdateForm(forms.ModelForm):
 
         image = Image.open(photo.image)
         cropped_image = image.crop((x, y, w + x, h + y))
-        resized = cropped_image.resize((263, 350), Image.ANTIALIAS)
+        resized = cropped_image.resize((480, 640), Image.ANTIALIAS)
 
         if img.format == 'JPEG':
             resized.save(new_image_io, format='JPEG')
