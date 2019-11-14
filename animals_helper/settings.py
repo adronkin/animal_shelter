@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'django_extensions',
-    'reserveapp'
+    'reserveapp',
+    'shelteradminapp',
 ]
 
 

@@ -1,0 +1,52 @@
+{% extends 'shelteradminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    {% for img in pet.images.all %}
+                        <a href="{{ img.image.url }}">
+                            <img src="{{ img.image.url }}" alt="">
+                        </a>
+                    {% endfor %}
+                    <h1>{{ pet.name }}</h1>
+                    <p>Активность: {{ pet.is_active }}</p>
+                    <p>Приют: <a href="{% url 'shelteradmin:shelter_detail' shelter.pk %}">{{ pet.pet_shelter }}</a></p>
+                    <p>Порода: {{ pet.pet_breed }}</p>
+                    <p>Пол: {{ pet.pet_gender }}</p>
+                    <p>Возраст:
+                        {{ pet.age }} {{ year_output }}
+                        {{ pet.month }} {{ month_output }}
+                    </p>
+                    <p>Размер: {{ pet.pet_size }}</p>
+                    <p>Длина шерсти: {{ pet.pet_wool_length }}</p>
+                    <p>Цвет: {{ pet.pet_color }}</p>
+                    <p>Характер: {{ pet.pet_character }}</p>
+                    <p>Состояние: {{ pet.pet_status }}</p>
+                    <p>Город: {{ shelter.shelter_city }}</p>
+                    <p>Связаться по телефону {{ shelter.shelter_phone }}</p>
+                    <p>
+                        <a href="{% url 'shelteradminapp:pet_update' object.pk %}"
+                           class="btn btn-danger">
+                            редактировать
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'shelteradminapp:pet_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

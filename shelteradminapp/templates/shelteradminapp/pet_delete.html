@@ -1,0 +1,25 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <p>Вы подтверждаете удаление питомца: {{ pet.name }}?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-danger" type="submit" value="удалить">
+                    </form>
+                    <a href="{% url 'shelteradmin:pet_list' object.pet_shelter.pk %}" class="btn btn-success">
+                        отмена
+                    </a>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

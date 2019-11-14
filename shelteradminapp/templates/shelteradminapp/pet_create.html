@@ -1,0 +1,27 @@
+{% extends 'shelteradminapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div>
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="form-control" type="submit" value="сохранить">
+                    </form>
+                    <a href="{% url 'shelteradmin:pet_list' request.resolver_match.kwargs.pk %}"
+                       class="btn btn-primary form-control last">
+                        к списку питомцев
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

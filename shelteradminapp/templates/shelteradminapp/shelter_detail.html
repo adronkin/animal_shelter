@@ -1,0 +1,68 @@
+{% extends 'shelteradminapp/base.html' %}
+{% load static %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div>
+                    {% for img in shelter.images.all %}
+                        <a href="{{ img.image.url }}">
+                            <img src="{{ img.image.url }}" alt="">
+                        </a>
+                    {% endfor %}
+                    <h1>Приют "{{ shelter.name }}"</h1>
+{#                    <p>Логотип:</p>#}
+{#                    <img src="{{ shelter.shelter_logo.url }}" alt="">#}
+                    <p>Описание: {{ shelter.description }}</p>
+                    <p>Город: {{ shelter.shelter_city }}</p>
+                    <p>Адрес: {{ shelter.shelter_address }}</p>
+                    <p>Телефон: {{ shelter.shelter_phone }}</p>
+                    <p>Email: {{ shelter.shelter_email }}</p>
+                    <p>Активность: {{ shelter.is_active }}</p>
+                    <p>Дата создания: {{ shelter.created }}</p>
+                    <p>Последнее редактирование: {{ shelter.updated }}</p>
+                    <p>
+                        <a href="{% url 'shelteradmin:shelter_update' object.pk %}"
+                           class="btn btn-danger">
+                            редактировать
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'shelteradmin:shelter_delete' object.pk %}"
+                           class="btn btn-danger">
+                            удалить
+                        </a>
+                    </p>
+{#                    <h2>Питомцы приюта:</h2>#}
+{#                    <div class="row">#}
+{#                        {% for pet in shelter.pets.all %}#}
+{#                            <div class="col-lg-3 col-md-6">#}
+{#                                <a href="{% url 'adminapp:pet_detail' pet.pk %}">#}
+{#                                    <div class="single-cat-list">#}
+{#                                        <img src="{{ pet.images.first.image.url }}" alt="" class="img-fluid">#}
+{#                                        <div class="overlay">#}
+{#                                            <div class="text">{{ pet.name }}</div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                    <p>#}
+{#                        <a href="{% url 'adminapp:pet_create_in_shelter' object.pk %}"#}
+{#                           class="btn btn-danger">#}
+{#                            Добавить питомца#}
+{#                        </a>#}
+{#                    </p>#}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}

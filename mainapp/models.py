@@ -19,9 +19,6 @@ class Core(models.Model):
     is_active = models.BooleanField(verbose_name='активен ли объект', default=True, db_index=True)
     created = models.DateTimeField(verbose_name='создан', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='обновлен', auto_now=True)
-    active_user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                    on_delete=models.CASCADE,
-                                    related_name='basket')
 
     def __str__(self):
         return f'{self.name}' if self.name else ''
@@ -64,7 +61,7 @@ class Shelter(Core):
     shelter_email = models.EmailField(verbose_name='эл.почта', null=False, blank=False, unique=True)
     shelter_cord_latitude = models.IntegerField(verbose_name='координаты - широта', default=0)
     shelter_cord_longitude = models.IntegerField(verbose_name='координаты - долгота', default=0)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
 
 class Donate(Core):

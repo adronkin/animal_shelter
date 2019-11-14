@@ -14,7 +14,7 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="{% url 'adminapp:pet_detail' object.pk %}">
                             <div class="single-cat-list">
-                                <img src="{{ object.images.first.image.url }}" alt="" class="img-fluid">
+                                <img src="{{ object.images.first.image.url }}" alt="{{ object.pet.name }}" class="img-fluid">
                                 <div class="overlay">
                                     <div class="text">{{ object.name }}</div>
                                 </div>

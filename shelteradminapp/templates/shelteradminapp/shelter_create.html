@@ -1,0 +1,26 @@
+{% extends 'shelteradminapp/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block main_banner %}
+    {% include 'adminapp/includes/inc-admin_banner_small.html' %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start cat-list Area -->
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div>
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="form-control btn btn-success" type="submit" value="сохранить">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cat-list Area -->
+{% endblock %}
