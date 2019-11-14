@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="создан личный кабинет приюта:&#10; + просмотр информации о приюте&#10; + редактирование приюта&#10; + удаление приюта&#10; + список питомцев&#10; + добавление нового питомца&#10; +- при добавлении питомца нет его картинки&#10; + добавлен просмотр информации о питомце&#10; + добавлено редактирование и удаление питомца (оптимизирован стиль редактирования)&#10; + добавлено создание, редактирование и удалиние фото питомцев">
-      <change afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/pet_create_image.html" afterDir="false" />
+    <list default="true" id="c99546e5-e9d0-4691-9743-6eb115176b42" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/pet/pet_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminapp/templates/adminapp/shelter/shelter_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/image_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/templates/shelteradminapp/image_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelteradminapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelteradminapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_BU84VCd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_JEFMbbA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_N8AWvWB.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_XmBvQF3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_XzEEshl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_ZPj992d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_n7WQMLN.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1540024758199966676_sIUBobz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_1_c2HQ5ob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_2_eteL0tP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_3_juPeZHS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_4_Q5kidAh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Diego_5_xkT2105.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Emmy_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Hitch_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Leva_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Martin_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Miron_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Sonya_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/ct1_2Iyji81.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/ct1_qNNMYTu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/kitty1_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/puppies_3.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
