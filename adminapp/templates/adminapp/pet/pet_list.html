@@ -14,9 +14,18 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="{% url 'adminapp:pet_detail' object.pk %}">
                             <div class="single-cat-list">
-                                <img src="{{ object.images.first.image.url }}" alt="{{ object.pet.name }}" class="img-fluid">
+                                <img src="{{ object.images.first.image.url }}" alt="{{ object.pet.name }}"
+                                     class="img-fluid">
                                 <div class="overlay">
-                                    <div class="text">{{ object.name }}</div>
+                                    <div class="text">
+                                        <p class="text_pet-info">{{ object.name }},</p>
+                                        <p class="text_pet-info">
+                                            {% if object.age == 0 %} {{ object.month }} мес.,
+                                            {% elif object.age >= 1 and object.age <= 4 %} {{ object.age }} г.,
+                                            {% else %} {{ object.age }} лет,
+                                            {% endif %}</p>
+                                        <p class="text_pet-info">{{ object.pet_status }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -24,7 +33,7 @@
                 {% endfor %}
             </div>
             <p>
-                <a href="{% url 'adminapp:pet_create'%}"
+                <a href="{% url 'adminapp:pet_create' %}"
                    class="btn btn-danger">
                     добавить питомца
                 </a>
