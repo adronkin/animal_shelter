@@ -25,7 +25,7 @@ def check_user(request):
 class Index(TemplateView):
     """ Главная страница """
     template_name = 'mainapp/index.html'
-    pets_row = Pet.objects.all()
+    pets_row = Pet.objects.filter(is_active=True)
     adopted = Pet.get_count('Уже дома')
     extra_context = {
         'pets_row': pets_row,
@@ -42,7 +42,8 @@ class ShelterList(ListView):
         # Call the base implementation first to get a context
         context = super(ShelterList, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the pets
-        context['pets_list'] = Pet.objects.all()
+        context['pets_list'] = Pet.objects.filter(is_active=True)
+        context['shelter_list'] = Shelter.objects.filter(is_active=True)
         context['title'] = 'Приюты'
         return context
 
@@ -55,7 +56,7 @@ class ShelterDetail(DetailView):
         # Call the base implementation first to get a context
         context = super(DetailView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the pets
-        context['pets_list'] = Pet.objects.all()
+        context['pets_list'] = Pet.objects.filter(is_active=True)
         context['adopted'] = Pet.get_count('Уже дома')
         context['not_adopted'] = Pet.get_count() - context['adopted']
         return context
@@ -115,7 +116,7 @@ def pet_card(request, pk):
 def pet_list(request, page=1):
     """ страница всех питомцев """
     title = 'Список питомцев'
-    pets = Pet.objects.all()
+    pets = Pet.objects.filter(is_active=True)
     paginator = Paginator(pets, 4)
     try:
         pets_paginator = paginator.page(page)
@@ -157,7 +158,7 @@ def adopted_list(request, page=1):
 def cat_list(request, page=1):
     """ страница только котов """
     title = 'Список питомцев'
-    cats = Pet.objects.filter(pet_category_id=5)
+    cats = Pet.objects.filter(pet_category_id=5, is_active=True)
     pet_class = PetCategory.objects.get(id=5)
     content = {
         'pet_class': pet_class,
@@ -170,7 +171,7 @@ def cat_list(request, page=1):
 def dog_list(request, page=1):
     """ страница только собак """
     title = 'Список питомцев'
-    dogs = Pet.objects.filter(pet_category_id=6)
+    dogs = Pet.objects.filter(pet_category_id=6, is_active=True)
     pet_class = PetCategory.objects.get(id=6)
     content = {
         'pet_class': pet_class,

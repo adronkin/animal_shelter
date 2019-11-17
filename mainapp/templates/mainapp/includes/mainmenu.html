@@ -6,7 +6,9 @@
                 {% if object.submenus.count %}
                     <ul>
                         {% for obj in object.submenus.all %}
-                            <li class="{{ obj.css_class }}"><a href="{{ obj.get_url }}"> {{ obj.name }} </a></li>
+                            {% if obj.is_active %}
+                                <li class="{{ obj.css_class }}"><a href="{{ obj.get_url }}"> {{ obj.name }} </a></li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 {% endif %}
@@ -48,8 +50,8 @@
                     {% else %}
                         <li>
                             <a href="{% url 'auth:edit' %}">
-                            Личный кабинет
-                        </a>
+                                Личный кабинет
+                            </a>
                         </li>
                     {% endif %}
                     <li class=""><a href="{% url 'auth:logout' %}">Выйти</a></li>
