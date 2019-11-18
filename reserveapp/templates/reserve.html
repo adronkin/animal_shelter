@@ -2,35 +2,68 @@
 {% load static %}
 
 {% block main_banner %}
-{% include 'mainapp/includes/inc-main_banner_small.html' %}
+    {% include 'mainapp/includes/inc-main_banner_small.html' %}
 {% endblock %}
 
 {% block content %}
-<title>{{ title }}</title>
-<h1 style="text-align: center">Ваши избранные питомцы</h1>
-<div class="reserve_block">
-    {% for item in reserve_pets %}
-        <div class="reserve_pet_block">
-                    <span class="pet_name">{{ item.pet.name }}</span><br>
-        {{ item.pet.pet_wool_length }}<br>
-                <img style="width: 300px" src="{{item.pet.images.first.image.url}}" alt="" class="img-fluid">
-        <br><br>
-                <a href="{% url 'main:index' %}"> Отправить заявку в приют! </a><!-- абстрактная ссылка на создание заявки -->
-        <br><br>
-        <button class="btn btn-round">
-            <a href="{% url 'reserve:remove' item.pk %}" class="">
-                удалить
-            </a>
-        </button>
+    <title>{{ title }}</title>
+    <h1 style="text-align: center">Ваши избранные питомцы</h1>
+    {#    <div class="reserve_block">#}
+    {#        {% for item in reserve_pets %}#}
+    {#            <div class="reserve_pet_block">#}
+    {#                <span class="pet_name">{{ item.pet.name }}</span><br>#}
+    {#                {{ item.pet.pet_wool_length }}<br>#}
+    {#                <img style="width: 300px" src="{{ item.pet.images.first.image.url }}" alt="" class="img-fluid">#}
+    {#                        <br><br>#}
+    {#                                <a href="{% url 'main:index' %}"> Отправить заявку в приют! </a><!-- абстрактная ссылка на создание заявки -->#}
+    {#                        <br><br>#}
+    {#                <button class="btn btn-round">#}
+    {#                    <a href="{% url 'reserve:remove' item.pk %}" class="">#}
+    {#                        удалить#}
+    {#                    </a>#}
+    {#                </button>#}
+    {##}
+    {#            </div>#}
+    {#        {% endfor %}#}
+    {#    </div>#}
 
+    <section class="cat-list-area section-gap">
+        <div class="container">
+            <div class="row">
+                {% for item in reserve_pets %}
+                    <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'mainapp:pet_card' item.pet.pk %}">
+                            <div class="single-cat-list">
+                                <img src="{{ item.pet.images.first.image.url }}" alt="" class="img-fluid">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <p class="text_pet-info">{{ item.pet.name }},</p>
+                                        <p class="text_pet-info">
+                                            {% if item.pet.age == 0 %} {{ item.pet.month }} мес.,
+                                            {% elif item.pet.age >= 1 and item.pet.age <= 4 %} {{ item.pet.age }} г.,
+                                            {% else %} {{ item.pet.age }} лет,
+                                            {% endif %}</p>
+                                        <p class="text_pet-info">{{ item.pet.pet_status }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <button class="btn btn-round">
+                            <a href="{% url 'reserve:remove' item.pk %}" class="">
+                                удалить
+                            </a>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
-</div>
+    </section>
     {% if reserve_pets %}
-            <div class="order_create">
-    </div>
-                <p style="text-align: center">После подтверждения заявки избранные питомцы будут перемещены в раздел "Мои заявки"</p>
-                </div>
-        <a href="{% url 'main:index' %}">на главную</a>
+        <div class="order_create">
+        {#        </div>#}
+        {#        <p style="text-align: center">После подтверждения заявки избранные питомцы будут перемещены в раздел "Мои#}
+        {#            заявки"</p>#}
+        {#        </div>#}
+        {#        <a href="{% url 'main:index' %}">на главную</a>#}
     {% endif %}
 {% endblock %}

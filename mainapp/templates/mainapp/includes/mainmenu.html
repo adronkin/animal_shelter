@@ -15,7 +15,7 @@
 
             </li>
         {% endfor %}
-        <li><a href="{% url 'mainapp:volunteer' %}">Волонтерство</a></li>
+{#        <li><a href="{% url 'mainapp:volunteer' %}">Волонтерство</a></li>#}
         {% if user.is_authenticated %}
             {% if user.avatar %}
                 <li><img src="{{ user.avatar.url }}" width="40" alt="" style="border-radius: 50%"></li>
