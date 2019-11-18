@@ -463,7 +463,7 @@ class StatusUpdate(UpdateView):
         return context
 
     def get_success_url(self):
-        return reverse_lazy('adminapp:status_detail', args=[self.object.petcategory.pk])
+        return reverse_lazy('adminapp:status_detail', args=[self.object.petstatus.pk])
 
 
 class StatusDetail(DetailView):

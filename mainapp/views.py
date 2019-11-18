@@ -116,7 +116,7 @@ def pet_card(request, pk):
 def pet_list(request, page=1):
     """ страница всех питомцев """
     title = 'Список питомцев'
-    pets = Pet.objects.filter(is_active=True)
+    pets = Pet.objects.filter(is_active=True).exclude(pet_status=22)
     paginator = Paginator(pets, 4)
     try:
         pets_paginator = paginator.page(page)
@@ -158,7 +158,7 @@ def adopted_list(request, page=1):
 def cat_list(request, page=1):
     """ страница только котов """
     title = 'Список питомцев'
-    cats = Pet.objects.filter(pet_category_id=5, is_active=True)
+    cats = Pet.objects.filter(pet_category_id=5, is_active=True).exclude(pet_status=22)
     pet_class = PetCategory.objects.get(id=5)
     content = {
         'pet_class': pet_class,
@@ -171,7 +171,7 @@ def cat_list(request, page=1):
 def dog_list(request, page=1):
     """ страница только собак """
     title = 'Список питомцев'
-    dogs = Pet.objects.filter(pet_category_id=6, is_active=True)
+    dogs = Pet.objects.filter(pet_category_id=6, is_active=True).exclude(pet_status=22)
     pet_class = PetCategory.objects.get(id=6)
     content = {
         'pet_class': pet_class,
@@ -283,12 +283,12 @@ class SearchView(ListView):
         sort_animal = self.request.GET.get('sort_animal')
 
         if search:
-            queryset = queryset.filter(name__icontains=search.title())
+            queryset = queryset.filter(name__icontains=search.title(), is_active=True)
         if sort_city:
-            queryset = queryset.filter(pet_shelter__shelter_city__name=sort_city)
+            queryset = queryset.filter(pet_shelter__shelter_city__name=sort_city, is_active=True)
         if sort_wool:
-            queryset = queryset.filter(pet_wool_length__name=sort_wool)
+            queryset = queryset.filter(pet_wool_length__name=sort_wool, is_active=True)
         if sort_animal:
-            queryset = queryset.filter(pet_category_id=sort_animal)
+            queryset = queryset.filter(pet_category_id=sort_animal, is_active=True)
 
         return queryset
